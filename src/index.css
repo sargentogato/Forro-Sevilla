@@ -1,0 +1,282 @@
+/* Global Styles - Professional Custom CSS foundation */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Brand Palette */
+  --forro-orange: #F27D26;
+  --forro-red: #D94436;
+  --forro-gold: #BF934B;
+  --forro-earth: #8C5B3F;
+  --forro-green: #4A7031;
+  
+  /* Neutral Palette */
+  --dark: #121212;
+  --dark-soft: #1e1e1e;
+  --light: #fdfaf6;
+  --white: #ffffff;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --space-unit: 1rem;
+  --section-padding: clamp(4rem, 10vw, 8rem);
+  --container-max: 1280px;
+
+  /* Misc */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base resets and defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .serif {
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Ensure header doesn't overflow */
+header.header {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.grid { display: grid; }
+
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-8 { gap: 2rem; }
+
+.text-center { text-align: center; }
+.text-balance { text-wrap: balance; }
+.text-upper { text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* Global components - Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--forro-orange);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--forro-red);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+  border: 2px solid var(--forro-orange);
+  color: var(--forro-orange);
+}
+
+.btn-outline:hover {
+  background-color: var(--forro-orange);
+  color: var(--white);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Section Headings */
+.section-head {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.section-head p {
+  font-size: 1.125rem;
+  color: var(--gray-500);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Grid Helpers */
+.grid-2, .grid-3, .grid-4 { 
+  display: grid;
+  gap: var(--gap, 2rem);
+}
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Palette for Cards */
+.palette-1 { --card-bg: #FFE8D6; --card-icon: #D94436; --card-accent: #8C5B3F; }
+.palette-2 { --card-bg: #E9F5DB; --card-icon: #4A7031; --card-accent: #2D4C1B; }
+.palette-3 { --card-bg: #DEE2FF; --card-icon: #4361EE; --card-accent: #3A0CA3; }
+.palette-4 { --card-bg: #FEEAFA; --card-icon: #FB69CC; --card-accent: #B5179E; }
+.palette-orange { --card-bg: #fff7ed; --card-icon: var(--forro-orange); --card-accent: var(--forro-earth); }
+.palette-red { --card-bg: #fef2f2; --card-icon: var(--forro-red); --card-accent: #991b1b; }
+.palette-gold { --card-bg: #fffbeb; --card-icon: var(--forro-gold); --card-accent: #92400e; }
+
+/* Festival Specifics */
+.festival-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.festival-table th {
+  background: var(--forro-red);
+  color: var(--white);
+  padding: 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.festival-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.calendar-shadow {
+  box-shadow: 0 4px 20px -2px rgba(217, 68, 54, 0.15);
+}
+
+.artist-card {
+  text-align: center;
+  transition: var(--transition);
+}
+
+.artist-image-wrapper {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 3rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.artist-card:hover .artist-image-wrapper {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.artist-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.artist-role {
+  color: var(--forro-orange);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

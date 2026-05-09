@@ -1,0 +1,104 @@
+{
+  "name": "2º Festival Forró Sevilla — Forró e Folia 2026",
+  "dates": "15–18 de Octubre, 2026",
+  "location": "Sevilla, España",
+  "description": "Celebración multicultural de 3 días de danza, música y conexión humana. El Forró como puente entre culturas.",
+  "schedule": [
+    {
+      "day": "Jueves 15 Oct",
+      "color": "#F27D26",
+      "events": [
+        {
+          "time": "Pre-evento",
+          "title": "Social dance al aire libre",
+          "location": "Muelle Camaronero, Triana",
+          "details": "Baile junto al río Guadalquivir para calentar motores."
+        }
+      ]
+    },
+    {
+      "day": "Viernes 16 Oct",
+      "color": "#D94E28",
+      "events": [
+        {
+          "time": "18:00–20:00",
+          "title": "Welcome Workshop 'Forró for Everyone'",
+          "location": "Rqr Eventos (Calle Pizarra 6)",
+          "details": "Con el profesor Elton Rodrigues."
+        },
+        {
+          "time": "20:00–02:00",
+          "title": "Free Dance & Live Music",
+          "location": "Rqr Eventos",
+          "details": "DJ Set y Música en vivo hasta la madrugada."
+        }
+      ]
+    },
+    {
+      "day": "Sábado 17 Oct",
+      "color": "#BF360C",
+      "events": [
+        {
+          "time": "09:00–12:00",
+          "title": "Tour guiado por Sevilla",
+          "location": "Centro histórico",
+          "details": "Solo Full Pass."
+        },
+        {
+          "time": "12:00–13:30",
+          "title": "Baile social",
+          "location": "Plaza de España",
+          "details": "Flashmob y baile social en uno de los lugares más icónicos de Sevilla."
+        },
+        {
+          "time": "15:30–19:00",
+          "title": "Talleres (Todos los niveles)",
+          "location": "ON Dance Studios (Av. Montes Sierra 21G)",
+          "details": "Niveles: Principiante, Inter 01, Inter 02, Avanzado."
+        },
+        {
+          "time": "21:00–02:30",
+          "title": "Party & Live Music",
+          "location": "Rqr Eventos",
+          "details": "La gran noche del festival."
+        }
+      ]
+    },
+    {
+      "day": "Domingo 18 Oct",
+      "color": "#827717",
+      "events": [
+        {
+          "time": "10:00–11:00",
+          "title": "Forró Breakfast",
+          "location": "ON Dance Studios",
+          "details": "Desayuno compartido para empezar el día con energía."
+        },
+        {
+          "time": "11:15–13:15",
+          "title": "Taller de Instrumentos",
+          "location": "ON Dance Studios",
+          "details": "Con Carol Benigno y Sandrinho Dupan."
+        },
+        {
+          "time": "13:30–16:00",
+          "title": "Talleres Intensivos",
+          "location": "ON Dance Studios",
+          "details": "Últimas sesiones de aprendizaje."
+        },
+        {
+          "time": "19:30–00:00",
+          "title": "Farewell Party",
+          "location": "Rqr Eventos",
+          "details": "Cierre del festival con música en directo."
+        }
+      ]
+    }
+  ],
+  "prices": [
+    { "type": "Full Pass", "lote1": "115€", "lote2": "130€", "lote3": "145€" },
+    { "type": "Workshop + Party (1 día)", "lote1": "85€ (Agotado)", "lote2": "95€", "lote3": "105€" },
+    { "type": "Solo Instrumentos", "lote1": "30€", "lote2": "—", "lote3": "—" },
+    { "type": "Party 1 día", "lote1": "15€", "lote2": "—", "lote3": "—" }
+  ]
+}

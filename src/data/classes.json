@@ -1,0 +1,39 @@
+{
+  "venues": [
+    {
+      "id": "muelle",
+      "name": "Muelle Camaronero / Muelle Triana",
+      "address": "Calle Betis, al lado del Kiosco Flores",
+      "schedules": [
+        { "day": "Miércoles", "time": "20:30–21:30h", "level": "Principiantes" }
+      ],
+      "note": "Requiere confirmación previa"
+    },
+    {
+      "id": "centro_civico",
+      "name": "Centro Cívico Hogar San Fernando",
+      "address": "Calle Don Fadrique, 59 · 41009 Sevilla",
+      "schedules": [
+        { "day": "Viernes", "time": "19:00–20:00h", "level": "Intermedios/Avanzados" },
+        { "day": "Viernes", "time": "20:00–21:00h", "level": "Principiantes" },
+        { "day": "Viernes", "time": "21:00–21:25h", "level": "Práctica libre" }
+      ]
+    }
+  ],
+  "prices": {
+    "group": [
+      { "name": "Mensual (4 clases)", "price": "30€" },
+      { "name": "Clase suelta", "price": "10€" }
+    ],
+    "private_individual": [
+      { "name": "Por hora", "price": "15€" },
+      { "name": "Bono 5 clases", "price": "60€" },
+      { "name": "Bono 10 clases", "price": "110€" }
+    ],
+    "private_couple": [
+      { "name": "Por hora", "price": "25€" },
+      { "name": "Bono 5 clases", "price": "120€" },
+      { "name": "Bono 10 clases", "price": "230€" }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "classes": "Classes",
+    "festival": "Festival 2026",
+    "events": "Events",
+    "history": "History",
+    "contact": "Contact",
+    "register": "Register"
+  },
+  "home": {
+    "hero_title": "Forró Arrasta-pé Sevilla",
+    "hero_subtitle": "Welcome to the rhythm that moves bodies and unites souls",
+    "view_classes": "View classes",
+    "what_is_forro": "What is Forró?",
+    "what_is_forro_text": "Forró is a Brazilian musical genre and dance style from North-East Brazil. It's about joy, connection, and rhythm.",
+    "read_more": "Read more",
+    "quick_access": "Quick Access",
+    "next_events": "Upcoming Events",
+    "no_events": "Coming soon",
+    "follow_us": "Follow us on Instagram",
+    "our_classes_gallery": "Our Classes",
+    "gallery_subtitle": "Capturing the essence and the joy of dancing together",
+    "view_on_instagram": "View more on Instagram",
+    "doubt_title": "Have any questions?",
+    "doubt_subtitle": "Write to us and we will give you all the information you need.",
+    "contact_now": "Contact now"
+  },
+  "classes": {
+    "title": "Learn forró in Seville with teacher Elton Rodrigues",
+    "hours_locations": "Hours and Locations",
+    "prices": "Prices (Course 2024–2025)",
+    "group_classes": "Group classes",
+    "private_individual": "Individual private classes",
+    "private_couple": "Private classes for couples",
+    "enroll": "Register now",
+    "ready_to_dance": "Ready to start dancing?",
+    "group_classes_subtitle": "1.5h / week",
+    "individual_subtitle": "1h individual",
+    "couple_subtitle": "1h for couples"
+  },
+  "festival": {
+    "dates": "October 15–18, 2026",
+    "title_section": "Festival Program",
+    "artists_title": "Artists & Teachers",
+    "passes_title": "Passes & Tickets",
+    "buy_tickets": "Buy Tickets",
+    "external_notice": "A new tab will open — you can come back here when you're done.",
+    "alternative_payment": "Alternative payment methods",
+    "pre_register": "Pre-register",
+    "artists": "Artists & Teachers",
+    "bank_holder": "Holder",
+    "bank_concept": "Reference"
+  },
+  "events": {
+    "intro_title": "Forró awaits you — don't miss any gathering",
+    "types_title": "Types of events we organize",
+    "type_parties": "Social parties",
+    "type_outdoor": "Outdoor rodas",
+    "type_concerts": "Live concerts",
+    "type_collab": "Cultural collaborations"
+  },
+  "common": {
+    "footer_love": "Designed with love in Seville",
+    "back_to_top": "Back to top",
+    "details": "Details"
+  }
+}
