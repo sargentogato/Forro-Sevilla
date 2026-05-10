@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { ref, computed, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { Menu, X, Instagram } from 'lucide-vue-next';
+import { loadLocaleMessages, type SupportedLocale } from '../i18n';
 
 const { t, locale } = useI18n();
 const route = useRoute();
 
 const isMenuOpen = ref(false);
 
-const navLinks = [
+const navLinks = computed(() => [
   { name: t('nav.home'), path: '/' },
   { name: t('nav.classes'), path: '/clases' },
   { name: t('nav.festival'), path: '/festival-2026' },
   { name: t('nav.events'), path: '/eventos' },
   { name: t('nav.history'), path: '/historia' },
   { name: t('nav.contact'), path: '/contacto' },
-];
+]);
 
-const toggleLanguage = () => {
-  locale.value = locale.value === 'es' ? 'en' : 'es';
+const toggleLanguage = async () => {
+  const next: SupportedLocale = locale.value === 'es' ? 'en' : 'es';
+  await loadLocaleMessages(next);
 };
 
 watch(() => route.path, () => {

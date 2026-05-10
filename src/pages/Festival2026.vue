@@ -37,7 +37,7 @@ const { t } = useI18n();
         <div class="grid grid-3 gap-12">
           <div class="artist-card animate-fade">
             <div class="artist-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="Elton Rodrigues" class="bw-img" referrerpolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="Elton Rodrigues" class="bw-img" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
             </div>
             <h3 class="artist-name serif">Elton Rodrigues</h3>
             <p class="artist-role text-upper">{{ t('festival.artists') }}</p>
@@ -45,18 +45,18 @@ const { t } = useI18n();
 
           <div class="artist-card animate-fade">
             <div class="artist-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1514525253344-f814d072e507?q=80&w=600&auto=format&fit=crop" alt="Carol Benigno" class="bw-img" referrerpolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1514525253344-f814d072e507?q=80&w=600&auto=format&fit=crop" alt="Carol Benigno" class="bw-img" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
             </div>
             <h3 class="artist-name serif">Carol Benigno</h3>
-            <p class="artist-role text-upper">Zabumba & Triángulo</p>
+            <p class="artist-role text-upper">{{ t('festival.instrument_percussion') }}</p>
           </div>
 
           <div class="artist-card animate-fade">
             <div class="artist-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop" alt="Sandrinho Dupan" class="bw-img" referrerpolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop" alt="Sandrinho Dupan" class="bw-img" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
             </div>
             <h3 class="artist-name serif">Sandrinho Dupan</h3>
-            <p class="artist-role text-upper">Acordeón</p>
+            <p class="artist-role text-upper">{{ t('festival.instrument_accordion') }}</p>
           </div>
         </div>
       </div>
@@ -74,10 +74,10 @@ const { t } = useI18n();
           <table class="festival-table">
             <thead>
               <tr>
-                <th>Pase</th>
-                <th>1º Lote</th>
-                <th>2º Lote</th>
-                <th>3º Lote</th>
+                <th>{{ t('festival.table_pass') }}</th>
+                <th>{{ t('festival.table_lot1') }}</th>
+                <th>{{ t('festival.table_lot2') }}</th>
+                <th>{{ t('festival.table_lot3') }}</th>
               </tr>
             </thead>
             <tbody>

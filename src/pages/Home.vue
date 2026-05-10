@@ -7,6 +7,8 @@ import {
   Music,
   Instagram,
 } from "lucide-vue-next";
+import HeroSection from "../components/HeroSection.vue";
+import WhatIsForro from "../components/WhatIsForro.vue";
 
 const { t } = useI18n();
 
@@ -37,73 +39,9 @@ const galleryImages = [
 <template>
   <div class="home-page">
     <!-- Hero Section -->
-    <section class="hero flex-center">
-      <div class="hero-bg">
-        <img
-          src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop"
-          alt="Pareja bailando forró"
-          class="hero-img"
-        />
-        <div class="hero-overlay"></div>
-      </div>
-
-      <div class="hero-content animate-fade">
-        <h1 class="hero-title">{{ t("home.hero_title") }}</h1>
-        <p class="hero-subtitle">{{ t("home.hero_subtitle") }}</p>
-        <div class="hero-actions">
-          <router-link
-            to="/festival-2026"
-            class="btn btn-primary btn-big shadow-xl scale-hover"
-          >
-            Festival 2026 · Sevilla
-          </router-link>
-        </div>
-      </div>
-
-      <div class="hero-footer-text">
-        <p class="serif">
-          "Tanto si es tu primera clase como si llevas años bailando, aquí
-          tienes tu sitio"
-        </p>
-      </div>
-    </section>
-
+    <HeroSection />
     <!-- What is Forró -->
-    <section class="section container">
-      <div class="grid grid-2 gap-16 items-center">
-        <div class="intro-content">
-          <h2 class="serif text-big-display mb-6">
-            {{ t("home.what_is_forro") }}
-          </h2>
-          <p
-            class="section-text text-lg lg:text-xl leading-relaxed text-gray-700"
-          >
-            {{ t("home.what_is_forro_text") }}
-            El forró es un fenómeno cultural vibrante que va más allá del baile;
-            es una forma de vida que celebra la alegría, la conexión y el
-            espíritu del Nordeste brasileño. En nuestras clases en Sevilla, te
-            sumergirás en una comunidad acogedora donde el respeto y la pasión
-            por la música se entrelazan. Una experiencia llena de alegría,
-            música y cultura brasileña que te hará vibrar desde el primer paso.
-          </p>
-          <div class="mt-8">
-            <router-link to="/historia" class="btn btn-outline">
-              {{ t("home.read_more") }}
-              <ChevronRight :size="20" />
-            </router-link>
-          </div>
-        </div>
-        <div class="intro-visual">
-          <div class="image-wrapper shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1200&auto=format&fit=crop"
-              alt="Abrazo forrozeiro"
-              class="intro-img-short"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <WhatIsForro />
 
     <!-- Quick Access -->
     <section class="section quick-access bg-gray-100">
@@ -121,10 +59,7 @@ const galleryImages = [
             <div class="card-icon flex-center"><Users :size="28" /></div>
             <div class="card-body">
               <h3 class="serif">{{ t("nav.classes") }}</h3>
-              <p>
-                Horarios, lugares y precios para todos los niveles adaptados a
-                ti.
-              </p>
+              <p>{{ t("home.classes_card_desc") }}</p>
             </div>
             <div class="card-arrow"><ChevronRight /></div>
           </router-link>
@@ -136,10 +71,7 @@ const galleryImages = [
             <div class="card-icon flex-center"><Music :size="28" /></div>
             <div class="card-body">
               <h3 class="serif">Festival 2026</h3>
-              <p>
-                Únete al mayor evento de forró en Sevilla. Artistas
-                internacionales y mucha fiesta.
-              </p>
+              <p>{{ t("home.festival_card_desc") }}</p>
             </div>
             <div class="card-arrow"><ChevronRight /></div>
           </router-link>
@@ -151,9 +83,7 @@ const galleryImages = [
             <div class="card-icon flex-center"><Calendar :size="28" /></div>
             <div class="card-body">
               <h3 class="serif">{{ t("nav.events") }}</h3>
-              <p>
-                Sigue nuestras fiestas sociales, cenas y sesiones al aire libre.
-              </p>
+              <p>{{ t("home.events_card_desc") }}</p>
             </div>
             <div class="card-arrow"><ChevronRight /></div>
           </router-link>
@@ -174,7 +104,7 @@ const galleryImages = [
           :key="img.id"
           class="gallery-item shadow-sm"
         >
-          <img :src="img.src" :alt="img.alt" class="gallery-img" />
+          <img :src="img.src" :alt="img.alt" class="gallery-img" loading="lazy" decoding="async" />
         </div>
       </div>
 
@@ -214,104 +144,6 @@ const galleryImages = [
   overflow-x: hidden;
 }
 
-.hero {
-  position: relative;
-  height: 90vh;
-  min-height: 600px;
-  text-align: center;
-  overflow: hidden;
-  color: white;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.8)
-  );
-}
-
-.hero-content {
-  max-width: 800px;
-  padding: 0 1.5rem;
-}
-
-.hero-title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  color: white;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.hero-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.75rem);
-  color: #fef3c7;
-  margin-bottom: 3rem;
-  font-style: italic;
-  font-weight: 300;
-}
-
-.hero-actions {
-  justify-content: center;
-}
-
-.hero-footer-text {
-  position: absolute;
-  bottom: 2rem;
-  left: 0;
-  right: 0;
-  text-align: center;
-  opacity: 0.8;
-  font-size: 0.9rem;
-  padding: 0 1.5rem;
-}
-
-.text-big-display {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  color: var(--forro-earth);
-  line-height: 1.1;
-}
-
-.intro-img-short {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-
-.scale-hover {
-  transition: transform 0.3s ease;
-}
-
-.scale-hover:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 640px) {
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .section-label {
   display: block;
   font-size: 0.8rem;
@@ -320,18 +152,6 @@ const galleryImages = [
   font-weight: 800;
   color: var(--forro-orange);
   margin-bottom: 1rem;
-}
-
-.section-text {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  color: var(--gray-700);
-}
-
-.image-wrapper {
-  border-radius: 4rem;
-  overflow: hidden;
-  border: 12px solid white;
 }
 
 .title-underline {

@@ -33,7 +33,7 @@ const { t } = useI18n();
           </a>
         </div>
         <div v-else class="events-list w-full">
-          <DayAgenda day="Próximos" color="var(--forro-orange)" :events="eventsData" />
+          <DayAgenda :day="t('events.upcoming')" color="var(--forro-orange)" :events="eventsData" />
         </div>
 
         <div class="event-types-card mt-24 bg-light-orange animate-fade w-full">

@@ -33,11 +33,11 @@ const plans = [
 <template>
   <div class="classes-page">
     <header class="page-header flex-center bg-dark text-white relative overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop" class="header-bg-img" alt="Background" />
+      <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop" class="header-bg-img" alt="Background" fetchpriority="high" decoding="async" />
       <div class="header-overlay"></div>
       <div class="container animate-fade relative z-10">
-        <h1 class="text-white hero-title">¡Baila con Nosotros!</h1>
-        <p class="hero-subtitle">Encuentra tu clase ideal y únete a la familia</p>
+        <h1 class="text-white hero-title">{{ t('classes.hero_title') }}</h1>
+        <p class="hero-subtitle">{{ t('classes.hero_subtitle') }}</p>
         <div class="title-underline"></div>
       </div>
     </header>
@@ -86,7 +86,7 @@ const plans = [
       <div class="container">
         <div class="section-head">
           <h2 class="serif">{{ t('classes.prices') }}</h2>
-          <p>Ciclo 2024–2025</p>
+          <p>{{ t('classes.cycle') }}</p>
         </div>
 
         <div class="grid grid-3 gap-8">
@@ -104,7 +104,7 @@ const plans = [
             </div>
             
             <div class="price-footer">
-              <p>Clases de 1h 30min</p>
+              <p>{{ t('classes.duration') }}</p>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ const plans = [
     <section class="section container text-center" style="padding-top: 2rem;">
       <div class="cta-banner palette-orange animate-fade">
         <h2 class="serif italic">{{ t('classes.ready_to_dance') }}</h2>
-        <p class="mb-8">No necesitas pareja ni experiencia previa. ¡Ven a bailar con nosotros!</p>
+        <p class="mb-8">{{ t('classes.cta_desc') }}</p>
         <a
           href="https://forms.gle/X4xaPv1dw6F6ALCt9"
           target="_blank"

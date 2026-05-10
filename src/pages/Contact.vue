@@ -15,21 +15,21 @@ const handleSubmit = (e: Event) => {
     <header class="page-header flex-center bg-gold text-white">
       <div class="container animate-fade">
         <h1 class="text-white">{{ t('nav.contact') }}</h1>
-        <p class="hero-subtitle italic">¡Estamos encantados de escucharte!</p>
+        <p class="hero-subtitle italic">{{ t('contact.page_subtitle') }}</p>
       </div>
     </header>
 
     <div class="container section">
       <div class="contact-layout grid grid-2 gap-12">
         <div class="contact-info-panel animate-fade">
-          <h2 class="serif mb-8 text-big">Información de contacto</h2>
+          <h2 class="serif mb-8 text-big">{{ t('contact.info_title') }}</h2>
           <div class="contact-grid">
             <a href="tel:+34603176756" class="contact-card group palette-orange">
               <div class="card-icon">
                 <Phone />
               </div>
               <div class="card-text">
-                <span class="label text-upper">Teléfono / WhatsApp</span>
+                <span class="label text-upper">{{ t('contact.label_phone') }}</span>
                 <p class="value">+34 603 176 756</p>
               </div>
             </a>
@@ -38,7 +38,7 @@ const handleSubmit = (e: Event) => {
                 <Mail />
               </div>
               <div class="card-text">
-                <span class="label text-upper">Email</span>
+                <span class="label text-upper">{{ t('contact.label_email') }}</span>
                 <p class="value">forroarrastapesevilla@gmail.com</p>
               </div>
             </a>
@@ -47,7 +47,7 @@ const handleSubmit = (e: Event) => {
                 <Instagram />
               </div>
               <div class="card-text">
-                <span class="label text-upper">Instagram</span>
+                <span class="label text-upper">{{ t('contact.label_instagram') }}</span>
                 <p class="value">@forrosevilla</p>
               </div>
             </a>
@@ -56,7 +56,7 @@ const handleSubmit = (e: Event) => {
                 <MapPin />
               </div>
               <div class="card-text">
-                <span class="label text-upper">Dirección de la Escuela</span>
+                <span class="label text-upper">{{ t('contact.label_address') }}</span>
                 <p class="value">Calle Don Fadrique, 59 · 41009 Sevilla</p>
               </div>
             </div>

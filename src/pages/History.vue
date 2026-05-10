@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { BookOpen, Map, User } from 'lucide-vue-next';
 
 const { t } = useI18n();
 const activeTab = ref('forro');
 
-const tabs = [
-  { id: 'forro', name: 'Historia del Forró', icon: BookOpen },
-  { id: 'school', name: 'Forró Arrasta-pé Sevilla', icon: Map },
-  { id: 'elton', name: 'Profesor Elton Rodrigues', icon: User },
-];
+const tabs = computed(() => [
+  { id: 'forro', name: t('history.tab_forro'), icon: BookOpen },
+  { id: 'school', name: t('history.tab_school'), icon: Map },
+  { id: 'elton', name: t('history.tab_elton'), icon: User },
+]);
 </script>
 
 <template>
@@ -41,52 +41,40 @@ const tabs = [
       <div class="tab-content animate-fade shadow-lg">
         <transition name="fade-slide" mode="out-in">
           <div v-if="activeTab === 'forro'" key="forro" class="content-view">
-            <h2 class="serif h2-title">Orígenes y Evolución</h2>
-            <p class="text-desc">
-              El forró es mucho más que un ritmo; es el alma del Nordeste de Brasil. Nacido en las zonas rurales, evolucionó de bailes tradicionales como el xote, el xaxado y el baião.
-            </p>
-            <p class="text-desc">
-              Su expansión mundial comenzó con el legendario Luiz Gonzaga, el "Rey del Baião", quien llevó el sonido del acordeón, la zabumba y el triángulo a todos los rincones de Brasil. Hoy en día, el forró es una danza de conexión internacional que une a personas de todas las culturas.
-            </p>
+            <h2 class="serif h2-title">{{ t('history.forro_subtitle') }}</h2>
+            <p class="text-desc">{{ t('history.forro_p1') }}</p>
+            <p class="text-desc">{{ t('history.forro_p2') }}</p>
             <div class="grid grid-2 gap-8 mt-12">
               <div class="media-wrapper">
-                 <img src="https://picsum.photos/seed/forro_history/800/600" alt="Old forró" class="shadow-md" referrerpolicy="no-referrer" />
+                 <img src="https://picsum.photos/seed/forro_history/800/600" alt="Old forró" class="shadow-md" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
               </div>
               <div class="quote-box glass-orange serif italic text-center">
-                "El forró es una fiesta de alegría, donde el único idioma es el abrazo."
+                {{ t('history.forro_quote') }}
               </div>
             </div>
           </div>
 
           <div v-else-if="activeTab === 'school'" key="school" class="content-view">
-            <h2 class="serif h2-title">Nuestra Misión en Sevilla</h2>
-            <p class="text-desc">
-              Forró Arrasta-pé Sevilla nació con un propósito claro: crear un puente cultural entre el vibrante espíritu de Brasil y la pasión de Andalucía. Sevilla, con su propia tradición de danza y música flamenca, es el lugar perfecto para esta fusión de almas.
-            </p>
-            <p class="text-desc">
-              Somos una comunidad inclusiva donde el respeto y la alegría son los pilares. No solo enseñamos pasos; construimos momentos de felicidad compartida en plazas, muelles y centros culturales de nuestra ciudad.
-            </p>
+            <h2 class="serif h2-title">{{ t('history.school_subtitle') }}</h2>
+            <p class="text-desc">{{ t('history.school_p1') }}</p>
+            <p class="text-desc">{{ t('history.school_p2') }}</p>
             <div class="media-banner mt-12">
-               <img src="https://picsum.photos/seed/seville_forro/1200/500" alt="Students dancing" class="shadow-md" referrerpolicy="no-referrer" />
+               <img src="https://picsum.photos/seed/seville_forro/1200/500" alt="Students dancing" class="shadow-md" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
             </div>
           </div>
 
           <div v-else-if="activeTab === 'elton'" key="elton" class="content-view">
             <div class="profile-layout flex gap-12 items-center mb-12">
                <div class="profile-pic-wrapper shadow-lg">
-                  <img src="https://picsum.photos/seed/elton_profile/400/400" alt="Elton Rodrigues" referrerpolicy="no-referrer" />
+                  <img src="https://picsum.photos/seed/elton_profile/400/400" alt="Elton Rodrigues" referrerpolicy="no-referrer" loading="lazy" decoding="async" />
                </div>
                <div class="profile-info">
                   <h2 class="serif h2-title profile-name">Elton Rodrigues</h2>
-                  <span class="profile-role text-upper">Instructor Principal & Fundador</span>
-                  <p class="mt-6 italic text-muted">
-                    Con una trayectoria dedicada a la danza y el estudio de las raíces brasileñas, Elton ha llevado el forró a diferentes ciudades de Europa, encontrando en Sevilla su hogar final para difundir esta cultura.
-                  </p>
+                  <span class="profile-role text-upper">{{ t('history.elton_role') }}</span>
+                  <p class="mt-6 italic text-muted">{{ t('history.elton_bio') }}</p>
                </div>
             </div>
-            <p class="text-desc">
-              Su metodología se centra en la conexión con el compañero, la musicalidad y, sobre todo, en disfrutar cada momento. Elton cree firmemente que "todo el mundo puede bailar forró", y sus clases están diseñadas para que desde el minuto uno te sientas parte de la familia.
-            </p>
+            <p class="text-desc">{{ t('history.elton_p1') }}</p>
           </div>
         </transition>
       </div>

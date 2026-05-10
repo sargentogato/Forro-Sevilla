@@ -1,18 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import Home from './pages/Home.vue';
-import Classes from './pages/Classes.vue';
-import Festival2026 from './pages/Festival2026.vue';
-import Events from './pages/Events.vue';
-import History from './pages/History.vue';
-import Contact from './pages/Contact.vue';
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/clases', component: Classes },
-  { path: '/festival-2026', component: Festival2026 },
-  { path: '/eventos', component: Events },
-  { path: '/historia', component: History },
-  { path: '/contacto', component: Contact },
+  { path: '/', component: () => import('./pages/Home.vue') },
+  { path: '/clases', component: () => import('./pages/Classes.vue') },
+  { path: '/festival-2026', component: () => import('./pages/Festival2026.vue') },
+  { path: '/eventos', component: () => import('./pages/Events.vue') },
+  { path: '/historia', component: () => import('./pages/History.vue') },
+  { path: '/contacto', component: () => import('./pages/Contact.vue') },
 ];
 
 const router = createRouter({

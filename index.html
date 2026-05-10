@@ -1,16 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forró Arrasta-pé Sevilla</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://picsum.photos">
+    <!-- Preload LCP image so it downloads in parallel with JS, not after -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop" fetchpriority="high">
+    <!-- Non-blocking font loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+    <style>
+      /* Minimal inline styles for the pre-JS shell — avoids FOUC */
+      #app-shell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Georgia, serif;
+        background: #1a1a1a;
+        color: white;
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      #app-shell h1 { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; margin: 0; }
+      #app-shell p  { font-size: 1rem; opacity: 0.6; margin: 0; font-style: italic; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static shell visible instantly before Vue boots — replaced on mount -->
+      <div id="app-shell">
+        <h1>Forró Arrasta-pé Sevilla</h1>
+        <p>Cargando…</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
-
