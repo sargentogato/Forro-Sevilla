@@ -1,14 +1,36 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import { ChevronRight, Calendar, Users, Music, Instagram } from 'lucide-vue-next';
+import { useI18n } from "vue-i18n";
+import {
+  ChevronRight,
+  Calendar,
+  Users,
+  Music,
+  Instagram,
+} from "lucide-vue-next";
 
 const { t } = useI18n();
 
 const galleryImages = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800&auto=format&fit=crop', alt: 'Pareja bailando forró' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1593630650942-887e35b71db3?q=80&w=800&auto=format&fit=crop', alt: 'Música en vivo forró' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop', alt: 'Clase de baile' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop', alt: 'Ambiente festivo' },
+  {
+    id: 1,
+    src: "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800&auto=format&fit=crop",
+    alt: "Pareja bailando forró",
+  },
+  {
+    id: 2,
+    src: "https://images.unsplash.com/photo-1593630650942-887e35b71db3?q=80&w=800&auto=format&fit=crop",
+    alt: "Música en vivo forró",
+  },
+  {
+    id: 3,
+    src: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop",
+    alt: "Clase de baile",
+  },
+  {
+    id: 4,
+    src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop",
+    alt: "Ambiente festivo",
+  },
 ];
 </script>
 
@@ -26,17 +48,23 @@ const galleryImages = [
       </div>
 
       <div class="hero-content animate-fade">
-        <h1 class="hero-title">{{ t('home.hero_title') }}</h1>
-        <p class="hero-subtitle">{{ t('home.hero_subtitle') }}</p>
+        <h1 class="hero-title">{{ t("home.hero_title") }}</h1>
+        <p class="hero-subtitle">{{ t("home.hero_subtitle") }}</p>
         <div class="hero-actions">
-          <router-link to="/festival-2026" class="btn btn-primary btn-big shadow-xl scale-hover">
+          <router-link
+            to="/festival-2026"
+            class="btn btn-primary btn-big shadow-xl scale-hover"
+          >
             Festival 2026 · Sevilla
           </router-link>
         </div>
       </div>
 
       <div class="hero-footer-text">
-        <p class="serif">"Tanto si es tu primera clase como si llevas años bailando, aquí tienes tu sitio"</p>
+        <p class="serif">
+          "Tanto si es tu primera clase como si llevas años bailando, aquí
+          tienes tu sitio"
+        </p>
       </div>
     </section>
 
@@ -44,21 +72,34 @@ const galleryImages = [
     <section class="section container">
       <div class="grid grid-2 gap-16 items-center">
         <div class="intro-content">
-          <h2 class="serif text-big-display mb-6">{{ t('home.what_is_forro') }}</h2>
-          <p class="section-text text-lg lg:text-xl leading-relaxed text-gray-700">
-            {{ t('home.what_is_forro_text') }}
-            El forró es un fenómeno cultural vibrante que va más allá del baile; es una forma de vida que celebra la alegría, la conexión y el espíritu del Nordeste brasileño. En nuestras clases en Sevilla, te sumergirás en una comunidad acogedora donde el respeto y la pasión por la música se entrelazan. Una experiencia llena de alegría, música y cultura brasileña que te hará vibrar desde el primer paso.
+          <h2 class="serif text-big-display mb-6">
+            {{ t("home.what_is_forro") }}
+          </h2>
+          <p
+            class="section-text text-lg lg:text-xl leading-relaxed text-gray-700"
+          >
+            {{ t("home.what_is_forro_text") }}
+            El forró es un fenómeno cultural vibrante que va más allá del baile;
+            es una forma de vida que celebra la alegría, la conexión y el
+            espíritu del Nordeste brasileño. En nuestras clases en Sevilla, te
+            sumergirás en una comunidad acogedora donde el respeto y la pasión
+            por la música se entrelazan. Una experiencia llena de alegría,
+            música y cultura brasileña que te hará vibrar desde el primer paso.
           </p>
           <div class="mt-8">
             <router-link to="/historia" class="btn btn-outline">
-              {{ t('home.read_more') }}
+              {{ t("home.read_more") }}
               <ChevronRight :size="20" />
             </router-link>
           </div>
         </div>
         <div class="intro-visual">
           <div class="image-wrapper shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1200&auto=format&fit=crop" alt="Abrazo forrozeiro" class="intro-img-short" />
+            <img
+              src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1200&auto=format&fit=crop"
+              alt="Abrazo forrozeiro"
+              class="intro-img-short"
+            />
           </div>
         </div>
       </div>
@@ -68,34 +109,51 @@ const galleryImages = [
     <section class="section quick-access bg-gray-100">
       <div class="container">
         <div class="section-head">
-          <h2 class="serif">{{ t('home.quick_access') }}</h2>
+          <h2 class="serif">{{ t("home.quick_access") }}</h2>
           <div class="title-underline"></div>
         </div>
-        
+
         <div class="grid grid-3 gap-8">
-          <router-link to="/clases" class="access-card palette-orange border-orange">
+          <router-link
+            to="/clases"
+            class="access-card palette-orange border-orange"
+          >
             <div class="card-icon flex-center"><Users :size="28" /></div>
             <div class="card-body">
-              <h3 class="serif">{{ t('nav.classes') }}</h3>
-              <p>Horarios, lugares y precios para todos los niveles adaptados a ti.</p>
+              <h3 class="serif">{{ t("nav.classes") }}</h3>
+              <p>
+                Horarios, lugares y precios para todos los niveles adaptados a
+                ti.
+              </p>
             </div>
             <div class="card-arrow"><ChevronRight /></div>
           </router-link>
 
-          <router-link to="/festival-2026" class="access-card palette-red border-red">
+          <router-link
+            to="/festival-2026"
+            class="access-card palette-red border-red"
+          >
             <div class="card-icon flex-center"><Music :size="28" /></div>
             <div class="card-body">
               <h3 class="serif">Festival 2026</h3>
-              <p>Únete al mayor evento de forró en Sevilla. Artistas internacionales y mucha fiesta.</p>
+              <p>
+                Únete al mayor evento de forró en Sevilla. Artistas
+                internacionales y mucha fiesta.
+              </p>
             </div>
             <div class="card-arrow"><ChevronRight /></div>
           </router-link>
 
-          <router-link to="/eventos" class="access-card palette-gold border-gold">
+          <router-link
+            to="/eventos"
+            class="access-card palette-gold border-gold"
+          >
             <div class="card-icon flex-center"><Calendar :size="28" /></div>
             <div class="card-body">
-              <h3 class="serif">{{ t('nav.events') }}</h3>
-              <p>Sigue nuestras fiestas sociales, cenas y sesiones al aire libre.</p>
+              <h3 class="serif">{{ t("nav.events") }}</h3>
+              <p>
+                Sigue nuestras fiestas sociales, cenas y sesiones al aire libre.
+              </p>
             </div>
             <div class="card-arrow"><ChevronRight /></div>
           </router-link>
@@ -106,20 +164,24 @@ const galleryImages = [
     <!-- Gallery Section -->
     <section class="section container">
       <div class="section-head">
-        <span class="section-label">{{ t('home.our_classes_gallery') }}</span>
-        <h2 class="serif">{{ t('home.gallery_subtitle') }}</h2>
+        <span class="section-label">{{ t("home.our_classes_gallery") }}</span>
+        <h2 class="serif">{{ t("home.gallery_subtitle") }}</h2>
       </div>
-      
+
       <div class="grid grid-4 gap-4 gallery-grid">
-        <div v-for="img in galleryImages" :key="img.id" class="gallery-item shadow-sm">
+        <div
+          v-for="img in galleryImages"
+          :key="img.id"
+          class="gallery-item shadow-sm"
+        >
           <img :src="img.src" :alt="img.alt" class="gallery-img" />
         </div>
       </div>
-      
+
       <div class="instagram-cta flex-center flex-col gap-4">
         <div class="insta-handle flex items-center gap-2">
-           <Instagram :size="24" class="text-orange" />
-           <span class="text-upper">@forrosevilla</span>
+          <Instagram :size="24" class="text-orange" />
+          <span class="text-upper">@forrosevilla</span>
         </div>
         <a
           href="https://instagram.com/forrosevilla"
@@ -127,7 +189,7 @@ const galleryImages = [
           rel="noopener noreferrer"
           class="btn btn-primary"
         >
-          {{ t('home.view_on_instagram') }}
+          {{ t("home.view_on_instagram") }}
         </a>
       </div>
     </section>
@@ -136,11 +198,11 @@ const galleryImages = [
     <section class="contact-banner section bg-gold text-white">
       <div class="container flex-between gap-8 banner-stack">
         <div class="banner-content">
-          <h2 class="serif text-white">{{ t('home.doubt_title') }}</h2>
-          <p>{{ t('home.doubt_subtitle') }}</p>
+          <h2 class="serif text-white">{{ t("home.doubt_title") }}</h2>
+          <p>{{ t("home.doubt_subtitle") }}</p>
         </div>
         <router-link to="/contacto" class="btn btn-white text-gold">
-          {{ t('home.contact_now') }}
+          {{ t("home.contact_now") }}
         </router-link>
       </div>
     </section>
@@ -163,7 +225,10 @@ const galleryImages = [
 
 .hero-bg {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
 
@@ -176,7 +241,12 @@ const galleryImages = [
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.8)
+  );
 }
 
 .hero-content {
@@ -188,7 +258,7 @@ const galleryImages = [
   font-size: clamp(3rem, 8vw, 6rem);
   color: white;
   margin-bottom: 1.5rem;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle {
@@ -285,18 +355,30 @@ const galleryImages = [
   border: 2px solid transparent;
 }
 
-.access-card.border-orange { border-color: rgba(242, 125, 38, 0.1); }
-.access-card.border-red { border-color: rgba(217, 68, 54, 0.1); }
-.access-card.border-gold { border-color: rgba(242, 169, 34, 0.1); }
+.access-card.border-orange {
+  border-color: rgba(242, 125, 38, 0.1);
+}
+.access-card.border-red {
+  border-color: rgba(217, 68, 54, 0.1);
+}
+.access-card.border-gold {
+  border-color: rgba(242, 169, 34, 0.1);
+}
 
 .access-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
-.access-card.border-orange:hover { border-color: var(--forro-orange); }
-.access-card.border-red:hover { border-color: var(--forro-red); }
-.access-card.border-gold:hover { border-color: var(--forro-gold); }
+.access-card.border-orange:hover {
+  border-color: var(--forro-orange);
+}
+.access-card.border-red:hover {
+  border-color: var(--forro-red);
+}
+.access-card.border-gold:hover {
+  border-color: var(--forro-gold);
+}
 
 .card-icon {
   width: 72px;
@@ -336,7 +418,9 @@ const galleryImages = [
 }
 
 @media (max-width: 640px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .gallery-item {
@@ -346,7 +430,10 @@ const galleryImages = [
 }
 
 .gallery-img {
-  width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
 }
 
 .gallery-item:hover .gallery-img {
@@ -375,6 +462,8 @@ const galleryImages = [
     flex-direction: column;
     text-align: center;
   }
-  .grid-3 { grid-template-columns: 1fr; }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
