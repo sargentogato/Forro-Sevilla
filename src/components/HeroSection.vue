@@ -77,13 +77,13 @@ const { t } = useI18n();
 
 .hero-content {
   max-width: 800px;
-  padding: 0 1.5rem;
+  padding: 0 24px;
 }
 
 .hero-title {
   font-size: clamp(3rem, 8vw, 6rem);
   color: white;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 

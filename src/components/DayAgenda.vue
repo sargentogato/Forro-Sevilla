@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AgendaItem from './AgendaItem.vue';
+import AgendaItem from "./AgendaItem.vue";
 
 interface DayAgendaProps {
   day: string;
@@ -14,7 +14,10 @@ const props = defineProps<DayAgendaProps>();
   <div class="day-agenda animate-fade">
     <div class="day-header flex-center gap-4">
       <div class="h-line"></div>
-      <h3 class="day-title text-upper" :style="{ backgroundColor: props.color }">
+      <h3
+        class="day-title text-upper"
+        :style="{ backgroundColor: props.color }"
+      >
         {{ props.day }}
       </h3>
       <div class="h-line"></div>
@@ -32,11 +35,11 @@ const props = defineProps<DayAgendaProps>();
 
 <style scoped>
 .day-agenda {
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 }
 
 .day-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .h-line {
@@ -46,7 +49,7 @@ const props = defineProps<DayAgendaProps>();
 }
 
 .day-title {
-  padding: 0.5rem 1.5rem;
+  padding: 8px 24px;
   border-radius: var(--radius-sm);
   color: white;
   font-weight: 800;

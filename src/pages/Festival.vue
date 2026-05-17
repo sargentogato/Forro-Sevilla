@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import { Calendar, MapPin, Music, Ticket, Info, ChevronRight, Check } from 'lucide-vue-next';
+import { Check, ChevronRight, Info } from "lucide-vue-next";
+import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
 const features = [
-  '4 días de talleres intensivos',
-  'Profesores internacionales',
-  'Vibe brasileña única en Sevilla',
-  'Fiestas sociales cada noche'
+  "4 días de talleres intensivos",
+  "Profesores internacionales",
+  "Vibe brasileña única en Sevilla",
+  "Fiestas sociales cada noche",
 ];
 </script>
 
@@ -16,15 +16,26 @@ const features = [
   <div class="festival-page">
     <header class="festival-hero">
       <div class="festival-hero-bg">
-        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1920&auto=format&fit=crop" alt="Festival de Forró Sevilla" class="hero-img" />
+        <img
+          src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1920&auto=format&fit=crop"
+          alt="Festival de Forró Sevilla"
+          class="hero-img"
+        />
         <div class="hero-overlay"></div>
       </div>
       <div class="festival-hero-content max-w-7xl">
-        <span class="festival-date">{{ t('festival.dates') }}</span>
+        <span class="festival-date">{{ t("festival.dates") }}</span>
         <h1 class="festival-title">Festival Forró Sevilla 2026</h1>
-        <p class="festival-subtitle">Arrasta-pé: Donde la pasión por el forró se encuentra con el duende de Sevilla.</p>
-        <a href="https://forms.gle/X4xaPv1dw6F6ALCt9" target="_blank" class="btn btn-primary btn-large">
-          {{ t('festival.buy_tickets') }}
+        <p class="festival-subtitle">
+          Arrasta-pé: Donde la pasión por el forró se encuentra con el duende de
+          Sevilla.
+        </p>
+        <a
+          href="https://forms.gle/X4xaPv1dw6F6ALCt9"
+          target="_blank"
+          class="btn btn-primary btn-large"
+        >
+          {{ t("festival.buy_tickets") }}
           <ChevronRight :size="20" />
         </a>
       </div>
@@ -33,9 +44,12 @@ const features = [
     <section class="festival-info py-24 max-w-7xl">
       <div class="info-grid">
         <div class="info-text">
-          <h2 class="section-title">La mayor cita de Forró del sur de España</h2>
+          <h2 class="section-title">
+            La mayor cita de Forró del sur de España
+          </h2>
           <p class="section-text">
-            Prepárate para una experiencia inolvidable. Cuatro días llenos de danza, música en vivo y una comunidad vibrante te esperan.
+            Prepárate para una experiencia inolvidable. Cuatro días llenos de
+            danza, música en vivo y una comunidad vibrante te esperan.
           </p>
           <ul class="feature-list">
             <li v-for="feat in features" :key="feat">
@@ -47,9 +61,9 @@ const features = [
         <div class="info-poster">
           <div class="poster-card">
             <div class="poster-inner">
-               <h3 class="poster-title">Sevilla 2026</h3>
-               <div class="poster-accent"></div>
-               <p class="poster-save">SAVE THE DATE</p>
+              <h3 class="poster-title">Sevilla 2026</h3>
+              <div class="poster-accent"></div>
+              <p class="poster-save">SAVE THE DATE</p>
             </div>
           </div>
         </div>
@@ -58,29 +72,41 @@ const features = [
 
     <section class="passes py-24">
       <div class="max-w-7xl">
-        <h2 class="section-title text-center">{{ t('festival.passes_title') }}</h2>
+        <h2 class="section-title text-center">
+          {{ t("festival.passes_title") }}
+        </h2>
         <div class="passes-grid">
-           <!-- Full Pass Card -->
-           <div class="pass-card featured">
-              <div class="pass-tag">Más popular</div>
-              <h3 class="pass-name">Full Pass</h3>
-              <div class="pass-price">85€</div>
-              <p class="pass-desc">Acceso total a todos los talleres, fiestas y conciertos durante los 4 días.</p>
-              <a href="#" class="btn btn-dark w-full">{{ t('festival.buy_tickets') }}</a>
-           </div>
+          <!-- Full Pass Card -->
+          <div class="pass-card featured">
+            <div class="pass-tag">Más popular</div>
+            <h3 class="pass-name">Full Pass</h3>
+            <div class="pass-price">85€</div>
+            <p class="pass-desc">
+              Acceso total a todos los talleres, fiestas y conciertos durante
+              los 4 días.
+            </p>
+            <a href="#" class="btn btn-dark w-full">{{
+              t("festival.buy_tickets")
+            }}</a>
+          </div>
 
-           <!-- Party Pass Card -->
-           <div class="pass-card">
-              <h3 class="pass-name">Party Pass</h3>
-              <div class="pass-price">45€</div>
-              <p class="pass-desc">Acceso a todas las fiestas sociales nocturnas y conciertos. No incluye talleres.</p>
-              <a href="#" class="btn btn-outline-dark w-full">{{ t('festival.buy_tickets') }}</a>
-           </div>
+          <!-- Party Pass Card -->
+          <div class="pass-card">
+            <h3 class="pass-name">Party Pass</h3>
+            <div class="pass-price">45€</div>
+            <p class="pass-desc">
+              Acceso a todas las fiestas sociales nocturnas y conciertos. No
+              incluye talleres.
+            </p>
+            <a href="#" class="btn btn-outline-dark w-full">{{
+              t("festival.buy_tickets")
+            }}</a>
+          </div>
         </div>
-        
+
         <div class="notice-box mt-4">
-           <Info :size="20" class="info-icon" />
-           <p>{{ t('festival.external_notice') }}</p>
+          <Info :size="20" class="info-icon" />
+          <p>{{ t("festival.external_notice") }}</p>
         </div>
       </div>
     </section>
@@ -112,7 +138,12 @@ const features = [
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
 }
 
 .festival-hero-content {
@@ -123,34 +154,36 @@ const features = [
 
 .festival-date {
   background-color: var(--forro-orange);
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.875rem;
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 
 .festival-title {
   font-size: 3rem;
-  margin: 1.5rem 0;
+  margin: 24px 0;
   font-weight: 900;
   line-height: 1.1;
 }
 
 @media (min-width: 768px) {
-  .festival-title { font-size: 4.5rem; }
+  .festival-title {
+    font-size: 4.5rem;
+  }
 }
 
 .festival-subtitle {
   font-size: 1.25rem;
   opacity: 0.9;
   max-width: 32rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 40px;
 }
 
 .btn-large {
-  padding: 1.25rem 3rem;
+  padding: 20px 48px;
   font-size: 1.125rem;
 }
 
@@ -162,7 +195,9 @@ const features = [
 }
 
 @media (min-width: 768px) {
-  .info-grid { grid-template-columns: 3fr 2fr; }
+  .info-grid {
+    grid-template-columns: 3fr 2fr;
+  }
 }
 
 .section-title {
@@ -186,7 +221,9 @@ const features = [
 }
 
 @media (min-width: 640px) {
-  .feature-list { grid-template-columns: repeat(2, 1fr); }
+  .feature-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .feature-list li {
@@ -200,7 +237,7 @@ const features = [
 .check-circle {
   width: 2rem;
   height: 2rem;
-  background-color: #ECFDF5;
+  background-color: #ecfdf5;
   color: var(--forro-green);
   border-radius: 50%;
   display: flex;
@@ -247,7 +284,7 @@ const features = [
 }
 
 .passes {
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
 }
 
 .passes-grid {
@@ -258,7 +295,11 @@ const features = [
 }
 
 @media (min-width: 768px) {
-  .passes-grid { grid-template-columns: repeat(2, 1fr); max-width: 60rem; margin-inline: auto; }
+  .passes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 60rem;
+    margin-inline: auto;
+  }
 }
 
 .pass-card {
@@ -267,7 +308,7 @@ const features = [
   border-radius: 2rem;
   text-align: center;
   position: relative;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
 }
 
@@ -290,9 +331,22 @@ const features = [
   text-transform: uppercase;
 }
 
-.pass-name { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
-.pass-price { font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark); }
-.pass-desc { color: var(--text-secondary); margin-bottom: 2.5rem; min-height: 4.5rem; }
+.pass-name {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.pass-price {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+.pass-desc {
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  min-height: 4.5rem;
+}
 
 .btn-outline-dark {
   border: 2px solid var(--dark);
@@ -307,7 +361,9 @@ const features = [
   color: white;
 }
 
-.w-full { width: 100%; }
+.w-full {
+  width: 100%;
+}
 
 .notice-box {
   display: flex;
@@ -318,5 +374,7 @@ const features = [
   font-size: 0.875rem;
 }
 
-.info-icon { color: var(--forro-orange); }
+.info-icon {
+  color: var(--forro-orange);
+}
 </style>

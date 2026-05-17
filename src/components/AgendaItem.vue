@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { ChevronDown, MapPin, Clock } from 'lucide-vue-next';
+import { ChevronDown, Clock, MapPin } from "lucide-vue-next";
+import { ref } from "vue";
 
 interface AgendaItemProps {
   time: string;
@@ -11,18 +11,18 @@ interface AgendaItemProps {
 }
 
 const props = withDefaults(defineProps<AgendaItemProps>(), {
-  color: '#F27D26'
+  color: "#F27D26",
 });
 
 const isOpen = ref(false);
 </script>
 
 <template>
-  <div class="agenda-item calendar-shadow" :style="{ borderLeftColor: props.color }">
-    <button
-      @click="isOpen = !isOpen"
-      class="item-trigger"
-    >
+  <div
+    class="agenda-item calendar-shadow"
+    :style="{ borderLeftColor: props.color }"
+  >
+    <button @click="isOpen = !isOpen" class="item-trigger">
       <div class="item-content">
         <div class="item-meta">
           <Clock :size="14" />
@@ -34,10 +34,7 @@ const isOpen = ref(false);
           {{ props.location }}
         </div>
       </div>
-      <div
-        class="chevron-wrapper"
-        :class="{ 'is-open': isOpen }"
-      >
+      <div class="chevron-wrapper" :class="{ 'is-open': isOpen }">
         <ChevronDown :size="24" />
       </div>
     </button>
@@ -70,7 +67,7 @@ const isOpen = ref(false);
 
 .item-trigger {
   width: 100%;
-  padding: 2rem;
+  padding: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,20 +80,20 @@ const isOpen = ref(false);
 .item-meta {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gray-400);
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .item-content h4 {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--dark);
-  margin-bottom: 0.52rem;
+  margin-bottom: 8px;
 }
 
 .item-location {
@@ -131,18 +128,20 @@ const isOpen = ref(false);
 }
 
 .details-inner {
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 16px 24px 24px;
   color: var(--gray-700);
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
 /* Transition */
-.expand-enter-active, .expand-leave-active {
+.expand-enter-active,
+.expand-leave-active {
   transition: all 0.3s ease-in-out;
   max-height: 200px;
 }
-.expand-enter-from, .expand-leave-to {
+.expand-enter-from,
+.expand-leave-to {
   max-height: 0;
   opacity: 0;
 }
