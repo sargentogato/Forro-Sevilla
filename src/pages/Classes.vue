@@ -1,56 +1,68 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import { MapPin, Clock, ChevronRight, Info } from 'lucide-vue-next';
-import classesData from '../data/classes.json';
+import { useI18n } from "vue-i18n";
+import { MapPin, Clock, ChevronRight, Info } from "lucide-vue-next";
+import classesData from "../data/classes.json";
 
 const { t } = useI18n();
 
 const plans = [
   {
-    key: 'group',
-    title: t('classes.group_classes'),
-    subtitle: t('classes.group_classes_subtitle'),
-    color: 'var(--forro-orange)',
-    prices: classesData.prices.group
+    key: "group",
+    title: t("classes.group_classes"),
+    subtitle: t("classes.group_classes_subtitle"),
+    color: "var(--forro-orange)",
+    prices: classesData.prices.group,
   },
   {
-    key: 'private_individual',
-    title: t('classes.private_individual'),
-    subtitle: t('classes.individual_subtitle'),
-    color: 'var(--forro-red)',
-    prices: classesData.prices.private_individual
+    key: "private_individual",
+    title: t("classes.private_individual"),
+    subtitle: t("classes.individual_subtitle"),
+    color: "var(--forro-red)",
+    prices: classesData.prices.private_individual,
   },
   {
-    key: 'private_couple',
-    title: t('classes.private_couple'),
-    subtitle: t('classes.couple_subtitle'),
-    color: 'var(--forro-gold)',
-    prices: classesData.prices.private_couple
-  }
+    key: "private_couple",
+    title: t("classes.private_couple"),
+    subtitle: t("classes.couple_subtitle"),
+    color: "var(--forro-gold)",
+    prices: classesData.prices.private_couple,
+  },
 ];
 </script>
 
 <template>
   <div class="classes-page">
-    <header class="page-header flex-center bg-dark text-white relative overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop" class="header-bg-img" alt="Background" fetchpriority="high" decoding="async" />
+    <header
+      class="page-header flex-center bg-dark text-white relative overflow-hidden"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop"
+        class="header-bg-img"
+        alt="Background"
+        fetchpriority="high"
+        decoding="async"
+      />
       <div class="header-overlay"></div>
-      <div class="container animate-fade relative z-10">
-        <h1 class="text-white hero-title">{{ t('classes.hero_title') }}</h1>
-        <p class="hero-subtitle">{{ t('classes.hero_subtitle') }}</p>
+      <div class="animate-fade relative z-10">
+        <h1 class="text-white hero-title">{{ t("classes.hero_title") }}</h1>
+        <p class="hero-subtitle">{{ t("classes.hero_subtitle") }}</p>
         <div class="title-underline"></div>
       </div>
     </header>
 
     <!-- Venues & Schedules -->
-    <section class="section container">
+    <section class="section">
       <div class="section-head-alt flex items-center gap-4">
         <div class="icon-blob orange"><MapPin :size="32" /></div>
-        <h2 class="serif">{{ t('classes.hours_locations') }}</h2>
+        <h2 class="serif">{{ t("classes.hours_locations") }}</h2>
       </div>
 
       <div class="grid grid-2 gap-8">
-        <div v-for="venue in classesData.venues" :key="venue.id" class="venue-card shadow-md animate-fade">
+        <div
+          v-for="venue in classesData.venues"
+          :key="venue.id"
+          class="venue-card shadow-md animate-fade"
+        >
           <div class="venue-header">
             <h3 class="serif">{{ venue.name }}</h3>
             <p class="venue-address">
@@ -58,16 +70,27 @@ const plans = [
               {{ venue.address }}
             </p>
           </div>
-          
-          <div class="schedule-list flex gap-4" style="flex-direction: column;">
-            <div v-for="(schedule, idx) in venue.schedules" :key="idx" class="schedule-item flex-between">
+
+          <div class="schedule-list flex gap-4" style="flex-direction: column">
+            <div
+              v-for="(schedule, idx) in venue.schedules"
+              :key="idx"
+              class="schedule-item flex-between"
+            >
               <div class="schedule-info">
                 <span class="day">{{ schedule.day }}</span>
                 <span class="time flex items-center gap-1">
                   <Clock :size="14" /> {{ schedule.time }}
                 </span>
               </div>
-              <span class="level-badge" :class="{ 'level-active': schedule.level.toLowerCase().includes('inici') }">
+              <span
+                class="level-badge"
+                :class="{
+                  'level-active': schedule.level
+                    .toLowerCase()
+                    .includes('inici'),
+                }"
+              >
                 {{ schedule.level }}
               </span>
             </div>
@@ -82,29 +105,38 @@ const plans = [
     </section>
 
     <!-- Prices -->
-    <section class="section bg-gray-100" style="padding-bottom: 2rem;">
-      <div class="container">
+    <section class="section bg-gray-100" style="padding-bottom: 2rem">
+      <div class="section__container">
         <div class="section-head">
-          <h2 class="serif">{{ t('classes.prices') }}</h2>
-          <p>{{ t('classes.cycle') }}</p>
+          <h2 class="serif">{{ t("classes.prices") }}</h2>
+          <p>{{ t("classes.cycle") }}</p>
         </div>
 
         <div class="grid grid-3 gap-8">
-          <div v-for="plan in plans" :key="plan.key" class="price-card animate-fade" :style="{ '--accent': plan.color }">
+          <div
+            v-for="plan in plans"
+            :key="plan.key"
+            class="price-card animate-fade"
+            :style="{ '--accent': plan.color }"
+          >
             <div class="price-header">
               <h3 class="serif">{{ plan.title }}</h3>
               <span class="price-subtitle text-upper">{{ plan.subtitle }}</span>
             </div>
-            
-            <div class="price-body flex gap-6" style="flex-direction: column;">
-              <div v-for="(p, idx) in plan.prices" :key="idx" class="price-row flex-between">
+
+            <div class="price-body flex gap-6" style="flex-direction: column">
+              <div
+                v-for="(p, idx) in plan.prices"
+                :key="idx"
+                class="price-row flex-between"
+              >
                 <span class="p-label">{{ p.name }}</span>
                 <span class="p-value">{{ p.price }}</span>
               </div>
             </div>
-            
+
             <div class="price-footer">
-              <p>{{ t('classes.duration') }}</p>
+              <p>{{ t("classes.duration") }}</p>
             </div>
           </div>
         </div>
@@ -112,17 +144,17 @@ const plans = [
     </section>
 
     <!-- CTA -->
-    <section class="section container text-center" style="padding-top: 2rem;">
+    <section class="section text-center" style="padding-top: 2rem">
       <div class="cta-banner palette-orange animate-fade">
-        <h2 class="serif italic">{{ t('classes.ready_to_dance') }}</h2>
-        <p class="mb-8">{{ t('classes.cta_desc') }}</p>
+        <h2 class="serif italic">{{ t("classes.ready_to_dance") }}</h2>
+        <p class="mb-8">{{ t("classes.cta_desc") }}</p>
         <a
           href="https://forms.gle/X4xaPv1dw6F6ALCt9"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-primary btn-big"
         >
-          {{ t('classes.enroll') }}
+          {{ t("classes.enroll") }}
           <ChevronRight />
         </a>
       </div>
@@ -150,7 +182,11 @@ const plans = [
 .header-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(242, 125, 38, 0.8), rgba(217, 68, 54, 0.6));
+  background: linear-gradient(
+    135deg,
+    rgba(242, 125, 38, 0.8),
+    rgba(217, 68, 54, 0.6)
+  );
   z-index: 2;
 }
 
@@ -192,11 +228,12 @@ const plans = [
   color: white;
 }
 
-.icon-blob.orange { background: var(--forro-orange); }
+.icon-blob.orange {
+  background: var(--forro-orange);
+}
 
 .venue-card {
   background: white;
-  padding: 3rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-100);
 }
@@ -342,7 +379,12 @@ const plans = [
 }
 
 @media (max-width: 768px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .cta-banner { padding: 3rem 1.5rem; }
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .cta-banner {
+    padding: 3rem 1.5rem;
+  }
 }
 </style>

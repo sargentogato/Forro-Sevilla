@@ -8,9 +8,6 @@ const app = createApp(App);
 app.use(router);
 app.use(i18n);
 
-const savedLocale = localStorage.getItem('locale') as SupportedLocale | null;
-if (savedLocale && savedLocale !== 'es') {
-  loadLocaleMessages(savedLocale).then(() => app.mount('#root'));
-} else {
-  app.mount('#root');
-}
+const savedLocale = (localStorage.getItem('locale') as SupportedLocale) ?? 'es';
+
+loadLocaleMessages(savedLocale).then(() => app.mount('#root'));

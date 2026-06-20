@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
-import { useRoute } from 'vue-router';
-import { useI18n } from 'vue-i18n';
-import { Menu, X, Instagram } from 'lucide-vue-next';
-import { loadLocaleMessages, type SupportedLocale } from '../i18n';
+import { ref, computed, watch } from "vue";
+import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
+import { Menu, X, Instagram } from "lucide-vue-next";
+import { loadLocaleMessages, type SupportedLocale } from "../i18n";
 
 const { t, locale } = useI18n();
 const route = useRoute();
@@ -11,22 +11,25 @@ const route = useRoute();
 const isMenuOpen = ref(false);
 
 const navLinks = computed(() => [
-  { name: t('nav.home'), path: '/' },
-  { name: t('nav.classes'), path: '/clases' },
-  { name: t('nav.festival'), path: '/festival-2026' },
-  { name: t('nav.events'), path: '/eventos' },
-  { name: t('nav.history'), path: '/historia' },
-  { name: t('nav.contact'), path: '/contacto' },
+  { name: t("nav.home"), path: "/" },
+  { name: t("nav.classes"), path: "/clases" },
+  { name: t("nav.festival"), path: "/festival-2026" },
+  { name: t("nav.events"), path: "/eventos" },
+  { name: t("nav.history"), path: "/historia" },
+  { name: t("nav.contact"), path: "/contacto" },
 ]);
 
 const toggleLanguage = async () => {
-  const next: SupportedLocale = locale.value === 'es' ? 'en' : 'es';
+  const next: SupportedLocale = locale.value === "es" ? "en" : "es";
   await loadLocaleMessages(next);
 };
 
-watch(() => route.path, () => {
-  isMenuOpen.value = false;
-});
+watch(
+  () => route.path,
+  () => {
+    isMenuOpen.value = false;
+  },
+);
 </script>
 
 <template>
@@ -35,7 +38,7 @@ watch(() => route.path, () => {
       <router-link to="/" class="logo">
         <div class="logo-icon">A</div>
         <span class="logo-text">
-          Forró Arrasta-pé<br/><span class="logo-accent">Sevilla</span>
+          Forró Arrasta-pé<br /><span class="logo-accent">Sevilla</span>
         </span>
       </router-link>
 
@@ -50,11 +53,8 @@ watch(() => route.path, () => {
         >
           {{ link.name }}
         </router-link>
-        <button
-          @click="toggleLanguage"
-          class="lang-toggle"
-        >
-          {{ locale === 'es' ? 'EN' : 'ES' }}
+        <button @click="toggleLanguage" class="lang-toggle">
+          {{ locale === "es" ? "EN" : "ES" }}
         </button>
         <a
           href="https://instagram.com/forrosevilla"
@@ -68,16 +68,10 @@ watch(() => route.path, () => {
 
       <!-- Mobile Nav Toggle -->
       <div class="nav-mobile-controls">
-        <button
-          @click="toggleLanguage"
-          class="lang-toggle"
-        >
-          {{ locale === 'es' ? 'EN' : 'ES' }}
+        <button @click="toggleLanguage" class="lang-toggle">
+          {{ locale === "es" ? "EN" : "ES" }}
         </button>
-        <button
-          @click="isMenuOpen = !isMenuOpen"
-          class="menu-toggle"
-        >
+        <button @click="isMenuOpen = !isMenuOpen" class="menu-toggle">
           <X v-if="isMenuOpen" :size="28" />
           <Menu v-else :size="28" />
         </button>
@@ -122,25 +116,40 @@ watch(() => route.path, () => {
       <div class="footer-col">
         <h3 class="serif footer-logo">Forró Arrasta-pé Sevilla</h3>
         <p class="footer-text">
-          {{ t('home.what_is_forro_text') }}
+          {{ t("home.what_is_forro_text") }}
         </p>
         <div class="footer-social">
-          <a href="https://instagram.com/forrosevilla" class="footer-social-link" target="_blank"><Instagram /></a>
+          <a
+            href="https://instagram.com/forrosevilla"
+            class="footer-social-link"
+            target="_blank"
+            ><Instagram
+          /></a>
         </div>
       </div>
       <div class="footer-col">
-        <h4 class="text-upper footer-subtitle">{{ t('home.quick_access') }}</h4>
+        <h4 class="text-upper footer-subtitle">{{ t("home.quick_access") }}</h4>
         <div class="footer-links">
-          <router-link to="/" class="f-link">{{ t('nav.home') }}</router-link>
-          <router-link to="/clases" class="f-link">{{ t('nav.classes') }}</router-link>
-          <router-link to="/festival-2026" class="f-link">{{ t('nav.festival') }}</router-link>
-          <router-link to="/eventos" class="f-link">{{ t('nav.events') }}</router-link>
-          <router-link to="/historia" class="f-link">{{ t('nav.history') }}</router-link>
-          <router-link to="/contacto" class="f-link">{{ t('nav.contact') }}</router-link>
+          <router-link to="/" class="f-link">{{ t("nav.home") }}</router-link>
+          <router-link to="/clases" class="f-link">{{
+            t("nav.classes")
+          }}</router-link>
+          <router-link to="/festival-2026" class="f-link">{{
+            t("nav.festival")
+          }}</router-link>
+          <router-link to="/eventos" class="f-link">{{
+            t("nav.events")
+          }}</router-link>
+          <router-link to="/historia" class="f-link">{{
+            t("nav.history")
+          }}</router-link>
+          <router-link to="/contacto" class="f-link">{{
+            t("nav.contact")
+          }}</router-link>
         </div>
       </div>
       <div class="footer-col">
-        <h4 class="text-upper footer-subtitle">{{ t('nav.contact') }}</h4>
+        <h4 class="text-upper footer-subtitle">{{ t("nav.contact") }}</h4>
         <div class="footer-info-stack">
           <p><strong>Tel:</strong> +34 603 176 756</p>
           <p><strong>Email:</strong> forroarrastapesevilla@gmail.com</p>
@@ -149,7 +158,10 @@ watch(() => route.path, () => {
       </div>
     </div>
     <div class="footer-bottom container">
-      <p>© {{ new Date().getFullYear() }} Forró Arrasta-pé Sevilla. {{ t('common.footer_love') }}.</p>
+      <p>
+        © {{ new Date().getFullYear() }} Forró Arrasta-pé Sevilla.
+        {{ t("common.footer_love") }}.
+      </p>
     </div>
   </footer>
 </template>
@@ -167,10 +179,10 @@ watch(() => route.path, () => {
 }
 
 .header-container {
-  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px;
 }
 
 .logo {
@@ -225,7 +237,8 @@ watch(() => route.path, () => {
   color: var(--gray-700);
 }
 
-.nav-link.active, .nav-link:hover {
+.nav-link.active,
+.nav-link:hover {
   color: var(--forro-orange);
 }
 
@@ -400,10 +413,12 @@ watch(() => route.path, () => {
 }
 
 /* Animations */
-.mobile-menu-enter-active, .mobile-menu-leave-active {
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
   transition: all 0.3s ease;
 }
-.mobile-menu-enter-from, .mobile-menu-leave-to {
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
   transform: translateY(-20px);
   opacity: 0;
 }
