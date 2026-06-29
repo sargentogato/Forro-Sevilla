@@ -22,10 +22,10 @@ const { t } = useI18n();
       <p class="hero-subtitle">{{ t("home.hero_subtitle") }}</p>
       <div class="hero-actions">
         <router-link
-          to="/festival-2026"
+          to="/festival"
           class="btn btn-primary btn-big shadow-xl scale-hover"
         >
-          Festival 2026 · Sevilla
+          {{ t("home.cta_button") }}
         </router-link>
       </div>
     </div>

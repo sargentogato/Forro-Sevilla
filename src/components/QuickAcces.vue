@@ -18,7 +18,7 @@ const data = [
     description: "home.festival_card_desc",
     icon: Music,
     arrow: ChevronRight,
-    to: "/festival-2026",
+    to: "/festival",
     colorClass: "access-card--red",
   },
   {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, computed, watch } from "vue";
-import { useRoute } from "vue-router";
+import { Instagram, Menu, X } from "lucide-vue-next";
+import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
-import { Menu, X, Instagram } from "lucide-vue-next";
+import { useRoute } from "vue-router";
 import { loadLocaleMessages, type SupportedLocale } from "../i18n";
 
 const { t, locale } = useI18n();
@@ -13,7 +13,7 @@ const isMenuOpen = ref(false);
 const navLinks = computed(() => [
   { name: t("nav.home"), path: "/" },
   { name: t("nav.classes"), path: "/clases" },
-  { name: t("nav.festival"), path: "/festival-2026" },
+  { name: t("nav.festival"), path: "/festival" },
   { name: t("nav.events"), path: "/eventos" },
   { name: t("nav.history"), path: "/historia" },
   { name: t("nav.contact"), path: "/contacto" },
@@ -134,7 +134,7 @@ watch(
           <router-link to="/clases" class="f-link">{{
             t("nav.classes")
           }}</router-link>
-          <router-link to="/festival-2026" class="f-link">{{
+          <router-link to="/festival" class="f-link">{{
             t("nav.festival")
           }}</router-link>
           <router-link to="/eventos" class="f-link">{{
