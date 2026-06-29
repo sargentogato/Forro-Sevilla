@@ -62,13 +62,33 @@ const translatedSchedule = computed(() =>
   })),
 );
 
+const formatPriceValue = (
+  priceValue: string | number | undefined,
+  soldOut = false,
+) => {
+  if (priceValue == null) return "—";
+
+  const formattedValue =
+    typeof priceValue === "number" ? `${priceValue}€` : String(priceValue);
+
+  if (!soldOut)
+    return formattedValue.replace(/\s*\((Agotado|Sold out)\)\s*/gi, "");
+
+  const soldOutLabel = t("festival.sold_out");
+  return formattedValue.includes("Agotado") ||
+    formattedValue.includes("Sold out")
+    ? formattedValue.replace(/\s*\((Agotado|Sold out)\)\s*/gi, "") +
+        ` (${soldOutLabel})`
+    : `${formattedValue} (${soldOutLabel})`;
+};
+
 const translatedPrices = computed(() =>
   (festivalData.prices || []).map((price: any) => ({
     ...price,
     type: translateText(price.type),
-    lote1: translateText(price.lote1),
-    lote2: translateText(price.lote2),
-    lote3: translateText(price.lote3),
+    lote1: formatPriceValue(price.lote1, Boolean(price.lote1SoldOut)),
+    lote2: formatPriceValue(price.lote2, Boolean(price.lote2SoldOut)),
+    lote3: formatPriceValue(price.lote3, Boolean(price.lote3SoldOut)),
   })),
 );
 </script>
@@ -227,10 +247,18 @@ const translatedPrices = computed(() =>
           <table class="festival__prices-table">
             <thead>
               <tr>
-                <th>{{ t("festival.table_pass") }}</th>
-                <th>{{ t("festival.table_lot1") }}</th>
-                <th>{{ t("festival.table_lot2") }}</th>
-                <th>{{ t("festival.table_lot3") }}</th>
+                <th class="festival__main-title">
+                  {{ t("festival.table_pass") }}
+                </th>
+                <th class="festival__col-titles">
+                  {{ t("festival.table_lot1") }}
+                </th>
+                <th class="festival__col-titles">
+                  {{ t("festival.table_lot2") }}
+                </th>
+                <th class="festival__col-titles">
+                  {{ t("festival.table_lot3") }}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -781,6 +809,14 @@ const translatedPrices = computed(() =>
   animation: fadeIn 0.6s ease forwards;
 }
 
+.festival__main-title {
+  text-align: left;
+}
+
+.festival__col-titles {
+  text-align: center;
+}
+
 .festival__prices-table {
   width: 100%;
   border-collapse: collapse;
@@ -793,7 +829,6 @@ const translatedPrices = computed(() =>
 
 .festival__prices-table th {
   padding: 20px 16px;
-  text-align: left;
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;

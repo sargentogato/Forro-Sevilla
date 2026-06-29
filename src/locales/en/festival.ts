@@ -30,6 +30,7 @@ const festival = {
   bank_concept: "Reference",
   instrument_percussion: "Zabumba & Triangle",
   instrument_accordion: "Accordion",
+  sold_out: "Sold out",
   price_full_pass: "Full Pass",
   price_workshop_party: "Workshop + Party (1 day)",
   price_instruments: "Solo Instruments",

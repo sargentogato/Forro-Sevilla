@@ -114,7 +114,8 @@
     },
     {
       "type": "festival.price_workshop_party",
-      "lote1": "85€ (Agotado)",
+      "lote1": "85€",
+      "lote1SoldOut": true,
       "lote2": "95€",
       "lote3": "105€"
     },
