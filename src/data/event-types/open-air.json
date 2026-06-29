@@ -1,0 +1,17 @@
+{
+  "id": "open-air",
+  "title": "Open air nocturno",
+  "subtitle": "Sesiones en la calle con fuego, ritmo y baile.",
+  "description": "Espacios al aire libre con shows, DJs y momentos para disfrutar del baile bajo el cielo.",
+  "when": "Viernes y sábados desde el atardecer.",
+  "where": "Jardines del festival y paseos peatonales.",
+  "highlights": [
+    "Shows de percusión y malabares",
+    "Sesiones con DJs invitados",
+    "Ambiente libre y festivo"
+  ],
+  "instagram": "https://instagram.com/forrosevilla",
+  "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+  "status": "activo",
+  "help": "Modifica el texto aquí si quieres cambiar la descripción que aparece en el modal."
+}

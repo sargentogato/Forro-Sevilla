@@ -178,6 +178,10 @@ watch(
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.main-content {
+  padding-top: 96px;
+}
+
 .header-container {
   display: flex;
   align-items: center;

@@ -1,129 +1,214 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import { Phone, Mail, Instagram, MapPin, Send } from 'lucide-vue-next';
+import { Instagram, Mail, MapPin, Phone } from "lucide-vue-next";
+import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
-
-const handleSubmit = (e: Event) => {
-  e.preventDefault();
-  // Form logic...
-};
 </script>
 
 <template>
   <div class="contact-page">
-    <header class="page-header flex-center bg-gold text-white">
-      <div class="container animate-fade">
-        <h1 class="text-white">{{ t('nav.contact') }}</h1>
-        <p class="hero-subtitle italic">{{ t('contact.page_subtitle') }}</p>
+    <header class="contact-page__hero">
+      <div class="contact-page__hero-content">
+        <h1 class="contact-page__title">{{ t("nav.contact") }}</h1>
+        <p class="contact-page__subtitle">{{ t("contact.page_subtitle") }}</p>
       </div>
     </header>
 
-    <div class="container section">
-      <div class="contact-layout grid grid-2 gap-12">
-        <div class="contact-info-panel animate-fade">
-          <h2 class="serif mb-8 text-big">{{ t('contact.info_title') }}</h2>
-          <div class="contact-grid">
-            <a href="tel:+34603176756" class="contact-card group palette-orange">
-              <div class="card-icon">
+    <section class="contact-page__content">
+      <div class="contact-page__layout">
+        <div class="contact-page__info">
+          <h2 class="contact-page__section-title">
+            {{ t("contact.info_title") }}
+          </h2>
+          <div class="contact-page__grid">
+            <a
+              href="tel:+34603176756"
+              class="contact-page__card contact-page__card--orange"
+            >
+              <div class="contact-page__icon">
                 <Phone />
               </div>
-              <div class="card-text">
-                <span class="label text-upper">{{ t('contact.label_phone') }}</span>
-                <p class="value">+34 603 176 756</p>
+              <div class="contact-page__card-text">
+                <span class="contact-page__label">{{
+                  t("contact.label_phone")
+                }}</span>
+                <p class="contact-page__value">+34 603 176 756</p>
               </div>
             </a>
-            <a href="mailto:forroarrastapesevilla@gmail.com" class="contact-card group palette-red">
-              <div class="card-icon">
+
+            <a
+              href="mailto:forroarrastapesevilla@gmail.com"
+              class="contact-page__card contact-page__card--red"
+            >
+              <div class="contact-page__icon">
                 <Mail />
               </div>
-              <div class="card-text">
-                <span class="label text-upper">{{ t('contact.label_email') }}</span>
-                <p class="value">forroarrastapesevilla@gmail.com</p>
+              <div class="contact-page__card-text">
+                <span class="contact-page__label">{{
+                  t("contact.label_email")
+                }}</span>
+                <p class="contact-page__value">
+                  forroarrastapesevilla@gmail.com
+                </p>
               </div>
             </a>
-            <a href="https://instagram.com/forrosevilla" target="_blank" class="contact-card group palette-gold">
-              <div class="card-icon">
+
+            <a
+              href="https://instagram.com/forrosevilla"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-page__card contact-page__card--gold"
+            >
+              <div class="contact-page__icon">
                 <Instagram />
               </div>
-              <div class="card-text">
-                <span class="label text-upper">{{ t('contact.label_instagram') }}</span>
-                <p class="value">@forrosevilla</p>
+              <div class="contact-page__card-text">
+                <span class="contact-page__label">{{
+                  t("contact.label_instagram")
+                }}</span>
+                <p class="contact-page__value">@forrosevilla</p>
               </div>
             </a>
-            <div class="contact-card palette-1">
-              <div class="card-icon">
+
+            <div class="contact-page__card contact-page__card--soft">
+              <div class="contact-page__icon">
                 <MapPin />
               </div>
-              <div class="card-text">
-                <span class="label text-upper">{{ t('contact.label_address') }}</span>
-                <p class="value">Calle Don Fadrique, 59 · 41009 Sevilla</p>
+              <div class="contact-page__card-text">
+                <span class="contact-page__label">{{
+                  t("contact.label_address")
+                }}</span>
+                <p class="contact-page__value">
+                  Calle Don Fadrique, 59 · 41009 Sevilla
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="map-panel shadow-lg animate-fade min-h-[500px]">
+        <div class="contact-page__map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m17!1m8!1m3!1d3169.3621531206124!2d-5.9926868!3d37.40487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c04f986422f%3A0xc3f58e663a7f80db!2sCalle%20Don%20Fadrique%2C%2059%2C%20Casco%20Antiguo%2C%2041009%20Sevilla!5e0!3m2!1ses!2ses!4v1715124000000!5m2!1ses!2ses"
-            width="100%"
-            height="100%"
-            style="border: 0; min-height: 500px; display: block;"
-            allowfullscreen="true"
+            src="https://www.google.com/maps?q=Calle%20Don%20Fadrique,%2059,%2041009%20Sevilla&z=16&output=embed"
+            title="Ubicación de Forró Sevilla"
             loading="lazy"
+            allowfullscreen="true"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
-.page-header {
-  height: 40vh;
-  min-height: 300px;
-  text-align: center;
+.contact-page {
+  width: 100%;
 }
 
-.bg-gold { background-color: var(--forro-gold); }
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  opacity: 0.9;
-  margin-top: 1rem;
-}
-
-.text-big { font-size: 3rem; color: var(--forro-earth); }
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.contact-card {
+.contact-page__hero {
+  min-height: 320px;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 2.5rem;
-  background: var(--card-bg);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: var(--transition);
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  background: linear-gradient(135deg, var(--forro-gold), #9e6b1a);
+  color: white;
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
+.contact-page__hero-content {
+  max-width: 760px;
+  width: 100%;
+}
+
+.contact-page__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: var(--font-serif);
+  font-weight: 800;
+}
+
+.contact-page__subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.contact-page__content {
+  padding: 4rem 1.25rem 5rem;
+}
+
+.contact-page__layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.contact-page__info {
+  background: white;
+  border-radius: 2rem;
+  padding: 2rem;
   box-shadow: var(--shadow-md);
 }
 
-.card-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 20px;
+.contact-page__section-title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-family: var(--font-serif);
+  color: var(--forro-earth);
+}
+
+.contact-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-page__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  transition: var(--transition);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.contact-page__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-page__card--orange {
+  border-left: 4px solid var(--forro-orange);
+}
+
+.contact-page__card--red {
+  border-left: 4px solid var(--forro-red);
+}
+
+.contact-page__card--gold {
+  border-left: 4px solid var(--forro-gold);
+}
+
+.contact-page__card--soft {
+  border-left: 4px solid #d9a76a;
+}
+
+.contact-page__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
   background: white;
-  color: var(--card-icon);
+  color: var(--forro-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,28 +216,75 @@ const handleSubmit = (e: Event) => {
   box-shadow: var(--shadow-sm);
 }
 
-.label {
+.contact-page__card-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.contact-page__label {
   display: block;
+  margin-bottom: 0.3rem;
   font-size: 0.7rem;
   font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--gray-400);
-  margin-bottom: 0.25rem;
 }
 
-.value {
+.contact-page__value {
+  margin: 0;
   font-weight: 700;
   color: var(--dark);
-  font-size: 1rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-.map-panel {
-  border-radius: 3rem;
+.contact-page__map {
+  height: 500px;
+  min-height: 500px;
+  border-radius: 2rem;
   overflow: hidden;
   border: 8px solid white;
+  box-shadow: var(--shadow-md);
+  background-color: #f3f4f6;
+}
+
+.contact-page__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: block;
+  border: 0;
 }
 
 @media (max-width: 1024px) {
-  .contact-layout { grid-template-columns: 1fr; }
-  .text-big { font-size: 2.25rem; }
+  .contact-page__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page__content {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .contact-page__info {
+    padding: 1.5rem;
+  }
+
+  .contact-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page__map {
+    height: 360px;
+    min-height: 360px;
+  }
+
+  .contact-page__map iframe {
+    min-height: 100%;
+  }
 }
 </style>

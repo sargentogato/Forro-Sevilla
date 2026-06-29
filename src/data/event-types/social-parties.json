@@ -1,0 +1,17 @@
+{
+  "id": "social-parties",
+  "title": "Fiestas sociales",
+  "subtitle": "Encuentros abiertos para bailar y conectar",
+  "description": "Momentos para compartir música, clases cortas y bailes colectivos en un ambiente relajado y divertido.",
+  "when": "Domingos y festivos, por la tarde.",
+  "where": "Plaza central y espacios exteriores.",
+  "highlights": [
+    "Clases rápidas de conexión",
+    "Música en vivo y DJ",
+    "Ambiente para conocer gente nueva"
+  ],
+  "instagram": "https://instagram.com/forrosevilla",
+  "image": "https://images.unsplash.com/photo-1519866273089-2ca3af17c967?auto=format&fit=crop&w=1200&q=80",
+  "status": "activo",
+  "help": "Para habilitar esta tarjeta, deja status como \"activo\". Cambia a otro valor para deshabilitarla."
+}
