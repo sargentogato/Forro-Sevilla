@@ -143,8 +143,7 @@ const festivalArtists = computed(() => [
         </div>
       </div>
     </section>
-<<<<<<< Updated upstream
-=======
+
     <!-- === AGENDA SECTION END === -->
 
     <!-- === ARTISTS SECTION START === -->
@@ -280,8 +279,7 @@ const festivalArtists = computed(() => [
                 </p>
               </div>
             </div>
->>>>>>> Stashed changes
-
+          </div>
     <FestivalArtistsSection :artists="festivalArtists" />
 
     <FestivalPricesSection
