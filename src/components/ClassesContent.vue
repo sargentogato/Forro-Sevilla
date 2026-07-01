@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { ChevronRight, Clock, Info, MapPin } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
-import { MapPin, Clock, ChevronRight, Info } from "lucide-vue-next";
 import classesData from "../data/classes.json";
 
 const { t } = useI18n();
@@ -276,7 +276,7 @@ const plans = [
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 4rem);
   line-height: 1.1;
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .classes-content__icon-blob {
@@ -356,6 +356,10 @@ const plans = [
   transform: translateX(5px);
 }
 
+:global(html.dark) .classes-content__schedule-item:hover {
+  background: rgba(242, 125, 38, 0.1);
+}
+
 .classes-content__schedule-info {
   display: flex;
   flex-direction: column;
@@ -376,11 +380,17 @@ const plans = [
   gap: 4px;
 }
 
+:global(html.dark) .classes-content__schedule-day,
+:global(html.dark) .classes-content__schedule-time {
+  color: #ffffff;
+}
+
 .classes-content__level-badge {
   font-size: 0.75rem;
   font-weight: 900;
   padding: 0.5rem 1rem;
   background: var(--white);
+  color: var(--dark);
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -468,6 +478,7 @@ const plans = [
   font-size: 1.75rem;
   font-family: var(--font-serif);
   margin-bottom: 0.5rem;
+  color: var(--dark);
 }
 
 .classes-content__price-subtitle {
@@ -494,7 +505,7 @@ const plans = [
 
 .classes-content__price-label {
   font-weight: 600;
-  color: var(--gray-700);
+  color: var(--gray-500);
 }
 
 .classes-content__price-value {
@@ -540,6 +551,7 @@ const plans = [
   font-family: var(--font-serif);
   margin-bottom: 1.5rem;
   font-style: italic;
+  color: var(--dark);
 }
 
 .classes-content__cta-description {

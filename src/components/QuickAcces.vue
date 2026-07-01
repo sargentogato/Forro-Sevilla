@@ -142,11 +142,45 @@ const data = [
   border-color: var(--forro-gold);
 }
 
+/* Dark mode modifiers */
+:global(html.dark) .access-card--orange {
+  background-color: var(--bg-surface);
+  --card-accent: #ffd180;
+  --card-text: #000000;
+  border-color: rgba(242, 125, 38, 0.3);
+}
+
+:global(html.dark) .access-card--orange:hover {
+  border-color: var(--forro-orange);
+}
+
+:global(html.dark) .access-card--red {
+  background-color: var(--bg-surface);
+  --card-accent: #ff8a80;
+  --card-text: #000000;
+  border-color: rgba(217, 68, 54, 0.3);
+}
+
+:global(html.dark) .access-card--red:hover {
+  border-color: var(--forro-red);
+}
+
+:global(html.dark) .access-card--gold {
+  background-color: var(--bg-surface);
+  --card-accent: #ffd54f;
+  --card-text: #000000;
+  border-color: rgba(242, 169, 34, 0.3);
+}
+
+:global(html.dark) .access-card--gold:hover {
+  border-color: var(--forro-gold);
+}
+
 .access-card__icon {
   width: 72px;
   height: 72px;
   border-radius: 24px;
-  background: white;
+  background: var(--bg-surface);
   color: var(--card-icon);
   display: flex;
   align-items: center;
@@ -162,9 +196,9 @@ const data = [
 }
 
 .access-card__text {
-  color: var(--gray-700);
+  color: var(--card-text, var(--gray-700));
   font-weight: 500;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .access-card__arrow {

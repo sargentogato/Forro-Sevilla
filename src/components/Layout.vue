@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Instagram, Menu, X } from "lucide-vue-next";
-import { computed, ref, watch } from "vue";
+import { Instagram, Menu, X, Sun, Moon } from "lucide-vue-next";
+import { computed, ref, watch, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { loadLocaleMessages, type SupportedLocale } from "../i18n";
@@ -30,6 +30,29 @@ watch(
     isMenuOpen.value = false;
   },
 );
+
+const isDark = ref(false);
+
+const toggleDarkMode = () => {
+  isDark.value = !isDark.value;
+  if (isDark.value) {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+};
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme:dark)").matches;
+
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    isDark.value = true;
+    document.documentElement.classList.add("dark");
+  }
+});
 </script>
 
 <template>
@@ -56,6 +79,14 @@ watch(
         <button @click="toggleLanguage" class="lang-toggle">
           {{ locale === "es" ? "EN" : "ES" }}
         </button>
+        <button
+          @click="toggleDarkMode"
+          class="theme-toggle"
+          aria-label="Cambiar tema"
+        >
+          <Sun v-if="isDark" :size="18" />
+          <Moon v-else :size="18" />
+        </button>
         <a
           href="https://instagram.com/forrosevilla"
           target="_blank"
@@ -70,6 +101,14 @@ watch(
       <div class="nav-mobile-controls">
         <button @click="toggleLanguage" class="lang-toggle">
           {{ locale === "es" ? "EN" : "ES" }}
+        </button>
+        <button
+          @click="toggleDarkMode"
+          class="theme-toggle"
+          aria-label="Cambiar tema"
+        >
+          <Sun v-if="isDark" :size="18" />
+          <Moon v-else :size="18" />
         </button>
         <button @click="isMenuOpen = !isMenuOpen" class="menu-toggle">
           <X v-if="isMenuOpen" :size="28" />
@@ -173,9 +212,9 @@ watch(
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--glass-bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .main-content {
@@ -252,9 +291,25 @@ watch(
   background: var(--gray-100);
   padding: 0.4rem 0.8rem;
   border-radius: var(--radius-sm);
-  color: var(--dark);
+  color: var(--gray-900);
   border: 1px solid var(--gray-200);
   cursor: pointer;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--gray-700);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  color: var(--forro-orange);
 }
 
 .social-link {
@@ -282,7 +337,7 @@ watch(
 .menu-toggle {
   background: none;
   border: none;
-  color: var(--dark);
+  color: var(--gray-700);
   cursor: pointer;
   padding: 0.5rem;
 }
@@ -292,8 +347,8 @@ watch(
   top: 6rem;
   left: 0;
   right: 0;
-  background-color: white;
-  border-bottom: 1px solid var(--gray-100);
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
   box-shadow: var(--shadow-lg);
 }
 
@@ -308,7 +363,7 @@ watch(
   font-size: 1.5rem;
   font-family: var(--font-serif);
   font-weight: 700;
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .mobile-nav-link.active {
@@ -318,7 +373,7 @@ watch(
 .mobile-menu-footer {
   margin-top: 1rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-100);
+  border-top: 1px solid var(--border-light);
 }
 
 .mobile-social-link {
