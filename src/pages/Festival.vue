@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import {
+  Calendar as CalendarIcon,
+  Check,
+  ChevronRight,
+  CreditCard,
+  ExternalLink,
+  Info,
+  Ticket,
+} from "lucide-vue-next";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import DayAgenda from "../components/DayAgenda.vue";
-import FestivalAboutSection from "../components/FestivalAboutSection.vue";
-import FestivalArtistsSection from "../components/FestivalArtistsSection.vue";
-import FestivalHeroSection from "../components/FestivalHeroSection.vue";
-import FestivalPricesSection from "../components/FestivalPricesSection.vue";
 import festivalData from "../data/festival.json";
 
 const { t } = useI18n();
@@ -57,75 +62,89 @@ const translatedSchedule = computed(() =>
   })),
 );
 
-const formatPriceValue = (
-  priceValue: string | number | undefined,
-  soldOut = false,
-) => {
-  if (priceValue == null) return "—";
-
-  const formattedValue =
-    typeof priceValue === "number" ? `${priceValue}€` : String(priceValue);
-
-  if (!soldOut)
-    return formattedValue.replace(/\s*\((Agotado|Sold out)\)\s*/gi, "");
-
-  const soldOutLabel = t("festival.sold_out");
-  return formattedValue.includes("Agotado") ||
-    formattedValue.includes("Sold out")
-    ? formattedValue.replace(/\s*\((Agotado|Sold out)\)\s*/gi, "") +
-        ` (${soldOutLabel})`
-    : `${formattedValue} (${soldOutLabel})`;
-};
-
 const translatedPrices = computed(() =>
   (festivalData.prices || []).map((price: any) => ({
     ...price,
     type: translateText(price.type),
-    lote1: formatPriceValue(price.lote1, Boolean(price.lote1SoldOut)),
-    lote2: formatPriceValue(price.lote2, Boolean(price.lote2SoldOut)),
-    lote3: formatPriceValue(price.lote3, Boolean(price.lote3SoldOut)),
+    lote1: translateText(price.lote1),
+    lote2: translateText(price.lote2),
+    lote3: translateText(price.lote3),
   })),
 );
-
-const festivalArtists = computed(() => [
-  {
-    name: "Elton Rodrigues",
-    role: t("festival.artists"),
-    image:
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Carol Benigno",
-    role: t("festival.instrument_percussion"),
-    image:
-      "https://images.unsplash.com/photo-1514525253344-f814d072e507?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Sandrinho Dupan",
-    role: t("festival.instrument_accordion"),
-    image:
-      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop",
-  },
-]);
 </script>
 
 <template>
   <div class="festival-page">
-    <FestivalHeroSection
-      :badge="translatedFestivalBadge"
-      :title="translatedFestivalTitle"
-      :subtitle="translatedFestivalDescription"
-      :cta-label="t('festival.buy_tickets')"
-    />
+    <!-- === HERO SECTION START === -->
+    <header class="festival__hero">
+      <div class="festival__hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1920&auto=format&fit=crop"
+          alt="Festival de Forró Sevilla"
+          class="festival__hero-img"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="festival__hero-overlay"></div>
+      </div>
+      <div class="festival__hero-content">
+        <span class="festival__badge">{{ translatedFestivalBadge }}</span>
+        <h1 class="festival__title">{{ translatedFestivalTitle }}</h1>
+        <p class="festival__subtitle">{{ translatedFestivalDescription }}</p>
+        <a
+          href="https://entradas.forrosevilla.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="festival__btn festival__btn--primary festival__btn--large"
+        >
+          {{ t("festival.buy_tickets") }}
+          <ChevronRight :size="20" />
+        </a>
+      </div>
+    </header>
+    <!-- === HERO SECTION END === -->
 
-    <FestivalAboutSection
-      :title="translatedAboutTitle"
-      :text="translatedAboutText"
-      :features="translatedFeatures"
-      :poster-title="translatedPosterTitle"
-      :poster-text="translatedPosterText"
-    />
+    <!-- === ABOUT SECTION START === -->
+    <section class="festival__about">
+      <div class="festival__about-container">
+        <div class="festival__about-grid">
+          <div class="festival__about-content">
+            <h2 class="festival__section-title">
+              {{ translatedAboutTitle }}
+            </h2>
+            <p class="festival__section-text">
+              {{ translatedAboutText }}
+            </p>
+            <ul class="festival__features-list">
+              <li
+                v-for="feat in translatedFeatures"
+                :key="feat"
+                class="festival__feature-item"
+              >
+                <div class="festival__check-icon">
+                  <Check :size="16" />
+                </div>
+                <span>{{ feat }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="festival__about-poster">
+            <div class="festival__poster-card">
+              <div class="festival__poster-inner">
+                <h3 class="festival__poster-title">
+                  {{ translatedPosterTitle }}
+                </h3>
+                <div class="festival__poster-accent"></div>
+                <p class="festival__poster-text">{{ translatedPosterText }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === ABOUT SECTION END === -->
 
+    <!-- === AGENDA SECTION START === -->
     <section class="festival__agenda">
       <div class="festival__agenda-container">
         <div class="festival__section-header">
@@ -143,7 +162,6 @@ const festivalArtists = computed(() => [
         </div>
       </div>
     </section>
-
     <!-- === AGENDA SECTION END === -->
 
     <!-- === ARTISTS SECTION START === -->
@@ -279,39 +297,221 @@ const festivalArtists = computed(() => [
                 </p>
               </div>
             </div>
-          </div>
-    <FestivalArtistsSection :artists="festivalArtists" />
 
-    <FestivalPricesSection
-      :prices="translatedPrices"
-      :buy-tickets-label="t('festival.buy_tickets')"
-      :external-notice="t('festival.external_notice')"
-      :alternative-payment-title="t('festival.alternative_payment')"
-      :bank-holder-label="t('festival.bank_holder')"
-      :bank-concept-label="t('festival.bank_concept')"
-      :pre-register-title="t('festival.pre_register')"
-    />
+            <div class="festival__info-card">
+              <h3 class="festival__info-card-title">
+                <CalendarIcon
+                  class="festival__info-card-icon festival__info-card-icon--orange"
+                  :size="24"
+                />
+                {{ t("festival.pre_register") }}
+              </h3>
+              <div class="festival__info-card-links">
+                <a
+                  href="https://forms.gle/X4xaPv1dw6F6ALCt9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="festival__info-link"
+                >
+                  Español <ChevronRight :size="20" />
+                </a>
+                <a
+                  href="https://forms.gle/Tn7jqu8rkBHCZJs7A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="festival__info-link"
+                >
+                  English <ChevronRight :size="20" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === PRICES SECTION END === -->
   </div>
 </template>
 
 <style scoped>
-.festival-page {
-  width: 100%;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.festival__agenda {
+/* === HERO SECTION START === */
+.festival__hero {
+  position: relative;
+  /* height: 70vh; */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.festival__hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.festival__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.festival__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.5),
+    transparent
+  );
+  z-index: 1;
+}
+
+.festival__hero-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.festival__badge {
+  display: inline-block;
+  background-color: var(--forro-orange);
+  padding: 8px 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.festival__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin: 24px 0;
+  font-weight: 900;
+  line-height: 1.1;
+  font-family: var(--font-serif);
+  animation: fadeIn 0.8s ease 0.1s forwards;
+  opacity: 0;
+  color: white;
+}
+
+.festival__subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-bottom: 40px;
+  line-height: 1.4;
+  animation: fadeIn 0.8s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.festival__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.festival__btn--primary {
+  background-color: var(--forro-orange);
+  color: white;
+  box-shadow: 0 10px 25px rgba(242, 125, 38, 0.3);
+  animation: fadeIn 0.8s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.festival__btn--primary:hover {
+  background-color: var(--forro-red);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(217, 68, 54, 0.4);
+}
+
+.festival__btn--large {
+  padding: 18px 48px;
+  font-size: 1.125rem;
+}
+
+.festival__btn--red {
+  background-color: var(--forro-red);
+  color: white;
+  box-shadow: 0 10px 25px rgba(217, 68, 54, 0.3);
+}
+
+.festival__btn--red:hover {
+  background-color: var(--forro-earth);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(140, 91, 63, 0.4);
+}
+
+@media (max-width: 768px) {
+  .festival__hero {
+    min-height: 400px;
+  }
+
+  .festival__hero-content {
+    padding: 0 16px;
+  }
+
+  .festival__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .festival__btn--large {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+}
+/* === HERO SECTION END === */
+
+/* === ABOUT SECTION START === */
+.festival__about {
   padding: 96px 24px;
   background: white;
 }
 
-.festival__agenda-container {
+.festival__about-container {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.festival__section-header {
-  margin-bottom: 64px;
-  text-align: center;
+.festival__about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .festival__about-grid {
+    grid-template-columns: 3fr 2fr;
+  }
 }
 
 .festival__section-title {
@@ -322,8 +522,6 @@ const festivalArtists = computed(() => [
   line-height: 1.2;
 }
 
-<<<<<<< Updated upstream
-=======
 .festival__section-text {
   font-size: 1.125rem;
   color: var(--text-secondary);
@@ -457,7 +655,6 @@ const festivalArtists = computed(() => [
   text-align: center;
 }
 
->>>>>>> Stashed changes
 .festival__section-line {
   height: 6px;
   width: 100px;
@@ -482,8 +679,6 @@ const festivalArtists = computed(() => [
     margin-bottom: 48px;
   }
 }
-<<<<<<< Updated upstream
-=======
 /* === AGENDA SECTION END === */
 
 /* === ARTISTS SECTION START === */
@@ -821,5 +1016,4 @@ const festivalArtists = computed(() => [
   }
 }
 /* === PRICES SECTION END === */
->>>>>>> Stashed changes
 </style>

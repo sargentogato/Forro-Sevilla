@@ -217,10 +217,6 @@ onMounted(() => {
   border-bottom: 1px solid var(--border-light);
 }
 
-.main-content {
-  padding-top: 96px;
-}
-
 .header-container {
   display: flex;
   align-items: center;
