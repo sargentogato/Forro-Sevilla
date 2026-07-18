@@ -42,11 +42,12 @@ const { t } = useI18n();
 <style scoped>
 .hero {
   position: relative;
-  height: 90vh;
+  aspect-ratio: 3 / 2;
   min-height: 600px;
   text-align: center;
   overflow: hidden;
   color: white;
+  z-index: 0;
 }
 
 .hero-bg {
@@ -62,6 +63,7 @@ const { t } = useI18n();
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
 }
 
 .hero-overlay {

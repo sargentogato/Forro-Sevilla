@@ -463,7 +463,6 @@ onMounted(() => {
 }
 
 .main-content {
-  padding-top: 6rem;
   min-height: 100vh;
 }
 
