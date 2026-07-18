@@ -41,7 +41,7 @@ defineProps<{
 <style scoped>
 .festival__artists {
   padding: 96px 24px;
-  background-color: #f9fafb;
+  background-color: var(--bg-surface);
 }
 
 .festival__artists-container {
@@ -52,7 +52,7 @@ defineProps<{
 .festival__section-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 24px;
-  color: var(--dark);
+  color: var(--gray-900);
   font-family: var(--font-serif);
   line-height: 1.2;
 }
@@ -104,7 +104,7 @@ defineProps<{
   font-weight: 700;
   font-family: var(--font-serif);
   margin-bottom: 8px;
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .festival__artist-role {

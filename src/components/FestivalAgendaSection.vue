@@ -28,7 +28,7 @@ defineProps<{
 <style scoped>
 .festival__agenda {
   padding: 96px 24px;
-  background: white;
+  background: var(--bg-base);
 }
 
 .festival__agenda-container {
@@ -44,7 +44,7 @@ defineProps<{
 .festival__section-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 24px;
-  color: var(--dark);
+  color: var(--gray-900);
   font-family: var(--font-serif);
   line-height: 1.2;
 }

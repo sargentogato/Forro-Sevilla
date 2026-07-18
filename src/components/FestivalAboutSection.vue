@@ -47,7 +47,7 @@ defineProps<{
 <style scoped>
 .festival__about {
   padding: 96px 24px;
-  background: white;
+  background: var(--bg-surface);
 }
 
 .festival__about-container {
@@ -71,7 +71,7 @@ defineProps<{
 .festival__section-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 24px;
-  color: var(--dark);
+  color: var(--gray-900);
   font-family: var(--font-serif);
   line-height: 1.2;
 }
@@ -106,7 +106,7 @@ defineProps<{
 .festival__check-icon {
   width: 48px;
   height: 48px;
-  background-color: #ecfdf5;
+  background-color: var(--gray-100);
   color: var(--forro-green);
   border-radius: 50%;
   display: flex;

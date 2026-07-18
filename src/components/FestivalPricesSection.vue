@@ -145,7 +145,7 @@ defineProps<{
 <style scoped>
 .festival__prices {
   padding: 96px 24px;
-  background-color: #fdf5f0;
+  background-color: var(--bg-base);
 }
 
 .festival__prices-container {
@@ -165,7 +165,7 @@ defineProps<{
 .festival__section-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 24px;
-  color: var(--dark);
+  color: var(--gray-900);
   font-family: var(--font-serif);
   line-height: 1.2;
 }
@@ -177,7 +177,7 @@ defineProps<{
 .festival__prices-table-wrapper {
   max-width: 1000px;
   margin: 0 auto 48px;
-  background: white;
+  background: var(--bg-surface);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -210,12 +210,12 @@ defineProps<{
 }
 
 .festival__prices-table tbody tr {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--gray-200);
   transition: background-color 0.3s ease;
 }
 
 .festival__prices-table tbody tr:hover {
-  background-color: #fff7ed;
+  background-color: var(--gray-100);
 }
 
 .festival__prices-table tbody tr:last-child {
@@ -253,7 +253,7 @@ defineProps<{
   justify-content: center;
   gap: 12px;
   padding: 16px 24px;
-  background: white;
+  background: var(--bg-surface);
   border-left: 4px solid var(--forro-orange);
   border-radius: 8px;
   font-size: 0.95rem;
@@ -324,10 +324,10 @@ defineProps<{
 }
 
 .festival__info-card {
-  background: white;
+  background: var(--bg-surface);
   padding: 40px 32px;
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--gray-200);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -348,7 +348,7 @@ defineProps<{
   font-family: var(--font-serif);
   margin-bottom: 24px;
   text-align: center;
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .festival__info-card-icon {
@@ -379,7 +379,7 @@ defineProps<{
 }
 
 .festival__info-card-content strong {
-  color: var(--dark);
+  color: var(--gray-900);
   font-weight: 700;
 }
 
@@ -395,7 +395,7 @@ defineProps<{
   justify-content: center;
   gap: 12px;
   padding: 14px 20px;
-  background: #f3f4f6;
+  background: var(--gray-100);
   border-radius: 12px;
   color: var(--forro-orange);
   font-weight: 700;
@@ -405,7 +405,7 @@ defineProps<{
 }
 
 .festival__info-link:hover {
-  background: #fff7ed;
+  background: var(--gray-200);
   border-color: var(--forro-orange);
   transform: translateX(4px);
 }
