@@ -42,7 +42,6 @@ const { t } = useI18n();
 <style scoped>
 .hero {
   position: relative;
-  aspect-ratio: 3 / 2;
   min-height: 600px;
   text-align: center;
   overflow: hidden;
