@@ -1,11 +1,55 @@
 const events = {
   intro_title: 'El Forró te espera — no faltes a ningún encuentro',
+  intro_upcoming: 'Próximamente',
+  intro_description: 'El Forró te espera — no faltes a ningún encuentro. Síguenos en Instagram @forrosevilla para estar al tanto de las novedades.',
   types_title: 'Tipos de eventos que organizamos',
   type_parties: 'Fiestas sociales',
   type_outdoor: 'Rodas al aire libre',
   type_concerts: 'Conciertos en vivo',
   type_collab: 'Colaboraciones culturales',
   upcoming: 'Próximos',
+
+  social_title: 'Fiestas sociales',
+  social_subtitle: 'Encuentros abiertos para bailar y conectar',
+  social_description: 'Momentos para compartir música, clases cortas y bailes colectivos en un ambiente relajado y divertido.',
+  social_when: 'Domingos y festivos, por la tarde.',
+  social_where: 'Plaza central y espacios exteriores.',
+  social_highlight_1: 'Clases rápidas de conexión',
+  social_highlight_2: 'Música en vivo y DJ',
+  social_highlight_3: 'Ambiente para conocer gente nueva',
+
+  openair_title: 'Open air nocturno',
+  openair_subtitle: 'Sesiones en la calle con fuego, ritmo y baile.',
+  openair_description: 'Espacios al aire libre con shows, DJs y momentos para disfrutar del baile bajo el cielo.',
+  openair_when: 'Viernes y sábados desde el atardecer.',
+  openair_where: 'Jardines del festival y paseos peatonales.',
+  openair_highlight_1: 'Shows de percusión y malabares',
+  openair_highlight_2: 'Sesiones con DJs invitados',
+  openair_highlight_3: 'Ambiente libre y festivo',
+
+  concerts_title: 'Conciertos destacados',
+  concerts_subtitle: 'Presentaciones en escenario con artistas invitados.',
+  concerts_description: 'Conciertos con programación especial que combinan artista y música en vivo para una experiencia única.',
+  concerts_when: 'Sábado noche.',
+  concerts_where: 'Escenario principal.',
+  concerts_highlight_1: 'Artistas nacionales e internacionales',
+  concerts_highlight_2: 'Producción técnica cuidada',
+  concerts_highlight_3: 'Atmosfera de espectáculo',
+
+  collab_title: 'Clases colaborativas',
+  collab_subtitle: 'Sesiones abiertas para aprender con diferentes profesores.',
+  collab_description: 'Clases diseñadas para compartir estilos, técnicas y experiencias entre bailarines de todos los niveles.',
+  collab_when: 'Mañanas de sábado.',
+  collab_where: 'Sala de formación y zona comunitaria.',
+  collab_highlight_1: 'Profesores invitados',
+  collab_highlight_2: 'Ejercicios en pareja y grupales',
+  collab_highlight_3: 'Técnicas variadas y creativas',
+
+  modal_status_active: 'Activo',
+  modal_status_inactive: 'Inactivo',
+  modal_when: 'Cuándo',
+  modal_where: 'Dónde',
+  modal_link: 'Ver post en Instagram'
 } as const;
 
 export default events;

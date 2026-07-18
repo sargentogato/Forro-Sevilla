@@ -149,7 +149,7 @@ const { t } = useI18n();
 }
 
 .contact-page__info {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 2rem;
   padding: 2rem;
   box-shadow: var(--shadow-md);
@@ -173,9 +173,9 @@ const { t } = useI18n();
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  background: var(--card-bg);
+  background: var(--bg-base);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
   text-decoration: none;
   transition: var(--transition);
   min-width: 0;
@@ -207,7 +207,7 @@ const { t } = useI18n();
   width: 3rem;
   height: 3rem;
   border-radius: 1rem;
-  background: white;
+  background: var(--bg-surface);
   color: var(--forro-orange);
   display: flex;
   align-items: center;
@@ -235,7 +235,7 @@ const { t } = useI18n();
 .contact-page__value {
   margin: 0;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--gray-900);
   line-height: 1.4;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -246,9 +246,9 @@ const { t } = useI18n();
   min-height: 500px;
   border-radius: 2rem;
   overflow: hidden;
-  border: 8px solid white;
+  border: 8px solid var(--bg-surface);
   box-shadow: var(--shadow-md);
-  background-color: #f3f4f6;
+  background-color: var(--bg-base);
 }
 
 .contact-page__map iframe {

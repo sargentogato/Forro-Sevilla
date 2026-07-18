@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import type { EventTypeData } from "../data/event-types";
+
+const { t } = useI18n();
 
 const props = defineProps<{
   visible: boolean;
@@ -37,10 +40,10 @@ function closeModal() {
       <div class="event-type-modal__header">
         <div class="event-type-modal__meta">
           <span class="event-type-modal__status">{{
-            typeData.status === "activo" ? "Activo" : "Inactivo"
+            typeData.status === "activo" ? t('events.modal_status_active') : t('events.modal_status_inactive')
           }}</span>
-          <h2 class="event-type-modal__title">{{ typeData.title }}</h2>
-          <p class="event-type-modal__subtitle">{{ typeData.subtitle }}</p>
+          <h2 class="event-type-modal__title">{{ t(typeData.title) }}</h2>
+          <p class="event-type-modal__subtitle">{{ t(typeData.subtitle) }}</p>
         </div>
         <img
           v-if="typeImage"
@@ -51,16 +54,16 @@ function closeModal() {
       </div>
 
       <div class="event-type-modal__content">
-        <p class="event-type-modal__description">{{ typeData.description }}</p>
+        <p class="event-type-modal__description">{{ t(typeData.description) }}</p>
 
         <div class="event-type-modal__details">
           <div class="event-type-modal__detail-item" v-if="typeData.when">
-            <span class="event-type-modal__detail-label">Cuándo</span>
-            <p>{{ typeData.when }}</p>
+            <span class="event-type-modal__detail-label">{{ t('events.modal_when') }}</span>
+            <p>{{ t(typeData.when) }}</p>
           </div>
           <div class="event-type-modal__detail-item" v-if="typeData.where">
-            <span class="event-type-modal__detail-label">Dónde</span>
-            <p>{{ typeData.where }}</p>
+            <span class="event-type-modal__detail-label">{{ t('events.modal_where') }}</span>
+            <p>{{ t(typeData.where) }}</p>
           </div>
         </div>
 
@@ -69,7 +72,7 @@ function closeModal() {
           v-if="typeData.highlights?.length"
         >
           <li v-for="(item, index) in typeData.highlights" :key="index">
-            {{ item }}
+            {{ t(item) }}
           </li>
         </ul>
 
@@ -79,7 +82,7 @@ function closeModal() {
           target="_blank"
           rel="noopener noreferrer"
           class="event-type-modal__link"
-          >Ver post en Instagram</a
+          >{{ t('events.modal_link') }}</a
         >
       </div>
     </div>

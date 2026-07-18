@@ -65,9 +65,9 @@ function closeModal() {
       <div class="events-page__inner">
         <div v-if="hasIntroState" class="events-page__empty-state">
           <Calendar :size="80" class="events-page__empty-icon" />
-          <h2 class="events-page__empty-title">{{ eventsData[0].title }}</h2>
+          <h2 class="events-page__empty-title">{{ t(eventsData[0].title) }}</h2>
           <p class="events-page__empty-description">
-            {{ eventsData[0].description }}
+            {{ t(eventsData[0].description) }}
           </p>
           <a
             href="https://instagram.com/forrosevilla"
@@ -111,8 +111,8 @@ function closeModal() {
                 typeIcons[type.id] ?? "❖"
               }}</span>
               <div>
-                <span class="events-page__type-label">{{ type.title }}</span>
-                <p class="events-page__type-summary">{{ type.subtitle }}</p>
+                <span class="events-page__type-label">{{ t(type.title) }}</span>
+                <p class="events-page__type-summary">{{ t(type.subtitle) }}</p>
               </div>
             </button>
           </div>
@@ -180,7 +180,7 @@ function closeModal() {
   width: 100%;
   padding: 3rem 1.5rem;
   border-radius: var(--radius-lg);
-  background: white;
+  background: var(--bg-surface);
   box-shadow: var(--shadow-md);
   text-align: center;
 }
@@ -195,7 +195,7 @@ function closeModal() {
   margin: 0 0 1rem;
   font-size: 1.8rem;
   font-family: var(--font-serif);
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .events-page__empty-description {
@@ -233,7 +233,7 @@ function closeModal() {
   padding: 2.5rem 1.5rem;
   border-radius: 2rem;
   border: 1px solid var(--gray-200);
-  background: #fdf5f0;
+  background: var(--bg-base);
 }
 
 .events-page__types-title {
@@ -241,7 +241,7 @@ function closeModal() {
   text-align: center;
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-family: var(--font-serif);
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .events-page__types-grid {
@@ -258,7 +258,7 @@ function closeModal() {
   gap: 1rem;
   width: 100%;
   padding: 1.2rem;
-  background: white;
+  background: var(--bg-surface);
   border: none;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -307,7 +307,7 @@ function closeModal() {
 .events-page__type-label {
   display: block;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--gray-900);
 }
 
 .events-page__type-summary {

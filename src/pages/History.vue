@@ -101,10 +101,10 @@ const tabs = computed(() => [
 
 .tabs-nav {
   display: flex;
-  background: white;
+  background: var(--bg-surface);
   padding: 0.5rem;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-100);
+  border: 1px solid var(--gray-200);
   margin-bottom: 4rem;
   gap: 0.5rem;
 }
@@ -138,7 +138,7 @@ const tabs = computed(() => [
 }
 
 .tab-content {
-  background: white;
+  background: var(--bg-surface);
   padding: 5rem;
   border-radius: 3rem;
   min-height: 500px;
@@ -178,9 +178,9 @@ const tabs = computed(() => [
 }
 
 .glass-orange {
-  background: #fff7ed;
-  color: var(--forro-earth);
-  border: 1px solid #ffedd5;
+  background: var(--bg-base);
+  color: var(--forro-orange);
+  border: 1px solid var(--gray-200);
 }
 
 .profile-layout {

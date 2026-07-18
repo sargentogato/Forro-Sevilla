@@ -1,14 +1,14 @@
 {
   "id": "concerts",
-  "title": "Conciertos destacados",
-  "subtitle": "Presentaciones en escenario con artistas invitados.",
-  "description": "Conciertos con programación especial que combinan artista y música en vivo para una experiencia única.",
-  "when": "Sábado noche.",
-  "where": "Escenario principal.",
+  "title": "events.concerts_title",
+  "subtitle": "events.concerts_subtitle",
+  "description": "events.concerts_description",
+  "when": "events.concerts_when",
+  "where": "events.concerts_where",
   "highlights": [
-    "Artistas nacionales e internacionales",
-    "Producción técnica cuidada",
-    "Atmosfera de espectáculo"
+    "events.concerts_highlight_1",
+    "events.concerts_highlight_2",
+    "events.concerts_highlight_3"
   ],
   "instagram": "https://instagram.com/forrosevilla",
   "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",

@@ -1,8 +1,8 @@
 [
   {
     "id": "intro",
-    "title": "Próximamente",
-    "description": "El Forró te espera — no faltes a ningún encuentro. Síguenos en Instagram @forrosevilla para estar al tanto de las novedades.",
+    "title": "events.intro_upcoming",
+    "description": "events.intro_description",
     "date": "",
     "location": "Sevilla",
     "price": ""

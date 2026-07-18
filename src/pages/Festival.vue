@@ -68,6 +68,12 @@ const translatedPrices = computed(() =>
 );
 
 const festivalArtists = computed(() => [
+  /* 
+    INSTRUCCIONES PARA IMÁGENES LOCALES (ARTISTAS):
+    1. Guarda las fotos de los artistas en public/images/festival/ (e.g. artista-1.jpg)
+    2. Recomendación: que las fotos sean cuadradas (ej: 600x600px) para que el círculo quede perfecto y pesen poco.
+    3. Cambia la URL de Unsplash por la ruta local: image: "/images/festival/artista-1.jpg"
+  */
   {
     name: "Elton Rodrigues",
     role: t("festival.artists"),
@@ -87,6 +93,33 @@ const festivalArtists = computed(() => [
       "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop",
   },
 ]);
+
+/* 
+// ============================================================================
+// PARA CAMBIAR A IMÁGENES LOCALES DE ARTISTAS:
+// 1. Mete las fotos (ej. artista-1.jpg) en la carpeta public/images/festival/
+// 2. Comenta el bloque 'const festivalArtists = computed...' de arriba.
+// 3. Descomenta el bloque de abajo y ajusta los nombres de las imágenes.
+// ============================================================================
+
+const festivalArtists = computed(() => [
+  {
+    name: "Elton Rodrigues",
+    role: t("festival.artists"),
+    image: "/images/festival/artista-1.jpg",
+  },
+  {
+    name: "Carol Benigno",
+    role: t("festival.instrument_percussion"),
+    image: "/images/festival/artista-2.jpg",
+  },
+  {
+    name: "Sandrinho Dupan",
+    role: t("festival.instrument_accordion"),
+    image: "/images/festival/artista-3.jpg",
+  },
+]);
+*/
 </script>
 
 <template>

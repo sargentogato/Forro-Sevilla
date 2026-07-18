@@ -1,11 +1,55 @@
 const events = {
   intro_title: "Forró awaits you — don't miss any gathering",
+  intro_upcoming: 'Coming soon',
+  intro_description: "Forró awaits you — don't miss any gathering. Follow us on Instagram @forrosevilla to stay updated.",
   types_title: 'Types of events we organize',
   type_parties: 'Social parties',
   type_outdoor: 'Outdoor rodas',
   type_concerts: 'Live concerts',
   type_collab: 'Cultural collaborations',
   upcoming: 'Upcoming',
+
+  social_title: 'Social parties',
+  social_subtitle: 'Open gatherings to dance and connect',
+  social_description: 'Moments to share music, short classes, and collective dancing in a relaxed and fun atmosphere.',
+  social_when: 'Sundays and holidays, afternoon.',
+  social_where: 'Central square and outdoor spaces.',
+  social_highlight_1: 'Quick connection classes',
+  social_highlight_2: 'Live music and DJ',
+  social_highlight_3: 'Atmosphere to meet new people',
+
+  openair_title: 'Night open air',
+  openair_subtitle: 'Street sessions with fire, rhythm, and dance.',
+  openair_description: 'Outdoor spaces with shows, DJs, and moments to enjoy dancing under the sky.',
+  openair_when: 'Fridays and Saturdays from sunset.',
+  openair_where: 'Festival gardens and pedestrian walkways.',
+  openair_highlight_1: 'Percussion and juggling shows',
+  openair_highlight_2: 'Sessions with guest DJs',
+  openair_highlight_3: 'Free and festive atmosphere',
+
+  concerts_title: 'Featured concerts',
+  concerts_subtitle: 'Stage performances with guest artists.',
+  concerts_description: 'Concerts with special programming that combine artist and live music for a unique experience.',
+  concerts_when: 'Saturday night.',
+  concerts_where: 'Main stage.',
+  concerts_highlight_1: 'National and international artists',
+  concerts_highlight_2: 'Careful technical production',
+  concerts_highlight_3: 'Show atmosphere',
+
+  collab_title: 'Collaborative classes',
+  collab_subtitle: 'Open sessions to learn with different teachers.',
+  collab_description: 'Classes designed to share styles, techniques, and experiences among dancers of all levels.',
+  collab_when: 'Saturday mornings.',
+  collab_where: 'Training room and community area.',
+  collab_highlight_1: 'Guest teachers',
+  collab_highlight_2: 'Couple and group exercises',
+  collab_highlight_3: 'Varied and creative techniques',
+
+  modal_status_active: 'Active',
+  modal_status_inactive: 'Inactive',
+  modal_when: 'When',
+  modal_where: 'Where',
+  modal_link: 'See Instagram post'
 } as const;
 
 export default events;

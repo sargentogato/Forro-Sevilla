@@ -1,14 +1,14 @@
 {
   "id": "social-parties",
-  "title": "Fiestas sociales",
-  "subtitle": "Encuentros abiertos para bailar y conectar",
-  "description": "Momentos para compartir música, clases cortas y bailes colectivos en un ambiente relajado y divertido.",
-  "when": "Domingos y festivos, por la tarde.",
-  "where": "Plaza central y espacios exteriores.",
+  "title": "events.social_title",
+  "subtitle": "events.social_subtitle",
+  "description": "events.social_description",
+  "when": "events.social_when",
+  "where": "events.social_where",
   "highlights": [
-    "Clases rápidas de conexión",
-    "Música en vivo y DJ",
-    "Ambiente para conocer gente nueva"
+    "events.social_highlight_1",
+    "events.social_highlight_2",
+    "events.social_highlight_3"
   ],
   "instagram": "https://instagram.com/forrosevilla",
   "image": "https://images.unsplash.com/photo-1519866273089-2ca3af17c967?auto=format&fit=crop&w=1200&q=80",

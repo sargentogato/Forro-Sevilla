@@ -12,8 +12,14 @@ withDefaults(
   }>(),
   {
     heroImage:
-      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1920&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1920&auto=format&fit",
     heroAlt: "Festival de Forró Sevilla",
+    /* 
+      // PARA CUANDO TENGAS LAS IMÁGENES EN LOCAL (e.g. en public/images/festival/), 
+      // puedes usar estas props en su lugar (y cambiar el HTML de abajo):
+      heroImageDesktop: "/images/festival/hero-desktop.jpg",
+      heroImageMobile: "/images/festival/hero-mobile.jpg",
+    */
   },
 );
 </script>
@@ -21,6 +27,7 @@ withDefaults(
 <template>
   <header class="festival__hero">
     <div class="festival__hero-bg">
+      <!-- IMAGEN ACTUAL (Externa Unsplash) -->
       <img
         :src="heroImage"
         :alt="heroAlt"
@@ -28,6 +35,21 @@ withDefaults(
         fetchpriority="high"
         decoding="async"
       />
+      <!-- 
+        // PARA IMÁGENES LOCALES (Comenta la etiqueta <img> de arriba y descomenta este bloque <picture>):
+        // Esto permite tener una imagen panorámica para PC y una más cuadrada para móviles.
+        
+        <picture>
+          <source media="(max-width: 768px)" srcset="/images/festival/hero-mobile.jpg" />
+          <img
+            src="/images/festival/hero-desktop.jpg"
+            :alt="heroAlt"
+            class="festival__hero-img"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      -->
       <div class="festival__hero-overlay"></div>
     </div>
     <div class="festival__hero-content">
@@ -65,6 +87,13 @@ withDefaults(
   align-items: center;
   overflow: hidden;
   padding: 15px;
+  min-height: 500px;
+}
+
+@media (min-width: 768px) {
+  .festival__hero {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .festival__hero-bg {
