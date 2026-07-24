@@ -40,7 +40,9 @@ function closeModal() {
       <div class="event-type-modal__header">
         <div class="event-type-modal__meta">
           <span class="event-type-modal__status">{{
-            typeData.status === "activo" ? t('events.modal_status_active') : t('events.modal_status_inactive')
+            typeData.status === "activo"
+              ? t("events.modal_status_active")
+              : t("events.modal_status_inactive")
           }}</span>
           <h2 class="event-type-modal__title">{{ t(typeData.title) }}</h2>
           <p class="event-type-modal__subtitle">{{ t(typeData.subtitle) }}</p>
@@ -54,15 +56,21 @@ function closeModal() {
       </div>
 
       <div class="event-type-modal__content">
-        <p class="event-type-modal__description">{{ t(typeData.description) }}</p>
+        <p class="event-type-modal__description">
+          {{ t(typeData.description) }}
+        </p>
 
         <div class="event-type-modal__details">
           <div class="event-type-modal__detail-item" v-if="typeData.when">
-            <span class="event-type-modal__detail-label">{{ t('events.modal_when') }}</span>
+            <span class="event-type-modal__detail-label">{{
+              t("events.modal_when")
+            }}</span>
             <p>{{ t(typeData.when) }}</p>
           </div>
           <div class="event-type-modal__detail-item" v-if="typeData.where">
-            <span class="event-type-modal__detail-label">{{ t('events.modal_where') }}</span>
+            <span class="event-type-modal__detail-label">{{
+              t("events.modal_where")
+            }}</span>
             <p>{{ t(typeData.where) }}</p>
           </div>
         </div>
@@ -82,7 +90,7 @@ function closeModal() {
           target="_blank"
           rel="noopener noreferrer"
           class="event-type-modal__link"
-          >{{ t('events.modal_link') }}</a
+          >{{ t("events.modal_link") }}</a
         >
       </div>
     </div>
@@ -183,7 +191,6 @@ function closeModal() {
 
 .event-type-modal__description {
   margin: 0;
-  color: var(--gray-700);
   line-height: 1.8;
 }
 

@@ -1,7 +1,7 @@
 const events = {
   intro_title: "Forró awaits you — don't miss any gathering",
   intro_upcoming: 'Coming soon',
-  intro_description: "Forró awaits you — don't miss any gathering. Follow us on Instagram @forrosevilla to stay updated.",
+  intro_description: "Forró awaits you — don't miss any gathering. Follow us on Instagram {'@'}forrosevilla to stay updated.",
   types_title: 'Types of events we organize',
   type_parties: 'Social parties',
   type_outdoor: 'Outdoor rodas',

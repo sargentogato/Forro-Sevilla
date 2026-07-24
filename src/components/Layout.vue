@@ -424,7 +424,6 @@ onMounted(() => {
   font-size: 0.8rem;
   font-weight: 900;
   margin-bottom: 2rem;
-  color: var(--gray-300);
 }
 
 .footer-links {

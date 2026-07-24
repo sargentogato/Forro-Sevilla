@@ -1,7 +1,7 @@
 const events = {
   intro_title: 'El Forró te espera — no faltes a ningún encuentro',
   intro_upcoming: 'Próximamente',
-  intro_description: 'El Forró te espera — no faltes a ningún encuentro. Síguenos en Instagram @forrosevilla para estar al tanto de las novedades.',
+  intro_description: 'El Forró te espera — no faltes a ningún encuentro. Síguenos en Instagram {\'@\'}forrosevilla para estar al tanto de las novedades.',
   types_title: 'Tipos de eventos que organizamos',
   type_parties: 'Fiestas sociales',
   type_outdoor: 'Rodas al aire libre',
