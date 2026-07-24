@@ -1,6 +1,11 @@
 <script setup lang="ts">
 defineProps<{
-  artists: Array<{
+  musicians: Array<{
+    name: string;
+    role: string;
+    image: string;
+  }>;
+  teachers: Array<{
     name: string;
     role: string;
     image: string;
@@ -14,24 +19,58 @@ defineProps<{
       <h2 class="festival__section-title festival__section-title--center">
         {{ $t("festival.artists_title") }}
       </h2>
-      <div class="festival__artists-grid">
-        <div
-          v-for="artist in artists"
-          :key="artist.name"
-          class="festival__artist-card"
-        >
-          <div class="festival__artist-image-wrapper">
-            <img
-              :src="artist.image"
-              :alt="artist.name"
-              class="festival__artist-image"
-              referrerpolicy="no-referrer"
-              loading="lazy"
-              decoding="async"
-            />
+
+      <div class="festival__artists-groups">
+        <div class="festival__artists-group">
+          <h3 class="festival__artists-group-title">
+            {{ $t("festival.musicians") }}
+          </h3>
+          <div class="festival__artists-grid">
+            <div
+              v-for="artist in musicians"
+              :key="artist.name"
+              class="festival__artist-card"
+            >
+              <div class="festival__artist-image-wrapper">
+                <img
+                  :src="artist.image"
+                  :alt="artist.name"
+                  class="festival__artist-image"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="festival__artist-name">{{ artist.name }}</h3>
+              <p class="festival__artist-role">{{ artist.role }}</p>
+            </div>
           </div>
-          <h3 class="festival__artist-name">{{ artist.name }}</h3>
-          <p class="festival__artist-role">{{ artist.role }}</p>
+        </div>
+
+        <div class="festival__artists-group">
+          <h3 class="festival__artists-group-title">
+            {{ $t("festival.teachers") }}
+          </h3>
+          <div class="festival__artists-grid">
+            <div
+              v-for="artist in teachers"
+              :key="artist.name"
+              class="festival__artist-card"
+            >
+              <div class="festival__artist-image-wrapper">
+                <img
+                  :src="artist.image"
+                  :alt="artist.name"
+                  class="festival__artist-image"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="festival__artist-name">{{ artist.name }}</h3>
+              <p class="festival__artist-role">{{ artist.role }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -61,11 +100,30 @@ defineProps<{
   text-align: center;
 }
 
+.festival__artists-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin-top: 64px;
+}
+
+.festival__artists-group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.festival__artists-group-title {
+  font-size: 1.75rem;
+  font-family: var(--font-serif);
+  color: var(--forro-orange);
+  text-align: center;
+}
+
 .festival__artists-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
-  margin-top: 64px;
 }
 
 @media (min-width: 768px) {
@@ -122,6 +180,10 @@ defineProps<{
 
   .festival__artists-grid {
     gap: 32px;
+  }
+
+  .festival__artists-group-title {
+    font-size: 1.45rem;
   }
 }
 </style>

@@ -67,30 +67,63 @@ const translatedPrices = computed(() =>
   })),
 );
 
-const festivalArtists = computed(() => [
-  /* 
-    INSTRUCCIONES PARA IMÁGENES LOCALES (ARTISTAS):
-    1. Guarda las fotos de los artistas en public/images/festival/ (e.g. artista-1.jpg)
-    2. Recomendación: que las fotos sean cuadradas (ej: 600x600px) para que el círculo quede perfecto y pesen poco.
-    3. Cambia la URL de Unsplash por la ruta local: image: "/images/festival/artista-1.jpg"
-  */
+const festivalMusicians = computed(() => [
   {
-    name: "Elton Rodrigues",
-    role: t("festival.artists"),
+    name: "Everton Coroné",
+    role: "Viernes y domingo · acordeón",
     image:
       "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
   },
   {
-    name: "Carol Benigno",
-    role: t("festival.instrument_percussion"),
+    name: "Carlinha Peracio",
+    role: "Viernes, sábado y domingo · zabumba",
     image:
       "https://images.unsplash.com/photo-1514525253344-f814d072e507?q=80&w=600&auto=format&fit=crop",
   },
   {
-    name: "Sandrinho Dupan",
-    role: t("festival.instrument_accordion"),
+    name: "Thainá Souza",
+    role: "Viernes y domingo · triángulo",
     image:
       "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Carol Benigno",
+    role: "Sábado · acordeón",
+    image:
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Sandrinho Dupan",
+    role: "Sábado · triángulo",
+    image:
+      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=600&auto=format&fit=crop",
+  },
+]);
+
+const festivalTeachers = computed(() => [
+  {
+    name: "Sonia Portolo",
+    role: "Profesora",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Fabio Reis",
+    role: "Profesor",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Ricelli Pinheiro",
+    role: "Profesor",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Elton Rodrigues",
+    role: "Profesor",
+    image:
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
   },
 ]);
 
@@ -151,7 +184,10 @@ const festivalArtists = computed(() => [
     <!-- ============================================= AGENDA SECTION END === -->
 
     <!-- === ARTISTS SECTION START === -->
-    <FestivalArtistsSection :artists="festivalArtists" />
+    <FestivalArtistsSection
+      :musicians="festivalMusicians"
+      :teachers="festivalTeachers"
+    />
     <!-- ============================================= ARTISTS SECTION END === -->
 
     <!-- === PRICES SECTION START === -->

@@ -6,5 +6,6 @@ import events from './events';
 import contact from './contact';
 import history from './history';
 import common from './common';
+import cookies from './cookies';
 
-export default { nav, home, classes, festival, events, contact, history, common };
+export default { nav, home, classes, festival, events, contact, history, common, cookies };

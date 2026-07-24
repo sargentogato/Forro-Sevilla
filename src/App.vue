@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Layout from './components/Layout.vue';
+import CookieBanner from './components/CookieBanner.vue';
 </script>
 
 <template>
@@ -18,4 +19,5 @@ import Layout from './components/Layout.vue';
       </transition>
     </router-view>
   </Layout>
+  <CookieBanner />
 </template>

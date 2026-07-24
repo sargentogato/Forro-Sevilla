@@ -129,7 +129,7 @@ const isOpen = ref(false);
 
 .details-inner {
   padding: 16px 24px 24px;
-  color: var(--gray-700);
+  color: var(--gray-250);
   font-size: 0.9rem;
   line-height: 1.6;
 }

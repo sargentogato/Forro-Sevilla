@@ -168,7 +168,7 @@ const plans = [
         {{ t("classes.cta_desc") }}
       </p>
       <a
-        href="https://forms.gle/X4xaPv1dw6F6ALCt9"
+        href="https://wa.me/603176756"
         target="_blank"
         rel="noopener noreferrer"
         class="classes-content__btn classes-content__btn--primary classes-content__btn--big"

@@ -185,6 +185,8 @@ onMounted(() => {
           <router-link to="/contacto" class="f-link">{{
             t("nav.contact")
           }}</router-link>
+          <router-link :to="{ name: 'CookiesPage' }" class="f-link">{{ t("cookies.policy.title") }}</router-link>
+          <router-link :to="{ name: 'PrivacyPage' }" class="f-link">{{ t("cookies.privacy.title") }}</router-link>
         </div>
       </div>
       <div class="footer-col">
