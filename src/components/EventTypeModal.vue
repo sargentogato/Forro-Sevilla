@@ -105,6 +105,7 @@ function closeModal() {
   display: grid;
   place-items: center;
   padding: 1.5rem;
+  color: var(--gray-250);
 }
 
 .event-type-modal__overlay {
@@ -173,7 +174,6 @@ function closeModal() {
 
 .event-type-modal__subtitle {
   margin: 0;
-  color: var(--gray-600);
   line-height: 1.7;
 }
 
