@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { BookOpen, Map, User, X } from "lucide-vue-next";
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { BookOpen, Map, User } from "lucide-vue-next";
+import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { resolveAssetPath } from "../utils/assetPaths";
 
 const { t } = useI18n();
 const activeTab = ref("forro");
-const selectedImage = ref<{
-  src: string;
-  alt: string;
-  caption?: string;
-} | null>(null);
 
 const tabs = computed(() => [
   { id: "forro", name: t("history.tab_forro"), icon: BookOpen },
@@ -69,28 +64,6 @@ const galleryImages = [
     variant: "default",
   },
 ];
-
-const openImage = (image: { src: string; alt: string; caption?: string }) => {
-  selectedImage.value = image;
-};
-
-const closeImage = () => {
-  selectedImage.value = null;
-};
-
-const handleKeydown = (event: KeyboardEvent) => {
-  if (event.key === "Escape") {
-    closeImage();
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("keydown", handleKeydown);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("keydown", handleKeydown);
-});
 </script>
 
 <template>
@@ -375,36 +348,10 @@ onBeforeUnmount(() => {
                   type="button"
                   class="masonry-card"
                   :class="`masonry-card--${image.variant}`"
-                  @click="openImage(image)"
-                  aria-label="Ampliar imagen"
+                  aria-label="Ver imagen"
                 >
                   <img :src="image.src" :alt="image.alt" loading="lazy" />
                 </button>
-              </div>
-            </div>
-
-            <div
-              v-if="selectedImage"
-              class="lightbox-backdrop"
-              @click.self="closeImage"
-            >
-              <div class="lightbox-modal">
-                <button
-                  type="button"
-                  class="lightbox-close"
-                  @click="closeImage"
-                  aria-label="Cerrar imagen"
-                >
-                  <X :size="24" />
-                </button>
-                <img
-                  :src="selectedImage.src"
-                  :alt="selectedImage.alt"
-                  class="lightbox-image"
-                />
-                <p v-if="selectedImage.caption" class="lightbox-caption">
-                  {{ selectedImage.caption }}
-                </p>
               </div>
             </div>
           </div>
@@ -680,7 +627,6 @@ onBeforeUnmount(() => {
   overflow: hidden;
   background: var(--bg-surface);
   box-shadow: var(--shadow-md);
-  cursor: pointer;
   break-inside: avoid;
 }
 
@@ -706,59 +652,6 @@ onBeforeUnmount(() => {
 .masonry-card--wide img {
   min-height: 16rem;
   object-fit: cover;
-}
-
-.lightbox-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  background: rgba(12, 12, 12, 0.8);
-  backdrop-filter: blur(6px);
-}
-
-.lightbox-modal {
-  position: relative;
-  width: min(100%, 900px);
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.lightbox-image {
-  max-width: 100%;
-  max-height: 78vh;
-  object-fit: contain;
-  border-radius: 1.25rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-}
-
-.lightbox-caption {
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--forro-earth);
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
 }
 
 @media (min-width: 640px) {

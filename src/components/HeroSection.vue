@@ -11,7 +11,7 @@ const { t } = useI18n();
         src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop"
         alt="Pareja bailando forró"
         class="hero-img"
-        fetchpriority="high"
+        loading="eager"
         decoding="async"
       />
       <div class="hero-overlay"></div>
