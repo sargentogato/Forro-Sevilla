@@ -2,6 +2,7 @@
 import { BookOpen, Map, User, X } from "lucide-vue-next";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { resolveAssetPath } from "../utils/assetPaths";
 
 const { t } = useI18n();
 const activeTab = ref("forro");
@@ -20,49 +21,49 @@ const tabs = computed(() => [
 const galleryImages = [
   {
     id: 1,
-    src: "/images/elton/gallery-1.jpg",
+    src: resolveAssetPath("/images/elton/gallery-1.jpg"),
     alt: "Elton Forró",
     caption: "Elton en escena",
     variant: "tall",
   },
   {
     id: 2,
-    src: "/images/elton/gallery-2.jpg",
+    src: resolveAssetPath("/images/elton/gallery-2.jpg"),
     alt: "Elton Forró",
     caption: "Momento de baile",
     variant: "wide",
   },
   {
     id: 3,
-    src: "/images/elton/gallery-3.jpg",
+    src: resolveAssetPath("/images/elton/gallery-3.jpg"),
     alt: "Elton Forró",
     caption: "Encuentro con la comunidad",
     variant: "default",
   },
   {
     id: 4,
-    src: "/images/elton/gallery-4.jpg",
+    src: resolveAssetPath("/images/elton/gallery-4.jpg"),
     alt: "Elton Forró",
     caption: "Público disfrutando",
     variant: "tall",
   },
   {
     id: 5,
-    src: "/images/elton/gallery-5.jpg",
+    src: resolveAssetPath("/images/elton/gallery-5.jpg"),
     alt: "Elton Forró",
     caption: "Música y tradición",
     variant: "default",
   },
   {
     id: 6,
-    src: "/images/elton/gallery-6.jpg",
+    src: resolveAssetPath("/images/elton/gallery-6.jpg"),
     alt: "Elton Forró",
     caption: "Estilo y energía",
     variant: "wide",
   },
   {
     id: 7,
-    src: "/images/elton/gallery-7.jpg",
+    src: resolveAssetPath("/images/elton/gallery-7.jpg"),
     alt: "Elton Forró",
     caption: "Celebración del forró",
     variant: "default",
@@ -132,7 +133,7 @@ onBeforeUnmount(() => {
               </div>
               <div class="media-wrapper hover-lift">
                 <img
-                  src="/images/history/forro-couple.jpg"
+                  :src="resolveAssetPath('/images/history/forro-couple.jpg')"
                   alt="Old forró"
                   class="shadow-lg object-cover w-full h-full"
                   loading="lazy"
@@ -156,7 +157,7 @@ onBeforeUnmount(() => {
               </div>
               <div class="media-wrapper hover-lift">
                 <img
-                  src="/images/history/forro-festival.jpg"
+                  :src="resolveAssetPath('/images/history/forro-festival.jpg')"
                   alt="¿Qué es el Forró?"
                   class="shadow-lg object-cover w-full h-full"
                   loading="lazy"
@@ -183,7 +184,7 @@ onBeforeUnmount(() => {
             <div class="grid grid-2 gap-8 items-center mb-16">
               <div class="media-wrapper hover-lift order-2-mobile">
                 <img
-                  src="/images/history/forro-couple.jpg"
+                  :src="resolveAssetPath('/images/history/forro-couple.jpg')"
                   alt="Bailando Forró"
                   class="shadow-lg object-cover w-full h-full"
                   loading="lazy"
@@ -282,7 +283,11 @@ onBeforeUnmount(() => {
                   </h2>
                   <div class="media-banner mb-6 overflow-hidden rounded-xl">
                     <img
-                      src="/images/history/forro-instruments.jpg"
+                      :src="
+                        resolveAssetPath(
+                          '/images/history/forro-instruments.jpg',
+                        )
+                      "
                       alt="Instrumentos"
                       class="shadow-md object-cover w-full h-48 hover-scale"
                       loading="lazy"
@@ -313,7 +318,7 @@ onBeforeUnmount(() => {
               class="media-banner mt-12 overflow-hidden rounded-2xl hover-lift"
             >
               <img
-                src="/images/history/forro-festival.jpg"
+                :src="resolveAssetPath('/images/history/forro-festival.jpg')"
                 alt="Students dancing"
                 class="shadow-md object-cover w-full hover-scale"
                 loading="lazy"
@@ -330,7 +335,7 @@ onBeforeUnmount(() => {
             <div class="profile-layout flex gap-12 items-center mb-12">
               <div class="profile-pic-wrapper shadow-lg hover-lift">
                 <img
-                  src="/images/elton/profile.jpg"
+                  :src="resolveAssetPath('/images/elton/profile.jpg')"
                   alt="Elton Rodrigues"
                   class="object-cover w-full h-full"
                   loading="lazy"

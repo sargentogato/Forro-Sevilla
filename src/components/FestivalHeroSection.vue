@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ChevronRight } from "lucide-vue-next";
+import { computed } from "vue";
+import { resolveAssetPath } from "../utils/assetPaths";
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     badge: string;
     title: string;
@@ -22,6 +24,8 @@ withDefaults(
     */
   },
 );
+
+const heroImageSrc = computed(() => resolveAssetPath(props.heroImage || ""));
 </script>
 
 <template>
@@ -29,7 +33,7 @@ withDefaults(
     <div class="festival__hero-bg">
       <!-- IMAGEN ACTUAL (Externa Unsplash) -->
       <img
-        :src="heroImage"
+        :src="heroImageSrc"
         :alt="heroAlt"
         class="festival__hero-img"
         fetchpriority="high"
