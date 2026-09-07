@@ -67,23 +67,23 @@ const galleryImages = [
 </script>
 
 <template>
-  <div class="history-page">
-    <header class="page-header flex-center bg-gold text-white">
+  <div class="history">
+    <header class="history__header history__header--gold">
       <div class="container animate-fade">
-        <h1 class="text-white">{{ t("nav.history") }}</h1>
-        <div class="title-underline"></div>
+        <h1 class="history__title">{{ t("nav.history") }}</h1>
+        <div class="history__title-underline"></div>
       </div>
     </header>
 
     <div class="container section">
       <!-- Tabs navigation -->
-      <div class="tabs-nav animate-fade">
+      <div class="history__tabs animate-fade">
         <button
           v-for="tab in tabs"
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="tab-btn"
-          :class="{ active: activeTab === tab.id }"
+          class="history__tab"
+          :class="{ 'history__tab--active': activeTab === tab.id }"
         >
           <component :is="tab.icon" :size="20" />
           <span>{{ tab.name }}</span>
@@ -91,84 +91,84 @@ const galleryImages = [
       </div>
 
       <!-- Tab content -->
-      <div class="tab-content animate-fade shadow-lg">
+      <div class="history__content animate-fade">
         <transition name="fade-slide" mode="out-in">
           <!-- FORRO HISTORY TAB -->
-          <div v-if="activeTab === 'forro'" key="forro" class="content-view">
+          <div v-if="activeTab === 'forro'" key="forro" class="history__view">
             <!-- Original Intro Section -->
-            <div class="grid grid-2 gap-8 items-center mb-16">
+            <div class="grid grid-2 gap-8 history__split history__section">
               <div>
-                <h2 class="serif h2-title mb-6">
+                <h2 class="history__heading">
                   {{ t("history.forro_subtitle") }}
                 </h2>
-                <p class="text-desc">{{ t("history.forro_p1") }}</p>
-                <p class="text-desc">{{ t("history.forro_p2") }}</p>
+                <p class="history__text">{{ t("history.forro_p1") }}</p>
+                <p class="history__text">{{ t("history.forro_p2") }}</p>
               </div>
-              <div class="media-wrapper hover-lift">
+              <div class="history__media history__hover-lift">
                 <img
                   :src="resolveAssetPath('/images/history/forro-couple.jpg')"
                   alt="Old forró"
-                  class="shadow-lg object-cover w-full h-full"
+                  class="history__image"
                   loading="lazy"
                 />
               </div>
             </div>
 
             <div
-              class="quote-box glass-orange serif italic text-center mb-16 shadow-sm"
+              class="history__quote history__quote--orange history__quote--section-end"
             >
               {{ t("history.forro_quote") }}
             </div>
 
             <!-- Section 1: Intro -->
-            <div class="grid grid-2 gap-8 items-center mb-16">
+            <div class="grid grid-2 gap-8 history__split history__section">
               <div>
-                <h2 class="serif h2-title">
+                <h2 class="history__heading">
                   {{ t("history.forro_what_title") }}
                 </h2>
-                <p class="text-desc">{{ t("history.forro_what_p1") }}</p>
+                <p class="history__text">{{ t("history.forro_what_p1") }}</p>
               </div>
-              <div class="media-wrapper hover-lift">
+              <div class="history__media history__hover-lift">
                 <img
                   :src="resolveAssetPath('/images/history/forro-festival.jpg')"
                   alt="¿Qué es el Forró?"
-                  class="shadow-lg object-cover w-full h-full"
+                  class="history__image"
                   loading="lazy"
                 />
               </div>
             </div>
 
             <!-- Section 2: Origin of Term -->
-            <div class="glass p-8 rounded-2xl mb-16 shadow-md border-light">
-              <h2 class="serif h2-title text-center mb-8">
+            <div class="history__panel history__section glass">
+              <h2 class="history__heading history__heading--centered">
                 {{ t("history.forro_origin_title") }}
               </h2>
-              <p class="text-desc">{{ t("history.forro_origin_p1") }}</p>
-              <p class="text-desc">{{ t("history.forro_origin_p2") }}</p>
-              <p class="text-desc">{{ t("history.forro_origin_p3") }}</p>
+              <p class="history__text">{{ t("history.forro_origin_p1") }}</p>
+              <p class="history__text">{{ t("history.forro_origin_p2") }}</p>
+              <p class="history__text">{{ t("history.forro_origin_p3") }}</p>
               <div
-                class="quote-box glass-orange serif italic text-center mt-8 shadow-sm"
+                class="history__quote history__quote--orange history__quote--nested"
               >
                 {{ t("history.forro_origin_p4") }}
               </div>
             </div>
 
             <!-- Section 3: How to dance -->
-            <div class="grid grid-2 gap-8 items-center mb-16">
-              <div class="media-wrapper hover-lift order-2-mobile">
+            <div class="grid grid-2 gap-8 history__split history__section">
+              <div class="history__media history__hover-lift order-2-mobile">
                 <img
                   :src="resolveAssetPath('/images/history/forro-couple.jpg')"
                   alt="Bailando Forró"
-                  class="shadow-lg object-cover w-full h-full"
+                  class="history__image"
                   loading="lazy"
                 />
               </div>
-              <div class="order-1-mobile">
-                <h2 class="serif h2-title">
+              <div class="history__text-column order-1-mobile">
+                <h2 class="history__heading">
                   {{ t("history.forro_how_title") }}
                 </h2>
-                <p class="text-desc">{{ t("history.forro_how_p1") }}</p>
-                <p class="text-desc">
+                <p class="history__text">{{ t("history.forro_how_p1") }}</p>
+                <p class="history__text">
                   <strong
                     >{{ t("history.forro_how_p2").split(":")[0] }}:</strong
                   >
@@ -177,7 +177,7 @@ const galleryImages = [
                     t("history.forro_how_p2")
                   }}
                 </p>
-                <p class="text-desc">
+                <p class="history__text">
                   <strong
                     >{{ t("history.forro_how_p3").split(":")[0] }}:</strong
                   >
@@ -190,44 +190,36 @@ const galleryImages = [
             </div>
 
             <!-- Section 4: Rhythms -->
-            <div class="mb-16">
-              <h2 class="serif h2-title text-center mb-8">
+            <div class="history__section">
+              <h2 class="history__heading history__heading--centered">
                 {{ t("history.forro_rhythms_title") }}
               </h2>
-              <p class="text-desc text-center mb-12 max-w-3xl mx-auto">
+              <p class="history__intro-text history__text">
                 {{ t("history.forro_rhythms_p1") }}
               </p>
 
-              <div class="grid grid-2 gap-6">
-                <div class="glass p-6 rounded-xl border-light hover-lift">
-                  <h3 class="serif text-2xl text-accent mb-3 font-bold">
-                    Baião
-                  </h3>
-                  <p class="text-desc mb-0 font-sm">
+              <div class="history__rhythms-grid grid grid-2">
+                <div class="history__rhythm glass history__hover-lift">
+                  <h3 class="history__rhythm-title">Baião</h3>
+                  <p class="history__rhythm-text history__text">
                     {{ t("history.forro_rhythms_p2") }}
                   </p>
                 </div>
-                <div class="glass p-6 rounded-xl border-light hover-lift">
-                  <h3 class="serif text-2xl text-accent mb-3 font-bold">
-                    Xote
-                  </h3>
-                  <p class="text-desc mb-0 font-sm">
+                <div class="history__rhythm glass history__hover-lift">
+                  <h3 class="history__rhythm-title">Xote</h3>
+                  <p class="history__rhythm-text history__text">
                     {{ t("history.forro_rhythms_p3") }}
                   </p>
                 </div>
-                <div class="glass p-6 rounded-xl border-light hover-lift">
-                  <h3 class="serif text-2xl text-accent mb-3 font-bold">
-                    Xaxado
-                  </h3>
-                  <p class="text-desc mb-0 font-sm">
+                <div class="history__rhythm glass history__hover-lift">
+                  <h3 class="history__rhythm-title">Xaxado</h3>
+                  <p class="history__rhythm-text history__text">
                     {{ t("history.forro_rhythms_p4") }}
                   </p>
                 </div>
-                <div class="glass p-6 rounded-xl border-light hover-lift">
-                  <h3 class="serif text-2xl text-accent mb-3 font-bold">
-                    Coco
-                  </h3>
-                  <p class="text-desc mb-0 font-sm">
+                <div class="history__rhythm glass history__hover-lift">
+                  <h3 class="history__rhythm-title">Coco</h3>
+                  <p class="history__rhythm-text history__text">
                     {{ t("history.forro_rhythms_p5") }}
                   </p>
                 </div>
@@ -235,26 +227,26 @@ const galleryImages = [
             </div>
 
             <!-- Section 5: Diffusion & Instruments -->
-            <div class="grid grid-2 gap-8 items-stretch">
-              <div
-                class="glass p-8 rounded-2xl border-light flex flex-col justify-between"
-              >
+            <div class="grid grid-2 gap-8 history__panels">
+              <div class="history__panel glass">
                 <div>
-                  <h2 class="serif h2-title mb-6">
+                  <h2 class="history__heading">
                     {{ t("history.forro_diffusion_title") }}
                   </h2>
-                  <p class="text-desc">{{ t("history.forro_diffusion_p1") }}</p>
-                  <p class="text-desc">{{ t("history.forro_diffusion_p2") }}</p>
+                  <p class="history__text">
+                    {{ t("history.forro_diffusion_p1") }}
+                  </p>
+                  <p class="history__text">
+                    {{ t("history.forro_diffusion_p2") }}
+                  </p>
                 </div>
               </div>
-              <div
-                class="glass p-8 rounded-2xl border-light flex flex-col justify-between"
-              >
+              <div class="history__panel glass">
                 <div>
-                  <h2 class="serif h2-title mb-6">
+                  <h2 class="history__heading">
                     {{ t("history.forro_instruments_title") }}
                   </h2>
-                  <div class="media-banner mb-6 overflow-hidden rounded-xl">
+                  <div class="history__banner history__banner--instrument">
                     <img
                       :src="
                         resolveAssetPath(
@@ -262,14 +254,14 @@ const galleryImages = [
                         )
                       "
                       alt="Instrumentos"
-                      class="shadow-md object-cover w-full h-48 hover-scale"
+                      class="history__image history__image--zoom"
                       loading="lazy"
                     />
                   </div>
-                  <p class="text-desc">
+                  <p class="history__text">
                     {{ t("history.forro_instruments_p1") }}
                   </p>
-                  <p class="text-desc">
+                  <p class="history__text">
                     {{ t("history.forro_instruments_p2") }}
                   </p>
                 </div>
@@ -281,19 +273,21 @@ const galleryImages = [
           <div
             v-else-if="activeTab === 'school'"
             key="school"
-            class="content-view"
+            class="history__view"
           >
-            <h2 class="serif h2-title">{{ t("history.school_subtitle") }}</h2>
-            <p class="text-desc">{{ t("history.school_p1") }}</p>
-            <p class="text-desc">{{ t("history.school_p2") }}</p>
-            <p class="text-desc">{{ t("history.school_p3") }}</p>
+            <h2 class="history__heading">
+              {{ t("history.school_subtitle") }}
+            </h2>
+            <p class="history__text">{{ t("history.school_p1") }}</p>
+            <p class="history__text">{{ t("history.school_p2") }}</p>
+            <p class="history__text">{{ t("history.school_p3") }}</p>
             <div
-              class="media-banner mt-12 overflow-hidden rounded-2xl hover-lift"
+              class="history__banner history__banner--spaced history__hover-lift"
             >
               <img
                 :src="resolveAssetPath('/images/history/forro-festival.jpg')"
                 alt="Students dancing"
-                class="shadow-md object-cover w-full hover-scale"
+                class="history__image history__image--zoom"
                 loading="lazy"
               />
             </div>
@@ -303,55 +297,55 @@ const galleryImages = [
           <div
             v-else-if="activeTab === 'elton'"
             key="elton"
-            class="content-view"
+            class="history__view"
           >
-            <div class="profile-layout flex gap-12 items-center mb-12">
-              <div class="profile-pic-wrapper shadow-lg hover-lift">
+            <div class="history__profile history__profile--spaced">
+              <div class="history__profile-picture history__hover-lift">
                 <img
                   :src="resolveAssetPath('/images/elton/profile.jpg')"
                   alt="Elton Rodrigues"
-                  class="object-cover w-full h-full"
+                  class="history__image"
                   loading="lazy"
                 />
               </div>
-              <div class="profile-info">
-                <h2 class="serif h2-title profile-name mb-2">
+              <div class="history__profile-info">
+                <h2 class="history__heading history__profile-name">
                   Elton Rodrigues
                 </h2>
-                <span class="profile-role text-upper">{{
+                <span class="history__profile-role">{{
                   t("history.elton_role")
                 }}</span>
-                <p class="mt-6 italic text-muted text-lg">
+                <p class="history__profile-bio">
                   {{ t("history.elton_bio") }}
                 </p>
               </div>
             </div>
-            <p class="text-desc">{{ t("history.elton_p1") }}</p>
-            <p class="text-desc">{{ t("history.elton_p2") }}</p>
-            <p class="text-desc">{{ t("history.elton_p3") }}</p>
-            <p class="text-desc">{{ t("history.elton_p4") }}</p>
-            <p class="text-desc">{{ t("history.elton_p5") }}</p>
+            <p class="history__text">{{ t("history.elton_p1") }}</p>
+            <p class="history__text">{{ t("history.elton_p2") }}</p>
+            <p class="history__text">{{ t("history.elton_p3") }}</p>
+            <p class="history__text">{{ t("history.elton_p4") }}</p>
+            <p class="history__text">{{ t("history.elton_p5") }}</p>
             <div
-              class="quote-box glass-orange serif italic text-center mt-12 shadow-sm text-lg"
+              class="history__quote history__quote--orange history__quote--closing"
             >
               {{ t("history.elton_quote") }}
             </div>
 
-            <div class="mt-16 mb-4">
-              <h3 class="serif h3-title text-primary text-center mb-10">
+            <div class="history__gallery-section">
+              <h3 class="history__gallery-title">
                 {{ t("history.elton_gallery_title") }}
               </h3>
-              <div class="masonry-gallery">
-                <button
+              <div class="history__gallery">
+                <div
                   v-for="image in galleryImages"
                   :key="image.id"
                   type="button"
-                  class="masonry-card"
-                  :class="`masonry-card--${image.variant}`"
+                  class="history__gallery-card"
+                  :class="`history__gallery-card--${image.variant}`"
                   aria-label="Ver imagen"
                 >
                   <img :src="image.src" :alt="image.alt" loading="lazy" />
-                </button>
+                </div>
               </div>
             </div>
           </div>
@@ -362,17 +356,21 @@ const galleryImages = [
 </template>
 
 <style scoped>
-.page-header {
+.history__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40vh;
   min-height: 300px;
   text-align: center;
+  color: var(--white);
 }
 
-.bg-gold {
+.history__header--gold {
   background-color: var(--forro-gold);
 }
 
-.title-underline {
+.history__title-underline {
   width: 100px;
   height: 6px;
   background: var(--white);
@@ -380,7 +378,11 @@ const galleryImages = [
   border-radius: 99px;
 }
 
-.tabs-nav {
+.history__title {
+  color: var(--white);
+}
+
+.history__tabs {
   display: flex;
   background: var(--bg-surface);
   padding: 0.5rem;
@@ -391,7 +393,7 @@ const galleryImages = [
   box-shadow: var(--shadow-sm);
 }
 
-.tab-btn {
+.history__tab {
   flex: 1;
   display: flex;
   align-items: center;
@@ -408,194 +410,222 @@ const galleryImages = [
   white-space: nowrap;
 }
 
-.tab-btn:hover {
+.history__tab:hover {
   background: var(--gray-100);
   color: var(--forro-orange);
 }
 
-.tab-btn.active {
+.history__tab--active {
   background: var(--forro-orange);
   color: white;
   box-shadow: var(--shadow-md);
 }
 
-.tab-content {
+.history__content {
   background: var(--bg-surface);
   padding: 4rem 5rem;
   border-radius: 2.5rem;
   min-height: 500px;
+  box-shadow: var(--shadow-lg);
 }
 
-.h2-title {
+.history__section {
+  margin-bottom: 4rem;
+}
+
+.history__split {
+  align-items: center;
+}
+
+.history__heading {
+  font-family: var(--font-serif);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: var(--forro-earth);
   line-height: 1.2;
 }
 
-.text-desc {
+.history__heading--centered {
+  text-align: center;
+}
+
+.history__text {
   font-size: 1.1rem;
   color: var(--gray-700);
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }
 
-.text-accent {
+.history__rhythm-title {
+  font-family: var(--font-serif);
   color: var(--forro-orange);
 }
 
-.media-wrapper img,
-.media-banner img {
+.history__media img,
+.history__banner img {
+  width: 100%;
+  object-fit: cover;
   border-radius: var(--radius-lg);
 }
 
-.media-wrapper {
+.history__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history__media {
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-.media-banner {
+.history__banner {
   border-radius: var(--radius-lg);
 }
 
-.quote-box {
+.history__quote {
+  font-family: var(--font-serif);
   padding: 2.5rem 3rem;
   border-radius: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
+  font-style: italic;
   line-height: 1.6;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
-.glass-orange {
+.history__quote--orange {
   background: var(--bg-base);
   color: var(--forro-orange);
   border: 1px solid rgba(242, 125, 38, 0.2);
 }
 
-.border-light {
-  border: 1px solid var(--border-light);
-}
-
-.p-8 {
-  padding: 2rem;
-}
-.p-6 {
-  padding: 1.5rem;
-}
-.mb-16 {
+.history__quote--section-end {
   margin-bottom: 4rem;
 }
-.mb-12 {
-  margin-bottom: 3rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
-}
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.mb-0 {
-  margin-bottom: 0;
-}
-.mt-8 {
+
+.history__quote--nested {
   margin-top: 2rem;
 }
-.mt-12 {
+
+.history__quote--closing {
   margin-top: 3rem;
+  font-size: 1.125rem;
 }
-.font-sm {
-  font-size: 0.95rem;
-}
-.max-w-3xl {
-  max-width: 48rem;
-}
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-.rounded-2xl {
-  border-radius: 1.5rem;
-}
-.rounded-xl {
+.history__rhythm {
+  border: 1px solid var(--border-light);
+  padding: 1.5rem;
   border-radius: 1rem;
 }
-.object-cover {
-  object-fit: cover;
-}
-.w-full {
-  width: 100%;
-}
-.h-full {
-  height: 100%;
-}
-.h-48 {
-  height: 12rem;
-}
-.flex {
+
+.history__panel {
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  border-radius: 1.5rem;
   display: flex;
-}
-.flex-col {
   flex-direction: column;
-}
-.justify-between {
   justify-content: space-between;
 }
-.items-center {
-  align-items: center;
-}
-.items-stretch {
-  align-items: stretch;
+
+.history__rhythm-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-.hover-lift {
+.history__rhythm-text {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.history__rhythms-grid {
+  gap: 1.5rem;
+}
+
+.history__gallery-section {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.history__gallery-section {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.history__intro-text {
+  max-width: 48rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.history__banner--instrument img {
+  height: 12rem;
+}
+
+.history__banner--spaced {
+  margin-top: 3rem;
+}
+
+.history__profile {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.history__profile--spaced {
+  margin-bottom: 3rem;
+}
+
+.history__hover-lift {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-.hover-lift:hover {
+.history__hover-lift:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.hover-scale {
+.history__image--zoom {
   transition: transform 0.5s ease;
 }
-.hover-lift:hover .hover-scale {
+
+.history__hover-lift:hover .history__image--zoom {
   transform: scale(1.05);
 }
 
-.profile-layout {
-  flex-wrap: wrap;
-}
-
-.profile-pic-wrapper {
+.history__profile-picture {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
   overflow: hidden;
   border: 6px solid var(--forro-orange);
   flex-shrink: 0;
 }
 
-.profile-role {
+.history__profile-picture .history__image {
+  height: 100%;
+}
+
+.history__profile-role {
   color: var(--forro-orange);
   font-weight: 800;
   font-size: 0.85rem;
 }
 
-.text-muted {
+.history__profile-bio {
   color: var(--gray-500);
-}
-.text-lg {
   font-size: 1.125rem;
+  margin-top: 1.5rem;
+}
+
+.history__gallery-title {
+  color: var(--forro-orange);
+  padding-bottom: 15px;
+  text-align: center;
 }
 
 /* Transitions */
@@ -612,12 +642,12 @@ const galleryImages = [
   transform: translateY(-20px);
 }
 
-.masonry-gallery {
+.history__gallery {
   column-count: 1;
   column-gap: 1.25rem;
 }
 
-.masonry-card {
+.history__gallery-card {
   display: inline-block;
   width: 100%;
   margin: 0 0 1rem;
@@ -630,7 +660,7 @@ const galleryImages = [
   break-inside: avoid;
 }
 
-.masonry-card img {
+.history__gallery-card img {
   display: block;
   width: 100%;
   height: auto;
@@ -639,38 +669,38 @@ const galleryImages = [
     filter 0.35s ease;
 }
 
-.masonry-card:hover img {
+.history__gallery-card:hover img {
   transform: scale(1.03);
   filter: brightness(1.02);
 }
 
-.masonry-card--tall img {
+.history__gallery-card--tall img {
   min-height: 22rem;
   object-fit: cover;
 }
 
-.masonry-card--wide img {
+.history__gallery-card--wide img {
   min-height: 16rem;
   object-fit: cover;
 }
 
 @media (min-width: 640px) {
-  .masonry-gallery {
+  .history__gallery {
     column-count: 2;
   }
 }
 
 @media (min-width: 768px) {
-  .masonry-gallery {
+  .history__gallery {
     column-count: 3;
   }
 }
 
 @media (max-width: 768px) {
-  .tabs-nav {
+  .history__tabs {
     flex-direction: column;
   }
-  .tab-content {
+  .history__content {
     padding: 3rem 1.5rem;
   }
   .grid-2 {
@@ -682,11 +712,11 @@ const galleryImages = [
   .order-1-mobile {
     order: 1;
   }
-  .profile-layout {
+  .history__profile {
     justify-content: center;
     text-align: center;
   }
-  .h2-title {
+  .history__heading {
     font-size: 2rem;
   }
 }
