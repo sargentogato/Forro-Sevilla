@@ -2,12 +2,11 @@
 import { BookOpen, Map, User } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import HistoryForro from "../components/history/HistoryForro.vue";
 import HistoryGallery from "../components/history/HistoryGallery.vue";
 import HistoryProfile from "../components/history/HistoryProfile.vue";
-import HistoryRhythms from "../components/history/HistoryRhythms.vue";
 import HistorySchool from "../components/history/HistorySchool.vue";
 import HistoryTabs from "../components/history/HistoryTabs.vue";
-import { resolveAssetPath } from "../utils/assetPaths";
 
 const { t } = useI18n();
 const activeTab = ref("forro");
@@ -36,143 +35,7 @@ const tabs = computed(() => [
       <div class="history__content animate-fade">
         <transition name="fade-slide" mode="out-in">
           <div v-if="activeTab === 'forro'" key="forro" class="history__view">
-            <div class="grid grid-2 gap-8 history__split history__section">
-              <div>
-                <h2 class="history__heading">
-                  {{ t("history.forro_subtitle") }}
-                </h2>
-                <p class="history__text">{{ t("history.forro_p1") }}</p>
-                <p class="history__text">{{ t("history.forro_p2") }}</p>
-              </div>
-              <div class="history__media history__hover-lift">
-                <img
-                  :src="resolveAssetPath('/images/history/forro-couple.jpg')"
-                  alt="Old forró"
-                  class="history__image"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            <div
-              class="history__quote history__quote--orange history__quote--section-end"
-            >
-              {{ t("history.forro_quote") }}
-            </div>
-
-            <!-- Section 1: Intro -->
-            <div class="grid grid-2 gap-8 history__split history__section">
-              <div>
-                <h2 class="history__heading">
-                  {{ t("history.forro_what_title") }}
-                </h2>
-                <p class="history__text">{{ t("history.forro_what_p1") }}</p>
-              </div>
-              <div class="history__media history__hover-lift">
-                <img
-                  :src="resolveAssetPath('/images/history/forro-festival.jpg')"
-                  alt="¿Qué es el Forró?"
-                  class="history__image"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            <!-- Section 2: Origin of Term -->
-            <div class="history__panel history__section glass">
-              <h2 class="history__heading history__heading--centered">
-                {{ t("history.forro_origin_title") }}
-              </h2>
-              <p class="history__text">{{ t("history.forro_origin_p1") }}</p>
-              <p class="history__text">{{ t("history.forro_origin_p2") }}</p>
-              <p class="history__text">{{ t("history.forro_origin_p3") }}</p>
-              <div
-                class="history__quote history__quote--orange history__quote--nested"
-              >
-                {{ t("history.forro_origin_p4") }}
-              </div>
-            </div>
-
-            <!-- Section 3: How to dance -->
-            <div class="grid grid-2 gap-8 history__split history__section">
-              <div class="history__media history__hover-lift order-2-mobile">
-                <img
-                  :src="resolveAssetPath('/images/history/forro-couple.jpg')"
-                  alt="Bailando Forró"
-                  class="history__image"
-                  loading="lazy"
-                />
-              </div>
-              <div class="history__text-column order-1-mobile">
-                <h2 class="history__heading">
-                  {{ t("history.forro_how_title") }}
-                </h2>
-                <p class="history__text">{{ t("history.forro_how_p1") }}</p>
-                <p class="history__text">
-                  <strong
-                    >{{ t("history.forro_how_p2").split(":")[0] }}:</strong
-                  >
-                  {{
-                    t("history.forro_how_p2").split(":").slice(1).join(":") ||
-                    t("history.forro_how_p2")
-                  }}
-                </p>
-                <p class="history__text">
-                  <strong
-                    >{{ t("history.forro_how_p3").split(":")[0] }}:</strong
-                  >
-                  {{
-                    t("history.forro_how_p3").split(":").slice(1).join(":") ||
-                    t("history.forro_how_p3")
-                  }}
-                </p>
-              </div>
-            </div>
-
-            <!-- Section 4: Rhythms -->
-            <HistoryRhythms class="history__section" />
-
-            <!-- Section 5: Diffusion & Instruments -->
-            <div class="grid grid-2 gap-8 history__panels">
-              <div class="history__panel glass">
-                <div>
-                  <h2 class="history__heading">
-                    {{ t("history.forro_diffusion_title") }}
-                  </h2>
-                  <p class="history__text">
-                    {{ t("history.forro_diffusion_p1") }}
-                  </p>
-                  <p class="history__text">
-                    {{ t("history.forro_diffusion_p2") }}
-                  </p>
-                </div>
-              </div>
-              <div class="history__panel glass">
-                <div>
-                  <h2 class="history__heading">
-                    {{ t("history.forro_instruments_title") }}
-                  </h2>
-                  <div class="history__banner history__banner--instrument">
-                    <img
-                      :src="
-                        resolveAssetPath(
-                          '/images/history/forro-instruments.jpg',
-                        )
-                      "
-                      alt="Instrumentos"
-                      class="history__image history__image--zoom"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p class="history__text">
-                    {{ t("history.forro_instruments_p1") }}
-                  </p>
-                  <p class="history__text">
-                    {{ t("history.forro_instruments_p2") }}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <HistoryForro />
           </div>
 
           <!-- SCHOOL TAB -->
@@ -233,113 +96,6 @@ const tabs = computed(() => [
   margin-bottom: 4rem;
 }
 
-.history__split {
-  align-items: center;
-}
-
-.history__heading {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--forro-earth);
-  line-height: 1.2;
-}
-
-.history__heading--centered {
-  text-align: center;
-}
-
-.history__text {
-  font-size: 1.1rem;
-  color: var(--gray-700);
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
-}
-
-.history__media img,
-.history__banner img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-}
-
-.history__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.history__media {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.history__banner {
-  border-radius: var(--radius-lg);
-}
-
-.history__quote {
-  font-family: var(--font-serif);
-  padding: 25px 15px;
-  border-radius: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  font-style: italic;
-  line-height: 1.6;
-  box-shadow: var(--shadow-sm);
-}
-
-.history__quote--orange {
-  background: var(--bg-base);
-  color: var(--forro-orange);
-  border: 1px solid rgba(242, 125, 38, 0.2);
-}
-
-.history__quote--section-end {
-  margin-bottom: 4rem;
-}
-
-.history__quote--nested {
-  margin-top: 2rem;
-}
-
-.history__panel {
-  border: 1px solid var(--border-light);
-  padding: 2rem;
-  border-radius: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.history__banner--instrument {
-  margin-bottom: 16px;
-}
-
-.history__banner--instrument img {
-  height: 12rem;
-}
-
-.history__hover-lift {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.history__hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.history__image--zoom {
-  transition: transform 0.5s ease;
-}
-
-.history__hover-lift:hover .history__image--zoom {
-  transform: scale(1.05);
-}
-
 /* Transitions */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
@@ -357,18 +113,6 @@ const tabs = computed(() => [
 @media (max-width: 768px) {
   .history__content {
     padding: 3rem 1.5rem;
-  }
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  .order-2-mobile {
-    order: 2;
-  }
-  .order-1-mobile {
-    order: 1;
-  }
-  .history__heading {
-    font-size: 2rem;
   }
 }
 </style>
