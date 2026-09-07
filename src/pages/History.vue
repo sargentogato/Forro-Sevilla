@@ -2,6 +2,7 @@
 import { BookOpen, Map, User } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import HistoryTabs from "../components/history/HistoryTabs.vue";
 import { resolveAssetPath } from "../utils/assetPaths";
 
 const { t } = useI18n();
@@ -76,26 +77,13 @@ const galleryImages = [
     </header>
 
     <div class="container section">
-      <!-- Tabs navigation -->
-      <div class="history__tabs animate-fade">
-        <button
-          v-for="tab in tabs"
-          :key="tab.id"
-          @click="activeTab = tab.id"
-          class="history__tab"
-          :class="{ 'history__tab--active': activeTab === tab.id }"
-        >
-          <component :is="tab.icon" :size="20" />
-          <span>{{ tab.name }}</span>
-        </button>
+      <div class="history__navigation">
+        <HistoryTabs v-model="activeTab" class="animate-fade" :tabs="tabs" />
       </div>
 
-      <!-- Tab content -->
       <div class="history__content animate-fade">
         <transition name="fade-slide" mode="out-in">
-          <!-- FORRO HISTORY TAB -->
           <div v-if="activeTab === 'forro'" key="forro" class="history__view">
-            <!-- Original Intro Section -->
             <div class="grid grid-2 gap-8 history__split history__section">
               <div>
                 <h2 class="history__heading">
@@ -382,51 +370,16 @@ const galleryImages = [
   color: var(--white);
 }
 
-.history__tabs {
-  display: flex;
-  background: var(--bg-surface);
-  padding: 0.5rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-light);
-  margin-bottom: 4rem;
-  gap: 0.5rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.history__tab {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1.25rem;
-  border-radius: var(--radius-md);
-  font-weight: 700;
-  color: var(--gray-500);
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: var(--transition);
-  white-space: nowrap;
-}
-
-.history__tab:hover {
-  background: var(--gray-100);
-  color: var(--forro-orange);
-}
-
-.history__tab--active {
-  background: var(--forro-orange);
-  color: white;
-  box-shadow: var(--shadow-md);
-}
-
 .history__content {
   background: var(--bg-surface);
   padding: 4rem 5rem;
   border-radius: 2.5rem;
   min-height: 500px;
   box-shadow: var(--shadow-lg);
+}
+
+.history__navigation {
+  margin-bottom: 4rem;
 }
 
 .history__section {
@@ -485,7 +438,7 @@ const galleryImages = [
 
 .history__quote {
   font-family: var(--font-serif);
-  padding: 2.5rem 3rem;
+  padding: 25px 15px;
   border-radius: 1.5rem;
   display: flex;
   align-items: center;
@@ -493,7 +446,6 @@ const galleryImages = [
   font-size: 1.35rem;
   font-style: italic;
   line-height: 1.6;
-  text-align: center;
   box-shadow: var(--shadow-sm);
 }
 
@@ -697,9 +649,6 @@ const galleryImages = [
 }
 
 @media (max-width: 768px) {
-  .history__tabs {
-    flex-direction: column;
-  }
   .history__content {
     padding: 3rem 1.5rem;
   }
