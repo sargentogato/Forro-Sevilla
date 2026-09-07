@@ -2,6 +2,7 @@
 import { BookOpen, Map, User } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import HistoryRhythms from "../components/history/HistoryRhythms.vue";
 import HistoryTabs from "../components/history/HistoryTabs.vue";
 import { resolveAssetPath } from "../utils/assetPaths";
 
@@ -178,41 +179,7 @@ const galleryImages = [
             </div>
 
             <!-- Section 4: Rhythms -->
-            <div class="history__section">
-              <h2 class="history__heading history__heading--centered">
-                {{ t("history.forro_rhythms_title") }}
-              </h2>
-              <p class="history__intro-text history__text">
-                {{ t("history.forro_rhythms_p1") }}
-              </p>
-
-              <div class="history__rhythms-grid grid grid-2">
-                <div class="history__rhythm glass history__hover-lift">
-                  <h3 class="history__rhythm-title">Baião</h3>
-                  <p class="history__rhythm-text history__text">
-                    {{ t("history.forro_rhythms_p2") }}
-                  </p>
-                </div>
-                <div class="history__rhythm glass history__hover-lift">
-                  <h3 class="history__rhythm-title">Xote</h3>
-                  <p class="history__rhythm-text history__text">
-                    {{ t("history.forro_rhythms_p3") }}
-                  </p>
-                </div>
-                <div class="history__rhythm glass history__hover-lift">
-                  <h3 class="history__rhythm-title">Xaxado</h3>
-                  <p class="history__rhythm-text history__text">
-                    {{ t("history.forro_rhythms_p4") }}
-                  </p>
-                </div>
-                <div class="history__rhythm glass history__hover-lift">
-                  <h3 class="history__rhythm-title">Coco</h3>
-                  <p class="history__rhythm-text history__text">
-                    {{ t("history.forro_rhythms_p5") }}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <HistoryRhythms class="history__section" />
 
             <!-- Section 5: Diffusion & Instruments -->
             <div class="grid grid-2 gap-8 history__panels">
@@ -409,11 +376,6 @@ const galleryImages = [
   margin-bottom: 1.25rem;
 }
 
-.history__rhythm-title {
-  font-family: var(--font-serif);
-  color: var(--forro-orange);
-}
-
 .history__media img,
 .history__banner img {
   width: 100%;
@@ -467,12 +429,6 @@ const galleryImages = [
   margin-top: 3rem;
   font-size: 1.125rem;
 }
-.history__rhythm {
-  border: 1px solid var(--border-light);
-  padding: 1.5rem;
-  border-radius: 1rem;
-}
-
 .history__panel {
   border: 1px solid var(--border-light);
   padding: 2rem;
@@ -482,21 +438,6 @@ const galleryImages = [
   justify-content: space-between;
 }
 
-.history__rhythm-title {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.history__rhythm-text {
-  font-size: 0.95rem;
-  margin-bottom: 0;
-}
-
-.history__rhythms-grid {
-  gap: 1.5rem;
-}
-
 .history__gallery-section {
   margin-top: 4rem;
   margin-bottom: 1rem;
@@ -505,12 +446,6 @@ const galleryImages = [
 .history__gallery-section {
   margin-top: 4rem;
   margin-bottom: 1rem;
-}
-
-.history__intro-text {
-  max-width: 48rem;
-  margin: 0 auto 3rem;
-  text-align: center;
 }
 
 .history__banner--instrument img {
