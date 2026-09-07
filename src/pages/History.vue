@@ -2,6 +2,7 @@
 import { BookOpen, Map, User } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import HistoryGallery from "../components/history/HistoryGallery.vue";
 import HistoryRhythms from "../components/history/HistoryRhythms.vue";
 import HistoryTabs from "../components/history/HistoryTabs.vue";
 import { resolveAssetPath } from "../utils/assetPaths";
@@ -14,58 +15,6 @@ const tabs = computed(() => [
   { id: "school", name: t("history.tab_school"), icon: Map },
   { id: "elton", name: t("history.tab_elton"), icon: User },
 ]);
-
-const galleryImages = [
-  {
-    id: 1,
-    src: resolveAssetPath("/images/elton/gallery-1.jpg"),
-    alt: "Elton Forró",
-    caption: "Elton en escena",
-    variant: "tall",
-  },
-  {
-    id: 2,
-    src: resolveAssetPath("/images/elton/gallery-2.jpg"),
-    alt: "Elton Forró",
-    caption: "Momento de baile",
-    variant: "wide",
-  },
-  {
-    id: 3,
-    src: resolveAssetPath("/images/elton/gallery-3.jpg"),
-    alt: "Elton Forró",
-    caption: "Encuentro con la comunidad",
-    variant: "default",
-  },
-  {
-    id: 4,
-    src: resolveAssetPath("/images/elton/gallery-4.jpg"),
-    alt: "Elton Forró",
-    caption: "Público disfrutando",
-    variant: "tall",
-  },
-  {
-    id: 5,
-    src: resolveAssetPath("/images/elton/gallery-5.jpg"),
-    alt: "Elton Forró",
-    caption: "Música y tradición",
-    variant: "default",
-  },
-  {
-    id: 6,
-    src: resolveAssetPath("/images/elton/gallery-6.jpg"),
-    alt: "Elton Forró",
-    caption: "Estilo y energía",
-    variant: "wide",
-  },
-  {
-    id: 7,
-    src: resolveAssetPath("/images/elton/gallery-7.jpg"),
-    alt: "Elton Forró",
-    caption: "Celebración del forró",
-    variant: "default",
-  },
-];
 </script>
 
 <template>
@@ -286,23 +235,7 @@ const galleryImages = [
               {{ t("history.elton_quote") }}
             </div>
 
-            <div class="history__gallery-section">
-              <h3 class="history__gallery-title">
-                {{ t("history.elton_gallery_title") }}
-              </h3>
-              <div class="history__gallery">
-                <div
-                  v-for="image in galleryImages"
-                  :key="image.id"
-                  type="button"
-                  class="history__gallery-card"
-                  :class="`history__gallery-card--${image.variant}`"
-                  aria-label="Ver imagen"
-                >
-                  <img :src="image.src" :alt="image.alt" loading="lazy" />
-                </div>
-              </div>
-            </div>
+            <HistoryGallery />
           </div>
         </transition>
       </div>
@@ -340,16 +273,6 @@ const galleryImages = [
 .history__content {
   background: var(--bg-surface);
   padding: 4rem 5rem;
-  border-radius: 2.5rem;
-  min-height: 500px;
-  box-shadow: var(--shadow-lg);
-}
-
-.history__navigation {
-  margin-bottom: 4rem;
-}
-
-.history__section {
   margin-bottom: 4rem;
 }
 
@@ -438,14 +361,8 @@ const galleryImages = [
   justify-content: space-between;
 }
 
-.history__gallery-section {
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-}
-
-.history__gallery-section {
-  margin-top: 4rem;
-  margin-bottom: 1rem;
+.history__banner--instrument {
+  margin-bottom: 16px;
 }
 
 .history__banner--instrument img {
@@ -509,12 +426,6 @@ const galleryImages = [
   margin-top: 1.5rem;
 }
 
-.history__gallery-title {
-  color: var(--forro-orange);
-  padding-bottom: 15px;
-  text-align: center;
-}
-
 /* Transitions */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
@@ -527,60 +438,6 @@ const galleryImages = [
 .fade-slide-leave-to {
   opacity: 0;
   transform: translateY(-20px);
-}
-
-.history__gallery {
-  column-count: 1;
-  column-gap: 1.25rem;
-}
-
-.history__gallery-card {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 1rem;
-  padding: 0;
-  border: none;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  background: var(--bg-surface);
-  box-shadow: var(--shadow-md);
-  break-inside: avoid;
-}
-
-.history__gallery-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
-}
-
-.history__gallery-card:hover img {
-  transform: scale(1.03);
-  filter: brightness(1.02);
-}
-
-.history__gallery-card--tall img {
-  min-height: 22rem;
-  object-fit: cover;
-}
-
-.history__gallery-card--wide img {
-  min-height: 16rem;
-  object-fit: cover;
-}
-
-@media (min-width: 640px) {
-  .history__gallery {
-    column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .history__gallery {
-    column-count: 3;
-  }
 }
 
 @media (max-width: 768px) {
