@@ -3,6 +3,7 @@ import { BookOpen, Map, User } from "lucide-vue-next";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import HistoryGallery from "../components/history/HistoryGallery.vue";
+import HistoryProfile from "../components/history/HistoryProfile.vue";
 import HistoryRhythms from "../components/history/HistoryRhythms.vue";
 import HistoryTabs from "../components/history/HistoryTabs.vue";
 import { resolveAssetPath } from "../utils/assetPaths";
@@ -203,37 +204,7 @@ const tabs = computed(() => [
             key="elton"
             class="history__view"
           >
-            <div class="history__profile history__profile--spaced">
-              <div class="history__profile-picture history__hover-lift">
-                <img
-                  :src="resolveAssetPath('/images/elton/profile.jpg')"
-                  alt="Elton Rodrigues"
-                  class="history__image"
-                  loading="lazy"
-                />
-              </div>
-              <div class="history__profile-info">
-                <h2 class="history__heading history__profile-name">
-                  Elton Rodrigues
-                </h2>
-                <span class="history__profile-role">{{
-                  t("history.elton_role")
-                }}</span>
-                <p class="history__profile-bio">
-                  {{ t("history.elton_bio") }}
-                </p>
-              </div>
-            </div>
-            <p class="history__text">{{ t("history.elton_p1") }}</p>
-            <p class="history__text">{{ t("history.elton_p2") }}</p>
-            <p class="history__text">{{ t("history.elton_p3") }}</p>
-            <p class="history__text">{{ t("history.elton_p4") }}</p>
-            <p class="history__text">{{ t("history.elton_p5") }}</p>
-            <div
-              class="history__quote history__quote--orange history__quote--closing"
-            >
-              {{ t("history.elton_quote") }}
-            </div>
+            <HistoryProfile />
 
             <HistoryGallery />
           </div>
@@ -348,10 +319,6 @@ const tabs = computed(() => [
   margin-top: 2rem;
 }
 
-.history__quote--closing {
-  margin-top: 3rem;
-  font-size: 1.125rem;
-}
 .history__panel {
   border: 1px solid var(--border-light);
   padding: 2rem;
@@ -373,17 +340,6 @@ const tabs = computed(() => [
   margin-top: 3rem;
 }
 
-.history__profile {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-
-.history__profile--spaced {
-  margin-bottom: 3rem;
-}
-
 .history__hover-lift {
   transition:
     transform 0.3s ease,
@@ -400,30 +356,6 @@ const tabs = computed(() => [
 
 .history__hover-lift:hover .history__image--zoom {
   transform: scale(1.05);
-}
-
-.history__profile-picture {
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
-  border: 6px solid var(--forro-orange);
-  flex-shrink: 0;
-}
-
-.history__profile-picture .history__image {
-  height: 100%;
-}
-
-.history__profile-role {
-  color: var(--forro-orange);
-  font-weight: 800;
-  font-size: 0.85rem;
-}
-
-.history__profile-bio {
-  color: var(--gray-500);
-  font-size: 1.125rem;
-  margin-top: 1.5rem;
 }
 
 /* Transitions */
@@ -452,10 +384,6 @@ const tabs = computed(() => [
   }
   .order-1-mobile {
     order: 1;
-  }
-  .history__profile {
-    justify-content: center;
-    text-align: center;
   }
   .history__heading {
     font-size: 2rem;
