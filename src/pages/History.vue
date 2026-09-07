@@ -5,6 +5,7 @@ import { useI18n } from "vue-i18n";
 import HistoryGallery from "../components/history/HistoryGallery.vue";
 import HistoryProfile from "../components/history/HistoryProfile.vue";
 import HistoryRhythms from "../components/history/HistoryRhythms.vue";
+import HistorySchool from "../components/history/HistorySchool.vue";
 import HistoryTabs from "../components/history/HistoryTabs.vue";
 import { resolveAssetPath } from "../utils/assetPaths";
 
@@ -180,22 +181,7 @@ const tabs = computed(() => [
             key="school"
             class="history__view"
           >
-            <h2 class="history__heading">
-              {{ t("history.school_subtitle") }}
-            </h2>
-            <p class="history__text">{{ t("history.school_p1") }}</p>
-            <p class="history__text">{{ t("history.school_p2") }}</p>
-            <p class="history__text">{{ t("history.school_p3") }}</p>
-            <div
-              class="history__banner history__banner--spaced history__hover-lift"
-            >
-              <img
-                :src="resolveAssetPath('/images/history/forro-festival.jpg')"
-                alt="Students dancing"
-                class="history__image history__image--zoom"
-                loading="lazy"
-              />
-            </div>
+            <HistorySchool />
           </div>
 
           <!-- ELTON TAB -->
@@ -334,10 +320,6 @@ const tabs = computed(() => [
 
 .history__banner--instrument img {
   height: 12rem;
-}
-
-.history__banner--spaced {
-  margin-top: 3rem;
 }
 
 .history__hover-lift {
