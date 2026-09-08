@@ -319,9 +319,6 @@ defineProps<{
   background: var(--bg-surface);
   border: 1px solid var(--gray-200);
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   padding: 40px 32px;
 
   transition:
