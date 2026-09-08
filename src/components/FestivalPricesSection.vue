@@ -119,20 +119,12 @@ defineProps<{
             </h3>
             <div class="festival__info-card-links">
               <a
-                href="https://forms.gle/X4xaPv1dw6F6ALCt9"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="festival__info-link"
-              >
-                Español <ChevronRight :size="20" />
-              </a>
-              <a
                 href="https://forms.gle/Tn7jqu8rkBHCZJs7A"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="festival__info-link"
               >
-                English <ChevronRight :size="20" />
+                Español / English <ChevronRight :size="20" />
               </a>
             </div>
           </div>
@@ -144,30 +136,30 @@ defineProps<{
 
 <style scoped>
 .festival__prices {
-  padding: 96px 24px;
   background-color: var(--bg-base);
+  padding: 96px 24px;
 }
 
 .festival__prices-container {
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 1280px;
 }
 
 .festival__section-header {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 24px;
   margin-bottom: 64px;
   text-align: center;
 }
 
 .festival__section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 24px;
   color: var(--gray-900);
   font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
+  margin-bottom: 24px;
 }
 
 .festival__section-icon {
@@ -175,11 +167,11 @@ defineProps<{
 }
 
 .festival__prices-table-wrapper {
-  max-width: 1000px;
-  margin: 0 auto 48px;
   background: var(--bg-surface);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 48px;
+  max-width: 1000px;
   overflow: hidden;
 }
 
@@ -192,8 +184,8 @@ defineProps<{
 }
 
 .festival__prices-table {
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
 }
 
 .festival__prices-table thead {
@@ -202,11 +194,11 @@ defineProps<{
 }
 
 .festival__prices-table th {
-  padding: 20px 16px;
-  font-weight: 700;
   font-size: 0.95rem;
-  text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 0.05em;
+  padding: 20px 16px;
+  text-transform: uppercase;
 }
 
 .festival__prices-table tbody tr {
@@ -223,41 +215,41 @@ defineProps<{
 }
 
 .festival__prices-table td {
-  padding: 20px 16px;
   font-size: 1rem;
+  padding: 20px 16px;
 }
 
 .festival__table-pass-name {
-  font-weight: 700;
+  color: var(--forro-earth);
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  color: var(--forro-earth);
+  font-weight: 700;
 }
 
 .festival__table-price {
-  text-align: center;
   color: var(--text-secondary);
+  text-align: center;
 }
 
 .festival__table-price--highlight {
   color: var(--forro-orange);
-  font-weight: 700;
   font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .festival__notice {
-  max-width: 1000px;
-  margin: 0 auto 48px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px 24px;
   background: var(--bg-surface);
   border-left: 4px solid var(--forro-orange);
   border-radius: 8px;
-  font-size: 0.95rem;
   color: var(--text-secondary);
+  display: flex;
+  font-size: 0.95rem;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 auto 48px;
+  max-width: 1000px;
+  padding: 16px 24px;
 }
 
 .festival__notice-icon {
@@ -280,41 +272,41 @@ defineProps<{
 }
 
 .festival__btn {
-  display: inline-flex;
   align-items: center;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
   gap: 12px;
   padding: 14px 32px;
-  border-radius: 9999px;
-  font-weight: 700;
-  cursor: pointer;
-  border: none;
   text-decoration: none;
-  font-family: var(--font-sans);
   transition: all 0.3s ease;
-  font-size: 1rem;
 }
 
 .festival__btn--red {
   background-color: var(--forro-red);
-  color: white;
   box-shadow: 0 10px 25px rgba(217, 68, 54, 0.3);
+  color: white;
 }
 
 .festival__btn--red:hover {
   background-color: var(--forro-earth);
-  transform: translateY(-2px);
   box-shadow: 0 15px 35px rgba(140, 91, 63, 0.4);
+  transform: translateY(-2px);
 }
 
 .festival__btn--large {
-  padding: 18px 48px;
   font-size: 1.125rem;
+  padding: 18px 48px;
 }
 
 .festival__info-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 32px;
+  grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
@@ -325,30 +317,34 @@ defineProps<{
 
 .festival__info-card {
   background: var(--bg-surface);
-  padding: 40px 32px;
-  border-radius: 16px;
   border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 40px 32px;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 .festival__info-card:hover {
-  transform: translateY(-4px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 .festival__info-card-title {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  color: var(--gray-900);
+  display: flex;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: var(--font-serif);
+  gap: 12px;
+  justify-content: center;
   margin-bottom: 24px;
   text-align: center;
-  color: var(--gray-900);
 }
 
 .festival__info-card-icon {
@@ -364,10 +360,10 @@ defineProps<{
 }
 
 .festival__info-card-content {
-  font-size: 0.95rem;
-  text-align: center;
   color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.8;
+  text-align: center;
 }
 
 .festival__info-card-content p {
@@ -385,23 +381,25 @@ defineProps<{
 
 .festival__info-card-links {
   display: flex;
+  flex-basis: 70%;
   flex-direction: column;
   gap: 12px;
+  justify-content: center;
 }
 
 .festival__info-link {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 14px 20px;
   background: var(--gray-100);
+  border: 2px solid transparent;
   border-radius: 12px;
   color: var(--forro-orange);
+  display: flex;
   font-weight: 700;
+  gap: 12px;
+  justify-content: center;
+  padding: 14px 20px;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
 .festival__info-link:hover {
@@ -425,8 +423,8 @@ defineProps<{
 
   .festival__prices-table th,
   .festival__prices-table td {
-    padding: 12px 8px;
     font-size: 0.85rem;
+    padding: 12px 8px;
   }
 
   .festival__info-card {
