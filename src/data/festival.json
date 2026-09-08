@@ -123,25 +123,25 @@
       "type": "festival.price_instruments",
       "lote1": "30€",
       "lote2": "—",
-      "lote3": "—"
+      "lote3": "45"
     },
     {
       "type": "festival.price_party_one_day",
       "lote1": "15€",
       "lote2": "—",
-      "lote3": "—"
+      "lote3": "20"
     },
     {
       "type": "festival.price_party_two_days",
       "lote1": "30€",
       "lote2": "—",
-      "lote3": "—"
+      "lote3": "35"
     },
     {
       "type": "festival.price_party_three_days",
       "lote1": "40€",
       "lote2": "—",
-      "lote3": "—"
+      "lote3": "49"
     }
   ]
 }
