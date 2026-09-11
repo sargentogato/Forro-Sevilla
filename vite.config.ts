@@ -2,6 +2,7 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
 import vueDevTools from "vite-plugin-vue-devtools";
+import { imagetools } from "vite-imagetools";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, ".", "");
@@ -11,7 +12,7 @@ export default defineConfig(({ mode }) => {
     // Use a configurable base path so the app works both on GitHub Pages
     // (with a subpath such as /Forro-Sevilla/) and on a regular hosting root.
     base: basePath,
-    plugins: [vue(), vueDevTools()],
+    plugins: [vue(), vueDevTools(), imagetools()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "."),

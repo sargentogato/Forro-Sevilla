@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
+import AppImages from "./AppImages.vue";
 
 const { t } = useI18n();
 </script>
@@ -7,12 +8,10 @@ const { t } = useI18n();
 <template>
   <section class="hero flex-center">
     <div class="hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop"
-        alt="Pareja bailando forró"
-        class="hero-img"
-        loading="eager"
-        decoding="async"
+      <app-images
+        name="home/portada-forro-sevilla.jpeg"
+        alt="Forro Sevilla Alumnos"
+        :eager="true"
       />
       <div class="hero-overlay"></div>
     </div>
@@ -56,6 +55,10 @@ const { t } = useI18n();
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+.hero-bg :deep(img) {
+  height: 100%;
 }
 
 .hero-img {

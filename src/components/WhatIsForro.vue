@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ChevronRight } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
+import AppImages from "./AppImages.vue";
 
 const { t } = useI18n();
 </script>
@@ -25,10 +26,10 @@ const { t } = useI18n();
       </div>
       <div class="forro-intro__visual">
         <div class="forro-intro__image-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1200&auto=format&fit=crop"
-            alt="Abrazo forrozeiro"
-            class="forro-intro__image"
+          <app-images
+            name="home/que-es-el-forro.jpg"
+            alt="Qué es el forro"
+            :eager="true"
           />
         </div>
       </div>
@@ -78,6 +79,10 @@ const { t } = useI18n();
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   width: 100%;
   max-width: 480px;
+}
+
+.forro-intro__image-wrapper :deep(img) {
+  height: 100%;
 }
 
 .forro-intro__image {

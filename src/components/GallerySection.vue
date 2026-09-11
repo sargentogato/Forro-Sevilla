@@ -1,28 +1,29 @@
 <script setup lang="ts">
 import { Instagram } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
+import AppImages from "./AppImages.vue";
 
 const { t } = useI18n();
 
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800&auto=format&fit=crop",
+    src: "home/forro-sevilla-escencia-bailando-juntos-A.jpg",
     alt: "Pareja bailando forró",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800&auto=format&fit=crop",
-    alt: "Música en vivo forró",
+    src: "home/forro-sevilla-escencia-bailando-juntos-B.jpg",
+    alt: "Pareja bailando forró",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop",
+    src: "home/forro-sevilla-escencia-bailando-juntos-C.jpg",
     alt: "Clase de baile",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop",
+    src: "home/forro-sevilla-escencia-bailando-juntos-D.jpg",
     alt: "Ambiente festivo",
   },
 ];
@@ -41,11 +42,11 @@ const galleryImages = [
 
     <div class="gallery-section__grid">
       <div v-for="img in galleryImages" :key="img.id" class="gallery-item">
-        <img
-          :src="img.src"
+        <app-images
+          :name="img.src"
           :alt="img.alt"
+          :eager="true"
           class="gallery-item__image"
-          loading="lazy"
         />
       </div>
     </div>
@@ -109,6 +110,14 @@ const galleryImages = [
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+}
+
+.gallery-item :deep(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+  display: block;
 }
 
 .gallery-item__image {
