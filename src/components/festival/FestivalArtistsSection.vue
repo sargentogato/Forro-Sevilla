@@ -136,7 +136,7 @@ defineProps<{
 
 .festival__artist-image-wrapper {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1.2;
   margin-bottom: 24px;
   border-radius: 16px;
   overflow: hidden;
@@ -147,6 +147,7 @@ defineProps<{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   filter: grayscale(100%);
   transition: filter 0.4s ease;
 }
