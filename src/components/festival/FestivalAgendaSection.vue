@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DayAgenda from "./DayAgenda.vue";
+import DayAgenda from "../DayAgenda.vue";
 
 defineProps<{
   title: string;
@@ -15,11 +15,7 @@ defineProps<{
         <div class="festival__section-line"></div>
       </div>
       <div class="festival__agenda-wrapper">
-        <DayAgenda
-          v-for="(day, idx) in schedule"
-          :key="idx"
-          v-bind="day"
-        />
+        <DayAgenda v-for="(day, idx) in schedule" :key="idx" v-bind="day" />
       </div>
     </div>
   </section>

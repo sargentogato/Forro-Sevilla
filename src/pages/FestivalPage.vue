@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import FestivalAboutSection from "../components/FestivalAboutSection.vue";
-import FestivalAgendaSection from "../components/FestivalAgendaSection.vue";
-import FestivalArtistsSection from "../components/FestivalArtistsSection.vue";
-import FestivalHeroSection from "../components/FestivalHeroSection.vue";
-import FestivalPricesSection from "../components/FestivalPricesSection.vue";
+import FestivalAboutSection from "../components/festival/FestivalAboutSection.vue";
+import FestivalAgendaSection from "../components/festival/FestivalAgendaSection.vue";
+import FestivalArtistsSection from "../components/festival/FestivalArtistsSection.vue";
+import FestivalHeroSection from "../components/festival/FestivalHeroSection.vue";
+import FestivalPricesSection from "../components/festival/FestivalPricesSection.vue";
+import { useFestivalPeople } from "../composables/useFestivalTeachers";
 import festivalData from "../data/festival.json";
 
 const { t } = useI18n();
+const { musicians, teachers } = useFestivalPeople();
 
 const translateText = (value?: string) => {
   if (!value) return "";
@@ -67,92 +69,6 @@ const translatedPrices = computed(() =>
   })),
 );
 
-const festivalMusicians = computed(() => [
-  {
-    name: "Everton Coroné",
-    role: "Viernes y domingo · acordeón",
-    image:
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Carlinha Peracio",
-    role: "Viernes, sábado y domingo · zabumba",
-    image:
-      "https://images.unsplash.com/photo-1514525253344-f814d072e507?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Thainá Souza",
-    role: "Viernes y domingo · triángulo",
-    image:
-      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Carol Benigno",
-    role: "Sábado · acordeón",
-    image:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Sandrinho Dupan",
-    role: "Sábado · triángulo",
-    image:
-      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=600&auto=format&fit=crop",
-  },
-]);
-
-const festivalTeachers = computed(() => [
-  {
-    name: "Sonia Portolo",
-    role: "Profesora",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Fabio Reis",
-    role: "Profesor",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Ricelli Pinheiro",
-    role: "Profesor",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    name: "Elton Rodrigues",
-    role: "Profesor",
-    image:
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
-  },
-]);
-
-/* 
-// ============================================================================
-// PARA CAMBIAR A IMÁGENES LOCALES DE ARTISTAS:
-// 1. Mete las fotos (ej. artista-1.jpg) en la carpeta public/images/festival/
-// 2. Comenta el bloque 'const festivalArtists = computed...' de arriba.
-// 3. Descomenta el bloque de abajo y ajusta los nombres de las imágenes.
-// ============================================================================
-
-const festivalArtists = computed(() => [
-  {
-    name: "Elton Rodrigues",
-    role: t("festival.artists"),
-    image: "/images/festival/artista-1.jpg",
-  },
-  {
-    name: "Carol Benigno",
-    role: t("festival.instrument_percussion"),
-    image: "/images/festival/artista-2.jpg",
-  },
-  {
-    name: "Sandrinho Dupan",
-    role: t("festival.instrument_accordion"),
-    image: "/images/festival/artista-3.jpg",
-  },
-]);
-*/
 </script>
 
 <template>
@@ -184,10 +100,7 @@ const festivalArtists = computed(() => [
     <!-- ============================================= AGENDA SECTION END === -->
 
     <!-- === ARTISTS SECTION START === -->
-    <FestivalArtistsSection
-      :musicians="festivalMusicians"
-      :teachers="festivalTeachers"
-    />
+    <FestivalArtistsSection :musicians="musicians" :teachers="teachers" />
     <!-- ============================================= ARTISTS SECTION END === -->
 
     <!-- === PRICES SECTION START === -->

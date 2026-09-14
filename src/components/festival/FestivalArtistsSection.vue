@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AppImages from "../AppImages.vue";
+
 defineProps<{
   musicians: Array<{
     name: string;
@@ -32,13 +34,11 @@ defineProps<{
               class="festival__artist-card"
             >
               <div class="festival__artist-image-wrapper">
-                <img
-                  :src="artist.image"
+                <app-images
+                  :name="artist.image"
                   :alt="artist.name"
+                  :eager="false"
                   class="festival__artist-image"
-                  referrerpolicy="no-referrer"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
               <h3 class="festival__artist-name">{{ artist.name }}</h3>
@@ -58,13 +58,11 @@ defineProps<{
               class="festival__artist-card"
             >
               <div class="festival__artist-image-wrapper">
-                <img
-                  :src="artist.image"
+                <app-images
+                  :name="artist.image"
                   :alt="artist.name"
+                  :eager="false"
                   class="festival__artist-image"
-                  referrerpolicy="no-referrer"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
               <h3 class="festival__artist-name">{{ artist.name }}</h3>
@@ -151,6 +149,10 @@ defineProps<{
   object-fit: cover;
   filter: grayscale(100%);
   transition: filter 0.4s ease;
+}
+
+.festival__artist-image :deep(img) {
+  height: 120%;
 }
 
 .festival__artist-card:hover .festival__artist-image {

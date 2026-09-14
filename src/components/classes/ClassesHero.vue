@@ -9,15 +9,10 @@ const { t } = useI18n();
   <header class="classes-content__header classes-content__header--dark">
     <app-images
       name="clases/clases-forro-sevilla.jpg"
+      alt="alumunos-forro-sevilla"
+      :eager="false"
       class="classes-content__bg-img"
     />
-    <!-- <img
-      src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop"
-      class="classes-content__bg-img"
-      alt="Background"
-      fetchpriority="high"
-      decoding="async"
-    /> -->
     <div class="classes-content__overlay"></div>
     <div class="classes-content__header-inner">
       <h1 class="classes-content__hero-title">
