@@ -23,7 +23,7 @@ export function useFestivalPeople() {
     {
       name: "Sandrinho Dupan",
       role: "Sábado · triángulo",
-      image: "history/forro-couple.jpg",
+      image: "festival/Sandrinho Dupan.forro-sevilla.webp",
     },
   ];
 

@@ -9,11 +9,14 @@ const props = defineProps({
 });
 
 // UN solo glob para toda la carpeta; Vite lo tree-shakea por uso
-const modules = import.meta.glob("/src/assets/images/**/*.{jpg,jpeg,png}", {
-  query: "?w=480;768;1024;1440;1920;2560&format=webp;jpg&as=picture",
-  import: "default",
-  eager: true,
-});
+const modules = import.meta.glob(
+  "/src/assets/images/**/*.{jpg,jpeg,png,webp}",
+  {
+    query: "?w=480;768;1024;1440;1920;2560&format=webp;jpg&as=picture",
+    import: "default",
+    eager: true,
+  },
+);
 
 const picToShow = modules[`/src/assets/images/${props.name}`];
 
