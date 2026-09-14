@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import GallerySection from "../components/GallerySection.vue";
-import HeroSection from "../components/HeroSection.vue";
-import QuickAcces from "../components/QuickAcces.vue";
-import WhatIsForro from "../components/WhatIsForro.vue";
+import GallerySection from "../components/home/GallerySection.vue";
+import HeroSection from "../components/home/HeroSection.vue";
+import QuickAcces from "../components/home/QuickAcces.vue";
+import WhatIsForro from "../components/home/WhatIsForro.vue";
 
 const { t } = useI18n();
 </script>

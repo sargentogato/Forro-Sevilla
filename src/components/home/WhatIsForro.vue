@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ChevronRight } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
-import AppImages from "./AppImages.vue";
+import AppImages from "../AppImages.vue";
 
 const { t } = useI18n();
 </script>

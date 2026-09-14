@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { resolveAssetPath } from "../../utils/assetPaths";
+import { resolveAssetPath } from "../../utils/assetPaths.ts";
 import HistoryRhythms from "./HistoryRhythms.vue";
 
 const { t } = useI18n();
