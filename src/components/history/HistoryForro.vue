@@ -2,6 +2,7 @@
 import { useI18n } from "vue-i18n";
 import { resolveAssetPath } from "../../utils/assetPaths.ts";
 import HistoryRhythms from "./HistoryRhythms.vue";
+import AppImages from "../AppImages.vue";
 
 const { t } = useI18n();
 </script>
@@ -17,14 +18,12 @@ const { t } = useI18n();
           <p>{{ t("history.forro_p1") }}</p>
           <p>{{ t("history.forro_p2") }}</p>
         </div>
-        <figure class="history-forro__media">
-          <img
-            :src="resolveAssetPath('/images/history/forro-couple.jpg')"
-            alt="Old forró"
-            class="history-forro__image"
-            loading="lazy"
-          />
-        </figure>
+        <app-images
+          name="history/history-forro-sevilla.jpg"
+          alt="historia del forro por forro sevilla"
+          :eager="false"
+          class="history-forro__image history-forro__media"
+        />
       </div>
       <blockquote class="history-forro__quote">
         {{ t("history.forro_quote") }}
@@ -38,14 +37,12 @@ const { t } = useI18n();
         </h2>
         <p>{{ t("history.forro_what_p1") }}</p>
       </div>
-      <figure class="history-forro__media">
-        <img
-          :src="resolveAssetPath('/images/history/forro-festival.jpg')"
-          alt="¿Qué es el Forró?"
-          class="history-forro__image"
-          loading="lazy"
-        />
-      </figure>
+      <app-images
+        name="history/history-forro-sevilla-que-es-el-forro.jpg"
+        alt="Que es el forro un baile lleno de alegria - forro sevilla"
+        :eager="false"
+        class="history-forro__image history-forro__media"
+      />
     </div>
 
     <section class="history-forro__panel glass">
@@ -61,14 +58,12 @@ const { t } = useI18n();
     </section>
 
     <div class="history-forro__section history-forro__dance">
-      <figure class="history-forro__media history-forro__dance-media">
-        <img
-          :src="resolveAssetPath('/images/history/forro-couple.jpg')"
-          alt="Bailando Forró"
-          class="history-forro__image"
-          loading="lazy"
-        />
-      </figure>
+      <app-images
+        name="history/como-se-baila-el-forro-forro-sevilla.jpg"
+        alt="Que es el forro un baile lleno de alegria - forro sevilla"
+        :eager="false"
+        class="history-forro__image history-forro__media"
+      />
       <div class="history-forro__dance-content">
         <h2 class="history-forro__heading">
           {{ t("history.forro_how_title") }}
@@ -105,7 +100,7 @@ const { t } = useI18n();
         <h2 class="history-forro__heading">
           {{ t("history.forro_instruments_title") }}
         </h2>
-        <figure class="history-forro__banner">
+        <figure class="history-forro__media">
           <img
             :src="resolveAssetPath('/images/history/forro-instruments.jpg')"
             alt="Instrumentos"
@@ -168,8 +163,7 @@ const { t } = useI18n();
   line-height: 1.8;
 }
 
-.history-forro__media,
-.history-forro__banner {
+.history-forro__media {
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -184,18 +178,9 @@ const { t } = useI18n();
   box-shadow: var(--shadow-lg);
 }
 
-.history-forro__image {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-.history-forro__image--zoom {
-  transition: transform 0.5s ease;
-}
-
-.history-forro__banner:hover .history-forro__image--zoom {
-  transform: scale(1.05);
+.history-forro__image :deep(img) {
+  border-radius: 16px;
+  height: 100%;
 }
 
 .history-forro__quote {
@@ -210,6 +195,7 @@ const { t } = useI18n();
   font-style: italic;
   line-height: 1.6;
   box-shadow: var(--shadow-sm);
+  text-align: center;
 }
 
 .history-forro__quote--nested {

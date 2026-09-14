@@ -31,22 +31,22 @@ export function useFestivalPeople() {
     {
       name: "Sonia Portolo",
       role: "Profesora",
-      image: "history/forro-couple.jpg",
+      image: "festival/Sonia Portolo-forro-sevilla.jpg",
     },
     {
       name: "Fabio Reis",
       role: "Profesor",
-      image: "history/forro-couple.jpg",
+      image: "festival/Fabio Reis-forro-sevilla.jpeg",
     },
     {
       name: "Ricelli Pinheiro",
       role: "Profesor",
-      image: "history/forro-couple.jpg",
+      image: "festival/Ricelli Pinheiro-forro-sevilla.png",
     },
     {
       name: "Elton Rodrigues",
       role: "Profesor",
-      image: "history/forro-couple.jpg",
+      image: "festival/Elton Rodrigues-forro-sevilla.webp",
     },
   ];
 

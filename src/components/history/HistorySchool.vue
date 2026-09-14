@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { resolveAssetPath } from "../../utils/assetPaths";
+import AppImages from "../AppImages.vue";
 
 const { t } = useI18n();
 </script>
@@ -15,14 +16,12 @@ const { t } = useI18n();
       <p>{{ t("history.school_p2") }}</p>
       <p>{{ t("history.school_p3") }}</p>
     </div>
-    <figure class="history-school__banner">
-      <img
-        :src="resolveAssetPath('/images/history/forro-festival.jpg')"
-        alt="Students dancing"
-        class="history-school__image"
-        loading="lazy"
-      />
-    </figure>
+    <app-images
+      name="history/proyecto-forro-arrastape-sevilla.webp"
+      alt="Pryecto Arrasta pe Sevilla"
+      :eager="false"
+      class="history-school__image"
+    />
   </section>
 </template>
 
@@ -64,6 +63,11 @@ const { t } = useI18n();
   width: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+.history-school__image :deep(img) {
+  height: 100%;
+  border-radius: 16px;
 }
 
 .history-school__banner:hover .history-school__image {
