@@ -195,7 +195,6 @@ const { t } = useI18n();
   font-style: italic;
   line-height: 1.6;
   box-shadow: var(--shadow-sm);
-  text-align: center;
 }
 
 .history-forro__quote--nested {
