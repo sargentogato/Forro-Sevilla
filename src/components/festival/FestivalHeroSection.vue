@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ChevronRight } from "lucide-vue-next";
-import { computed } from "vue";
-import { resolveAssetPath } from "../../utils/assetPaths";
 import AppImages from "../AppImages.vue";
 
 const props = withDefaults(
@@ -89,7 +87,9 @@ const props = withDefaults(
 }
 
 .festival__hero-img :deep(img) {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .festival__hero-overlay {
