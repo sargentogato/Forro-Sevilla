@@ -13,7 +13,7 @@ export function useFestivalPeople() {
     {
       name: "Thainá Souza",
       role: "Viernes y domingo · triángulo",
-      image: "history/forro-couple.jpg",
+      image: "festival/Thaina-Souza-forro-sevilla.jpeg",
     },
     {
       name: "Carol Benigno",
