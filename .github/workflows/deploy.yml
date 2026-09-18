@@ -24,7 +24,7 @@ jobs:
 
       - name: Build
         env:
-          VITE_BASE_PATH: /Forro-Sevilla/
+          VITE_BASE_PATH: /
         run: npm run build
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
