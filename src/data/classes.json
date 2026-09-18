@@ -39,7 +39,7 @@
   "prices": {
     "group": [
       { "name": "Mensual (4 clases)", "price": "30€" },
-      { "name": "Clase suelta", "price": "10€" }
+      { "name": "Clase suelta", "price": "12€" }
     ],
     "private_individual": [
       { "name": "Por hora", "price": "15€" },
