@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import classesData from "../../data/classes.json";
 
 const { t } = useI18n();
 
-const plans = [
+const plans = computed(() => [
   {
     key: "group",
     title: t("classes.group_classes"),
@@ -26,7 +27,7 @@ const plans = [
     color: "var(--forro-gold)",
     prices: classesData.prices.private_couple,
   },
-];
+]);
 </script>
 
 <template>
@@ -61,7 +62,9 @@ const plans = [
               :key="idx"
               class="classes-content__price-row"
             >
-              <span class="classes-content__price-label">{{ p.name }}</span>
+              <span class="classes-content__price-label">
+                {{ t(`classes.${p.nameKey}`) }}
+              </span>
               <span class="classes-content__price-value">{{ p.price }}</span>
             </div>
           </div>

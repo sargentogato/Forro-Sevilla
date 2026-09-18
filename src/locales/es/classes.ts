@@ -16,6 +16,31 @@ const classes = {
   group_classes_subtitle: "1.5h / semana",
   individual_subtitle: "1h individual",
   couple_subtitle: "1h en pareja",
+  venues: {
+    muelle: {
+      name: "Muelle Camaronero / Muelle Triana",
+      address: "Calle Betis, al lado del Kiosco Flores",
+      schedules: { wednesday: "Miércoles" },
+      note: "Requiere confirmación previa",
+    },
+    centro_civico: {
+      name: "Centro Cívico Hogar San Fernando",
+      address: "Calle Don Fadrique, 59 · 41009 Sevilla",
+      schedules: { friday: "Viernes" },
+    },
+  },
+  levels: {
+    beginner: "Principiantes",
+    intermediate_advanced: "Intermedios/Avanzados",
+    free_practice: "Práctica libre",
+  },
+  price_labels: {
+    monthly_4_classes: "Mensual (4 clases)",
+    single_class: "Clase suelta",
+    per_hour: "Por hora",
+    pass_5_classes: "Bono 5 clases",
+    pass_10_classes: "Bono 10 clases",
+  },
 } as const;
 
 export default classes;

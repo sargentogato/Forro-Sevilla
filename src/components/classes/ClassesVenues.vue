@@ -24,10 +24,12 @@ const { t } = useI18n();
         class="classes-content__venue-card"
       >
         <div class="classes-content__venue-header">
-          <h3 class="classes-content__venue-title">{{ venue.name }}</h3>
+          <h3 class="classes-content__venue-title">
+            {{ t(`classes.${venue.nameKey}`) }}
+          </h3>
           <p class="classes-content__venue-address">
             <MapPin :size="16" />
-            {{ venue.address }}
+            {{ t(`classes.${venue.addressKey}`) }}
           </p>
         </div>
 
@@ -39,7 +41,7 @@ const { t } = useI18n();
           >
             <div class="classes-content__schedule-info">
               <span class="classes-content__schedule-day">
-                {{ schedule.day }}
+                {{ t(`classes.${schedule.dayKey}`) }}
               </span>
               <span class="classes-content__schedule-time">
                 <Clock :size="14" /> {{ schedule.time }}
@@ -48,19 +50,18 @@ const { t } = useI18n();
             <span
               class="classes-content__level-badge"
               :class="{
-                'classes-content__level-badge--active': schedule.level
-                  .toLowerCase()
-                  .includes('inici'),
+                'classes-content__level-badge--active':
+                  schedule.levelKey === 'levels.beginner',
               }"
             >
-              {{ schedule.level }}
+              {{ t(`classes.${schedule.levelKey}`) }}
             </span>
           </div>
         </div>
 
-        <div v-if="venue.note" class="classes-content__venue-note">
+        <div v-if="venue.noteKey" class="classes-content__venue-note">
           <Info :size="18" />
-          <span>{{ venue.note }}</span>
+          <span>{{ t(`classes.${venue.noteKey}`) }}</span>
         </div>
       </div>
     </div>

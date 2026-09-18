@@ -2,54 +2,54 @@
   "venues": [
     {
       "id": "muelle",
-      "name": "Muelle Camaronero / Muelle Triana",
-      "address": "Calle Betis, al lado del Kiosco Flores",
+      "nameKey": "venues.muelle.name",
+      "addressKey": "venues.muelle.address",
       "schedules": [
         {
-          "day": "Miércoles",
+          "dayKey": "venues.muelle.schedules.wednesday",
           "time": "20:30–21:30h",
-          "level": "Principiantes"
+          "levelKey": "levels.beginner"
         }
       ],
-      "note": "Requiere confirmación previa"
+      "noteKey": "venues.muelle.note"
     },
     {
       "id": "centro_civico",
-      "name": "Centro Cívico Hogar San Fernando",
-      "address": "Calle Don Fadrique, 59 · 41009 Sevilla",
+      "nameKey": "venues.centro_civico.name",
+      "addressKey": "venues.centro_civico.address",
       "schedules": [
         {
-          "day": "Viernes",
+          "dayKey": "venues.centro_civico.schedules.friday",
           "time": "19:00–20:00h",
-          "level": "Intermedios/Avanzados"
+          "levelKey": "levels.intermediate_advanced"
         },
         {
-          "day": "Viernes",
+          "dayKey": "venues.centro_civico.schedules.friday",
           "time": "20:00–21:00h",
-          "level": "Principiantes"
+          "levelKey": "levels.beginner"
         },
         {
-          "day": "Viernes",
+          "dayKey": "venues.centro_civico.schedules.friday",
           "time": "21:00–21:25h",
-          "level": "Práctica libre"
+          "levelKey": "levels.free_practice"
         }
       ]
     }
   ],
   "prices": {
     "group": [
-      { "name": "Mensual (4 clases)", "price": "30€" },
-      { "name": "Clase suelta", "price": "12€" }
+      { "nameKey": "price_labels.monthly_4_classes", "price": "30€" },
+      { "nameKey": "price_labels.single_class", "price": "12€" }
     ],
     "private_individual": [
-      { "name": "Por hora", "price": "15€" },
-      { "name": "Bono 5 clases", "price": "60€" },
-      { "name": "Bono 10 clases", "price": "110€" }
+      { "nameKey": "price_labels.per_hour", "price": "15€" },
+      { "nameKey": "price_labels.pass_5_classes", "price": "60€" },
+      { "nameKey": "price_labels.pass_10_classes", "price": "110€" }
     ],
     "private_couple": [
-      { "name": "Por hora", "price": "25€" },
-      { "name": "Bono 5 clases", "price": "120€" },
-      { "name": "Bono 10 clases", "price": "230€" }
+      { "nameKey": "price_labels.per_hour", "price": "25€" },
+      { "nameKey": "price_labels.pass_5_classes", "price": "120€" },
+      { "nameKey": "price_labels.pass_10_classes", "price": "230€" }
     ]
   }
 }
