@@ -4,11 +4,13 @@ import { computed, ref, watch, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { loadLocaleMessages, type SupportedLocale } from "../i18n";
+import AppImages from "./AppImages.vue";
 
 const { t, locale } = useI18n();
 const route = useRoute();
 
 const isMenuOpen = ref(false);
+const logoImag = "logos/forro-sevilla-logo.png";
 
 const navLinks = computed(() => [
   { name: t("nav.home"), path: "/" },
@@ -59,7 +61,9 @@ onMounted(() => {
   <header id="header" class="header">
     <div class="header-container container">
       <router-link to="/" class="logo">
-        <div class="logo-icon">A</div>
+        <div class="logo-icon">
+          <app-images :name="logoImag" alt="Forro Sevilla Logo" sizes="25px" />
+        </div>
         <span class="logo-text">
           Forró Arrasta-pé<br /><span class="logo-accent">Sevilla</span>
         </span>
@@ -185,8 +189,12 @@ onMounted(() => {
           <router-link to="/contacto" class="f-link">{{
             t("nav.contact")
           }}</router-link>
-          <router-link :to="{ name: 'CookiesPage' }" class="f-link">{{ t("cookies.policy.title") }}</router-link>
-          <router-link :to="{ name: 'PrivacyPage' }" class="f-link">{{ t("cookies.privacy.title") }}</router-link>
+          <router-link :to="{ name: 'CookiesPage' }" class="f-link">{{
+            t("cookies.policy.title")
+          }}</router-link>
+          <router-link :to="{ name: 'PrivacyPage' }" class="f-link">{{
+            t("cookies.privacy.title")
+          }}</router-link>
         </div>
       </div>
       <div class="footer-col">
@@ -235,15 +243,16 @@ onMounted(() => {
 .logo-icon {
   width: 3rem;
   height: 3rem;
-  background-color: var(--forro-orange);
   color: white;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif);
-  font-weight: 900;
-  font-size: 1.5rem;
+}
+
+.logo-icon :deep(img) {
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #ec7b26;
 }
 
 .logo-text {
