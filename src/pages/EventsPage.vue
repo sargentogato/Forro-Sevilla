@@ -4,7 +4,10 @@ import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import DayAgenda from "../components/DayAgenda.vue";
 import EventTypeModal from "../components/EventTypeModal.vue";
-import { eventTypeOptions, type EventTypeData } from "../data/event-types";
+import {
+  eventTypeOptions,
+  type EventTypeData,
+} from "../data/event-types/index.ts";
 import eventsData from "../data/events.json";
 
 const { t } = useI18n();

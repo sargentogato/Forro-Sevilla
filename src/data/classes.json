@@ -5,7 +5,11 @@
       "name": "Muelle Camaronero / Muelle Triana",
       "address": "Calle Betis, al lado del Kiosco Flores",
       "schedules": [
-        { "day": "Miércoles", "time": "20:30–21:30h", "level": "Principiantes" }
+        {
+          "day": "Miércoles",
+          "time": "20:30–21:30h",
+          "level": "Principiantes"
+        }
       ],
       "note": "Requiere confirmación previa"
     },
@@ -14,9 +18,21 @@
       "name": "Centro Cívico Hogar San Fernando",
       "address": "Calle Don Fadrique, 59 · 41009 Sevilla",
       "schedules": [
-        { "day": "Viernes", "time": "19:00–20:00h", "level": "Intermedios/Avanzados" },
-        { "day": "Viernes", "time": "20:00–21:00h", "level": "Principiantes" },
-        { "day": "Viernes", "time": "21:00–21:25h", "level": "Práctica libre" }
+        {
+          "day": "Viernes",
+          "time": "19:00–20:00h",
+          "level": "Intermedios/Avanzados"
+        },
+        {
+          "day": "Viernes",
+          "time": "20:00–21:00h",
+          "level": "Principiantes"
+        },
+        {
+          "day": "Viernes",
+          "time": "21:00–21:25h",
+          "level": "Práctica libre"
+        }
       ]
     }
   ],

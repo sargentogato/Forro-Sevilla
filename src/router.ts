@@ -4,9 +4,18 @@ const routes = [
   { path: "/", component: () => import("./pages/HomePage.vue") },
   { path: "/clases", component: () => import("./pages/ClassesPage.vue") },
   { path: "/festival", component: () => import("./pages/FestivalPage.vue") },
-  { path: "/eventos", component: () => import("./pages/Events.vue") },
-  { path: "/historia", component: () => import("./pages/History.vue") },
-  { path: "/contacto", component: () => import("./pages/Contact.vue") },
+  {
+    path: "/eventos",
+    component: () => import("./pages/EventsPage.vue"),
+  },
+  {
+    path: "/historia",
+    component: () => import("./pages/HistoryPage.vue"),
+  },
+  {
+    path: "/contacto",
+    component: () => import("./pages/ContactPage.vue"),
+  },
   {
     path: "/cookies",
     name: "CookiesPage",
