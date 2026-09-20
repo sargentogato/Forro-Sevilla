@@ -20,13 +20,13 @@ const classes = {
     muelle: {
       name: "Muelle Camaronero / Muelle Triana",
       address: "Calle Betis, al lado del Kiosco Flores",
-      schedules: { wednesday: "Miércoles" },
+      schedules: { day: "Jueves" },
       note: "Requiere confirmación previa",
     },
     centro_civico: {
       name: "Centro Cívico Hogar San Fernando",
       address: "Calle Don Fadrique, 59 · 41009 Sevilla",
-      schedules: { friday: "Viernes" },
+      schedules: { day: "Viernes" },
     },
   },
   levels: {
