@@ -44,6 +44,16 @@ export function useFestivalPeople() {
       image: "festival/Ricelli Pinheiro-forro-sevilla.png",
     },
     {
+      name: "Géssica Barreto",
+      role: "Profesor",
+      image: "festival/Géssica Barreto- forro-sevilla.webp",
+    },
+    {
+      name: "Marcio Freitas",
+      role: "Profesor",
+      image: "festival/Marcio Freitas-forro-sevilla.webp",
+    },
+    {
       name: "Elton Rodrigues",
       role: "Profesor",
       image: "festival/Elton Rodrigues-forro-sevilla.webp",
