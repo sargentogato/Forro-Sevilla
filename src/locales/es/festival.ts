@@ -1,3 +1,4 @@
+import { EachMapping } from "./../../../node_modules/@jridgewell/trace-mapping/src/types";
 const festival = {
   dates: "15–18 de Octubre, 2026",
   hero_title: "2º Festival Forró Sevilla — Forró e Folia 2026",
@@ -43,17 +44,17 @@ const festival = {
   schedule_day_friday: "Viernes 16 Oct",
   schedule_day_saturday: "Sábado 17 Oct",
   schedule_day_sunday: "Domingo 18 Oct",
-  schedule_thursday_time: "Pre-evento",
+  schedule_thursday_time: "19:00 - 22:00 - Pre Evento",
   schedule_thursday_title: "Baile social al aire libre",
   schedule_thursday_location: "Muelle Camaronero, Triana",
   schedule_thursday_details:
     "Baile junto al río Guadalquivir para calentar motores.",
   schedule_friday_1_time: "18:00–20:00",
-  schedule_friday_1_title: "Welcome Workshop “Forró for Everyone”",
+  schedule_friday_1_title: "Workshop de Bienvenida “Forró para tod@s”",
   schedule_friday_1_location: "Rqr Eventos (Calle Pizarra 6)",
   schedule_friday_1_details: "Con el profesor Elton Rodrigues.",
   schedule_friday_2_time: "20:00–02:00",
-  schedule_friday_2_title: "Free Dance & Live Music",
+  schedule_friday_2_title: "Baile Libre & Música en vivo",
   schedule_friday_2_location: "Rqr Eventos",
   schedule_friday_2_details: "DJ set y música en vivo hasta tarde.",
   schedule_saturday_1_time: "09:00–12:00",

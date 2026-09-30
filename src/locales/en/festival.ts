@@ -43,7 +43,7 @@ const festival = {
   schedule_day_friday: "Friday 16 Oct",
   schedule_day_saturday: "Saturday 17 Oct",
   schedule_day_sunday: "Sunday 18 Oct",
-  schedule_thursday_time: "Pre-event",
+  schedule_thursday_time: "19:00 - 22:00 - Pre-event",
   schedule_thursday_title: "Outdoor social dance",
   schedule_thursday_location: "Muelle Camaronero, Triana",
   schedule_thursday_details: "Dance by the Guadalquivir river to warm up.",
