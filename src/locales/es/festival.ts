@@ -50,7 +50,7 @@ const festival = {
   schedule_thursday_details:
     "Baile junto al río Guadalquivir para calentar motores.",
   schedule_friday_1_time: "18:00–20:00",
-  schedule_friday_1_title: "Workshop de Bienvenida “Forró para tod@s”",
+  schedule_friday_1_title: "Workshop de Bienvenida “Forró para todos”",
   schedule_friday_1_location: "Rqr Eventos (Calle Pizarra 6)",
   schedule_friday_1_details: "Con el profesor Elton Rodrigues.",
   schedule_friday_2_time: "20:00–02:00",
