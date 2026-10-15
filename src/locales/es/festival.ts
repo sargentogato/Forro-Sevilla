@@ -46,7 +46,7 @@ const festival = {
   schedule_day_sunday: "Domingo 18 Oct",
   schedule_thursday_time: "19:00 - 22:00 - Pre Evento",
   schedule_thursday_title: "Baile social al aire libre",
-  schedule_thursday_location: "Muelle Camaronero, Triana",
+  schedule_thursday_location: "Torre del Oro",
   schedule_thursday_details:
     "Baile junto al río Guadalquivir para calentar motores.",
   schedule_friday_1_time: "18:00–20:00",
